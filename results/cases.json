@@ -1,0 +1,1955 @@
+[
+  {
+    "id": "budget-and-tax-rate-planning-tool::Recap Page 2.L52",
+    "workbook": "corpus/budget-and-tax-rate-planning-tool.xlsx",
+    "target": "Recap Page 2!L52",
+    "formula_nodes": 8,
+    "screen": "60 distinct, 60/60 nonzero",
+    "inputs": [
+      {
+        "key": "Recap Page 2!K27",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!K28",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!K33",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!K34",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!K35",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!K38",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Recap Page 2!K39",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Recap Page 2!K45",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!K46",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!K47",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!K48",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "capital-targets-template::Debt.G8",
+    "workbook": "corpus/capital-targets-template.xlsx",
+    "target": "Debt!G8",
+    "formula_nodes": 16,
+    "screen": "60 distinct, 60/60 nonzero",
+    "inputs": [
+      {
+        "key": "Debt!G11",
+        "kind": "number",
+        "observed": 50342.65,
+        "interesting": [
+          0,
+          -50342.65,
+          50342.65,
+          100685.3,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G12",
+        "kind": "number",
+        "observed": 45000,
+        "interesting": [
+          0,
+          -45000,
+          45000,
+          90000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G13",
+        "kind": "number",
+        "observed": 17000,
+        "interesting": [
+          0,
+          -17000,
+          17000,
+          34000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G14",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G15",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G16",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G19",
+        "kind": "number",
+        "observed": 20657.35,
+        "interesting": [
+          0,
+          -20657.35,
+          20657.35,
+          41314.7,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G22",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G23",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G24",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G31",
+        "kind": "number",
+        "observed": 155000,
+        "interesting": [
+          0,
+          -155000,
+          155000,
+          310000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G32",
+        "kind": "number",
+        "observed": 45000,
+        "interesting": [
+          0,
+          -45000,
+          45000,
+          90000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G33",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G34",
+        "kind": "number",
+        "observed": 338000,
+        "interesting": [
+          0,
+          -338000,
+          338000,
+          676000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G35",
+        "kind": "number",
+        "observed": 90000,
+        "interesting": [
+          0,
+          -90000,
+          90000,
+          180000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G36",
+        "kind": "number",
+        "observed": 100000,
+        "interesting": [
+          0,
+          -100000,
+          100000,
+          200000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G37",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G38",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G43",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G47",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!G48",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "capital-targets-template::Debt.H8",
+    "workbook": "corpus/capital-targets-template.xlsx",
+    "target": "Debt!H8",
+    "formula_nodes": 16,
+    "screen": "60 distinct, 60/60 nonzero",
+    "inputs": [
+      {
+        "key": "Debt!H11",
+        "kind": "number",
+        "observed": 54620.89,
+        "interesting": [
+          0,
+          -54620.89,
+          54620.89,
+          109241.78,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H12",
+        "kind": "number",
+        "observed": 45000,
+        "interesting": [
+          0,
+          -45000,
+          45000,
+          90000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H13",
+        "kind": "number",
+        "observed": 17000,
+        "interesting": [
+          0,
+          -17000,
+          17000,
+          34000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H14",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H15",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H16",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H19",
+        "kind": "number",
+        "observed": 19379.11,
+        "interesting": [
+          0,
+          -19379.11,
+          19379.11,
+          38758.22,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H22",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H23",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H24",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H31",
+        "kind": "number",
+        "observed": 155000,
+        "interesting": [
+          0,
+          -155000,
+          155000,
+          310000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H32",
+        "kind": "number",
+        "observed": 40000,
+        "interesting": [
+          0,
+          -40000,
+          40000,
+          80000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H33",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H34",
+        "kind": "number",
+        "observed": 338000,
+        "interesting": [
+          0,
+          -338000,
+          338000,
+          676000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H35",
+        "kind": "number",
+        "observed": 85000,
+        "interesting": [
+          0,
+          -85000,
+          85000,
+          170000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H36",
+        "kind": "number",
+        "observed": 100000,
+        "interesting": [
+          0,
+          -100000,
+          100000,
+          200000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H37",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H38",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H43",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H47",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!H48",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "capital-targets-template::CIP.C68",
+    "workbook": "corpus/capital-targets-template.xlsx",
+    "target": "CIP!C68",
+    "formula_nodes": 11,
+    "screen": "47 distinct, 46/60 nonzero",
+    "inputs": [
+      {
+        "key": "CIP!C10",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C11",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C14",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C15",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C16",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C19",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C20",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C21",
+        "kind": "number",
+        "observed": 25000,
+        "interesting": [
+          0,
+          -25000,
+          25000,
+          50000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C22",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C27",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "CIP!C31",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C32",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C33",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C34",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C35",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C38",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C39",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C40",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C41",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C42",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C45",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C46",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C49",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C50",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C57",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C58",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C59",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C60",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C61",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C62",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C63",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C64",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C65",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C66",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C8",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "CIP!C9",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "financial-forecasting-template-10-year::Fiscal Years.AA13",
+    "workbook": "corpus/financial-forecasting-template-10-year.xlsx",
+    "target": "Fiscal Years!AA13",
+    "formula_nodes": 25,
+    "screen": "23 distinct, 31/60 nonzero",
+    "inputs": [
+      {
+        "key": "Fiscal Years!B13",
+        "kind": "date",
+        "observed": "2014-07-01 00:00:00",
+        "interesting": [
+          "2014-07-01 00:00:00"
+        ],
+        "used_by": [
+          "EDATE"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "financial-forecasting-template-10-year::Fiscal Years.AA16",
+    "workbook": "corpus/financial-forecasting-template-10-year.xlsx",
+    "target": "Fiscal Years!AA16",
+    "formula_nodes": 25,
+    "screen": "23 distinct, 31/60 nonzero",
+    "inputs": [
+      {
+        "key": "Fiscal Years!B16",
+        "kind": "date",
+        "observed": "2014-06-30 00:00:00",
+        "interesting": [
+          "2014-06-30 00:00:00"
+        ],
+        "used_by": [
+          "EDATE"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "financial-forecasting-template-10-year::Available Funds.T48",
+    "workbook": "corpus/financial-forecasting-template-10-year.xlsx",
+    "target": "Available Funds!T48",
+    "formula_nodes": 18,
+    "screen": "23 distinct, 31/60 nonzero",
+    "inputs": [
+      {
+        "key": "Fiscal Years!B13",
+        "kind": "date",
+        "observed": "2014-07-01 00:00:00",
+        "interesting": [
+          "2014-07-01 00:00:00"
+        ],
+        "used_by": [
+          "EDATE"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "financial-forecasting-template-5-year::Available Funds.N48",
+    "workbook": "corpus/financial-forecasting-template-5-year.xlsx",
+    "target": "Available Funds!N48",
+    "formula_nodes": 12,
+    "screen": "23 distinct, 31/60 nonzero",
+    "inputs": [
+      {
+        "key": "Fiscal Years!B13",
+        "kind": "date",
+        "observed": "2019-07-01 00:00:00",
+        "interesting": [
+          "2019-07-01 00:00:00"
+        ],
+        "used_by": [
+          "EDATE"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "financial-forecasting-template-5-year::Available Funds.N53",
+    "workbook": "corpus/financial-forecasting-template-5-year.xlsx",
+    "target": "Available Funds!N53",
+    "formula_nodes": 12,
+    "screen": "23 distinct, 31/60 nonzero",
+    "inputs": [
+      {
+        "key": "Fiscal Years!B16",
+        "kind": "date",
+        "observed": "2019-06-30 00:00:00",
+        "interesting": [
+          "2019-06-30 00:00:00"
+        ],
+        "used_by": [
+          "EDATE"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "financial-indicators-template-0::6 - Operating Expenditures.K35",
+    "workbook": "corpus/financial-indicators-template-0.xlsx",
+    "target": "6 - Operating Expenditures!K35",
+    "formula_nodes": 6,
+    "screen": "17 distinct, 31/60 nonzero",
+    "inputs": [
+      {
+        "key": "6 - Operating Expenditures!H50",
+        "kind": "number",
+        "observed": 22690243,
+        "interesting": [
+          0,
+          -22690243,
+          22690243,
+          45380486,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!H51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!I34",
+        "kind": "number",
+        "observed": 1.019273868220529,
+        "interesting": [
+          0,
+          -1.019273868220529,
+          1.019273868220529,
+          2.038547736441058,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "6 - Operating Expenditures!I35",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "6 - Operating Expenditures!I50",
+        "kind": "number",
+        "observed": 3279382,
+        "interesting": [
+          0,
+          -3279382,
+          3279382,
+          6558764,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!I51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!J50",
+        "kind": "number",
+        "observed": 8128547,
+        "interesting": [
+          0,
+          -8128547,
+          8128547,
+          16257094,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!J51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!K50",
+        "kind": "number",
+        "observed": 3358161,
+        "interesting": [
+          0,
+          -3358161,
+          3358161,
+          6716322,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!K51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!L50",
+        "kind": "number",
+        "observed": 2692665,
+        "interesting": [
+          0,
+          -2692665,
+          2692665,
+          5385330,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!L51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!M50",
+        "kind": "number",
+        "observed": 1754128,
+        "interesting": [
+          0,
+          -1754128,
+          1754128,
+          3508256,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!M51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!N50",
+        "kind": "number",
+        "observed": 659002,
+        "interesting": [
+          0,
+          -659002,
+          659002,
+          1318004,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!N51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!O50",
+        "kind": "number",
+        "observed": 636052,
+        "interesting": [
+          0,
+          -636052,
+          636052,
+          1272104,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!O51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!P50",
+        "kind": "number",
+        "observed": 531562,
+        "interesting": [
+          0,
+          -531562,
+          531562,
+          1063124,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!P51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!Q50",
+        "kind": "number",
+        "observed": 2017127,
+        "interesting": [
+          0,
+          -2017127,
+          2017127,
+          4034254,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!Q51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!R51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      }
+    ]
+  }
+]
