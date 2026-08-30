@@ -26,6 +26,22 @@ def cell_key(workbook: str | Path, ref: str) -> str:
     return f"'[{book}]{sheet.upper()}'!{coord.replace('$', '').upper()}"
 
 
+_ORACLE_CACHE: dict[str, "WorkbookOracle"] = {}
+
+
+def get_oracle(path: str | Path) -> "WorkbookOracle":
+    """Compile each workbook at most once per process.
+
+    Building the model for a large workbook costs seconds, and a single workbook
+    supplies many cases. Rebuilding it per case turned a 6-minute evaluation into
+    a multi-hour one — the fuzzing itself is ~1 ms per vector.
+    """
+    k = str(path)
+    if k not in _ORACLE_CACHE:
+        _ORACLE_CACHE[k] = WorkbookOracle(path)
+    return _ORACLE_CACHE[k]
+
+
 class WorkbookOracle:
     """Compile once, evaluate many times."""
 

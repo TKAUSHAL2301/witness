@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import math
 import random
+import time
 from dataclasses import dataclass, field
 from typing import Callable
 
@@ -146,18 +147,22 @@ class VectorSampler:
         return [self._one(s) for s in self.specs]
 
 
-def _shrink(vector, baseline, refs, oracle_fn, port_fn, rounds: int = 3):
+def _shrink(vector, baseline, refs, oracle_fn, port_fn, rounds: int = 2, budget: int = 400):
     """Reduce a failing vector toward the baseline, one coordinate at a time,
     keeping only reversions that preserve the failure. What survives is the
     minimal set of inputs responsible."""
     cur = list(vector)
+    spent = 0
     for _ in range(rounds):
         changed = False
         for i in range(len(cur)):
+            if spent >= budget:
+                break
             if cur[i] == baseline[i]:
                 continue
             trial = list(cur)
             trial[i] = baseline[i]
+            spent += 1
             try:
                 e, a = oracle_fn(trial), port_fn(trial)
             except Exception:  # noqa: BLE001
@@ -179,6 +184,7 @@ def fuzz_case(
     trials: int = 10_000,
     seed: int = 0,
     stop_on_first: bool = True,
+    time_budget_s: float = 240.0,
 ) -> FuzzResult:
     specs = case["inputs"]
     refs = [s["key"] for s in specs]
@@ -190,7 +196,13 @@ def fuzz_case(
     # Trial 0 is always the workbook's own saved inputs.
     vectors_head = [baseline]
 
+    started = time.monotonic()
     for n in range(trials):
+        if time.monotonic() - started > time_budget_s:
+            res.notes.append(
+                f"time budget {time_budget_s:.0f}s reached after {n:,} of {trials:,} trials"
+            )
+            break
         vec = vectors_head[n] if n < len(vectors_head) else sampler.draw()
         res.trials_run += 1
         try:

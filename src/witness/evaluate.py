@@ -17,7 +17,7 @@ from pathlib import Path
 
 from witness.fuzz import VectorSampler, fuzz_case
 from witness.invariants import check as check_invariants
-from witness.oracle import WorkbookOracle
+from witness.oracle import get_oracle
 from witness.port import load_port, slugify
 
 SEEDS = [11, 23, 47]
@@ -31,7 +31,7 @@ def evaluate(trials: int = 10_000, seeds: list[int] = None, arms=("baseline", "w
     for case in cases:
         slug = slugify(case["id"])
         try:
-            o = WorkbookOracle(case["workbook"])
+            o = get_oracle(case["workbook"])
             refs = [s["key"] for s in case["inputs"]]
             oracle_fn, nodes = o.compile_case(refs, case["target"])
         except Exception as e:  # noqa: BLE001

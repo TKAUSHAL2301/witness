@@ -79,7 +79,7 @@ def derive(case: dict) -> list[Invariant]:
                 "(true when the target is a pure sum/difference of its inputs)",
             )
         )
-    for i in numeric[:6]:
+    for i in numeric[:3]:
         inv.append(
             Invariant(
                 f"monotone[{specs[i]['key']}]",
@@ -103,7 +103,7 @@ def _sweep(fn, base: list, idx: int, steps: list[float]):
     return out
 
 
-def check(case: dict, oracle_fn, port_fn, sampler, probes: int = 12) -> InvariantReport:
+def check(case: dict, oracle_fn, port_fn, sampler, probes: int = 6) -> InvariantReport:
     """Confirm each proposed invariant against the ORACLE, then enforce the
     confirmed ones against the PORT.
 

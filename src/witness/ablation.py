@@ -25,7 +25,7 @@ import textwrap
 from pathlib import Path
 
 from witness.fuzz import fuzz_case
-from witness.oracle import WorkbookOracle
+from witness.oracle import get_oracle
 from witness.port import CONTRACT, _cone_source, _input_block, _run_agent, _extract_code, load_port, slugify
 
 TRIALS = 2000
@@ -128,7 +128,7 @@ def main(argv: list[str]) -> int:
     rows = []
     for c in cases:
         try:
-            o = WorkbookOracle(c["workbook"])
+            o = get_oracle(c["workbook"])
             refs = [s["key"] for s in c["inputs"]]
             oracle_fn, _ = o.compile_case(refs, c["target"])
         except Exception as e:  # noqa: BLE001

@@ -224,17 +224,20 @@ analysis: [CHANGELOG.md](CHANGELOG.md).
 ## Status
 
 
-| Stage                     | State                                                  |
-| ------------------------- | ------------------------------------------------------ |
-| 0 · Engine-trust gate     | ✅ **Executed — 12/12, 36,500 cells, 0 disagreements** |
-| 1 · Formula-DAG extractor | ⬜                                                     |
-| 2 · Per-block translation | ⬜                                                     |
-| 3 · Differential fuzzer   | ⬜                                                     |
-| 4 · Shrink + repair loop  | ⬜                                                     |
-| 5 · Invariant layer       | ⬜                                                     |
-| 6 · Refusal gate          | ⬜                                                     |
-| 7 · Certificate           | ⬜                                                     |
+| Stage | State |
+| --- | --- |
+| 0 · Engine-trust gate | ✅ 12/12 workbooks, 36,500 cells, 0 disagreements |
+| 1 · Formula-DAG extractor | ✅ 17 workbooks parsed, inputs typed |
+| 2 · Case scoping + sensitivity screen | ✅ **37 cases**, always-zero shortcut caught on every one |
+| 3 · Differential fuzzer | ✅ 30,000 vectors per certified case |
+| 4 · Shrink + repair loop | ✅ only the shrunk counterexample is fed back |
+| 5 · **Invariant layer** | ✅ scale-homogeneity + monotonicity, each confirmed on the oracle before being enforced on the port |
+| 6 · Refusal gate | ✅ volatile and unsupported functions rejected |
+| 7 · Certificate | ✅ signable, with a **quantified** coverage section |
+| 8 · **Mutation suite** | ✅ 7 semantic mutants + 5 equivalent false-alarm controls |
+| 9 · **Coverage map** | ✅ 91.4% mean cell coverage, 100% branch coverage |
+| 10 · **pytest plugin** | ✅ `certify_equivalent()` — ships as a CI gate |
 
-Data: 14 municipal finance workbooks published by the Commonwealth of
+Data: 17 municipal finance workbooks published by the Commonwealth of
 Massachusetts, Division of Local Services. Public records. Provenance and
 licences in [PRIOR-WORK.md](PRIOR-WORK.md).

@@ -13,7 +13,7 @@ from pathlib import Path
 
 from witness import dag as D
 from witness.fuzz import VectorSampler
-from witness.oracle import WorkbookOracle
+from witness.oracle import get_oracle
 
 SCREEN_DRAWS = 60
 MIN_DISTINCT = 3
@@ -80,7 +80,7 @@ def main(argv: list[str]) -> int:
             print(f"[skip] {p.name}: no clean output slice")
             continue
         try:
-            oracle = WorkbookOracle(p)
+            oracle = get_oracle(p)
         except Exception as e:  # noqa: BLE001
             print(f"[skip] {p.name}: oracle {type(e).__name__}")
             continue

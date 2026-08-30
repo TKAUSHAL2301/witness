@@ -33,7 +33,7 @@ import sys
 from pathlib import Path
 
 from witness.fuzz import fuzz_case
-from witness.oracle import WorkbookOracle
+from witness.oracle import get_oracle
 from witness.port import load_port, slugify
 
 
@@ -72,7 +72,7 @@ def run(trials: int = 2000, seed: int = 5, arm: str = "witness") -> dict:
         if not p.exists():
             continue
         try:
-            o = WorkbookOracle(case["workbook"])
+            o = get_oracle(case["workbook"])
             refs = [s["key"] for s in case["inputs"]]
             oracle_fn, _ = o.compile_case(refs, case["target"])
         except Exception:  # noqa: BLE001
