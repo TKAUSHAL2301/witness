@@ -1,0 +1,28 @@
+[
+  {
+    "arm": "witness",
+    "case": "financial-forecasting-template-5-year::Available Funds.N48",
+    "ok": true,
+    "repairs": 2,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 0,
+        "trials": 1,
+        "certified": false
+      },
+      {
+        "attempt": 1,
+        "agreed": 4,
+        "trials": 5,
+        "certified": false
+      },
+      {
+        "attempt": 2,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  }
+]
