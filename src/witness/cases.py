@@ -75,7 +75,7 @@ def main(argv: list[str]) -> int:
             print(f"[skip] {p.name}: no formulas")
             continue
         # Screen many more candidates than we keep; most will be rejected.
-        picked_all = D.pick_cases(g, n=per_book * 12)
+        picked_all = D.pick_cases(g, n=per_book * 25)
         if not picked_all:
             print(f"[skip] {p.name}: no clean output slice")
             continue

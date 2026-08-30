@@ -279,7 +279,7 @@ def slice_for_output(dag: WorkbookDAG, target: str, max_inputs: int = 40) -> dic
     }
 
 
-def pick_cases(dag: WorkbookDAG, n: int = 3, min_depth: int = 6, max_inputs: int = 40) -> list[dict]:
+def pick_cases(dag: WorkbookDAG, n: int = 3, min_depth: int = 3, max_inputs: int = 60) -> list[dict]:
     """Choose the most interesting output cells to certify in this workbook."""
     cands = []
     for out in dag.outputs:
@@ -296,8 +296,8 @@ def pick_cases(dag: WorkbookDAG, n: int = 3, min_depth: int = 6, max_inputs: int
     picked, used_sheets = [], {}
     for c in cands:
         sheet = c["target"].split("!")[0]
-        if used_sheets.get(sheet, 0) >= 2:
-            continue  # spread across sheets rather than 3 cells in one column
+        if used_sheets.get(sheet, 0) >= 5:
+            continue  # spread across sheets rather than many cells in one column
         used_sheets[sheet] = used_sheets.get(sheet, 0) + 1
         picked.append(c)
         if len(picked) >= n:

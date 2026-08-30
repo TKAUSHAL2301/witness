@@ -1,5 +1,3120 @@
 [
   {
+    "id": "appropriation-template::Annual.D31",
+    "workbook": "corpus/appropriation-template.xlsx",
+    "target": "Annual!D31",
+    "formula_nodes": 4,
+    "screen": "59 distinct, 60/60 nonzero",
+    "inputs": [
+      {
+        "key": "Annual!D10",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D11",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D12",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D13",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D14",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D15",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D16",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D17",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D18",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D19",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D20",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D21",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D22",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D23",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D24",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D25",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D26",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D27",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D28",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!D5",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!D6",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!D7",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!D8",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!D9",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D10",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D11",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D12",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D13",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D14",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D15",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D16",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D17",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D18",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D19",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D20",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D21",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D22",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D23",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D24",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D25",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D26",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D27",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D28",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!D5",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!D6",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!D7",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!D8",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!D9",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      }
+    ]
+  },
+  {
+    "id": "appropriation-template::Annual.E31",
+    "workbook": "corpus/appropriation-template.xlsx",
+    "target": "Annual!E31",
+    "formula_nodes": 4,
+    "screen": "59 distinct, 60/60 nonzero",
+    "inputs": [
+      {
+        "key": "Annual!E10",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E11",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E12",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E13",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E14",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E15",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E16",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E17",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E18",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E19",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E20",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E21",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E22",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E23",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E24",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E25",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E26",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E27",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E28",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!E5",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!E6",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!E7",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!E8",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!E9",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E10",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E11",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E12",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E13",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E14",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E15",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E16",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E17",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E18",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E19",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E20",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E21",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E22",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E23",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E24",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E25",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E26",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E27",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E28",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!E5",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!E6",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!E7",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!E8",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!E9",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      }
+    ]
+  },
+  {
+    "id": "appropriation-template::Annual.F31",
+    "workbook": "corpus/appropriation-template.xlsx",
+    "target": "Annual!F31",
+    "formula_nodes": 4,
+    "screen": "59 distinct, 60/60 nonzero",
+    "inputs": [
+      {
+        "key": "Annual!F10",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F11",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F12",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F13",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F14",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F15",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F16",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F17",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F18",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F19",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F20",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F21",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F22",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F23",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F24",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F25",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F26",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F27",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F28",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!F5",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!F6",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!F7",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!F8",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!F9",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F10",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F11",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F12",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F13",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F14",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F15",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F16",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F17",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F18",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F19",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F20",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F21",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F22",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F23",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F24",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F25",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F26",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F27",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F28",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!F5",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!F6",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!F7",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!F8",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!F9",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      }
+    ]
+  },
+  {
+    "id": "appropriation-template::Annual.H31",
+    "workbook": "corpus/appropriation-template.xlsx",
+    "target": "Annual!H31",
+    "formula_nodes": 4,
+    "screen": "59 distinct, 60/60 nonzero",
+    "inputs": [
+      {
+        "key": "Annual!H10",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H11",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H12",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H13",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H14",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H15",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H16",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H17",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H18",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H19",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H20",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H21",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H22",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H23",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H24",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H25",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H26",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H27",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H28",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!H5",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!H6",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!H7",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!H8",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!H9",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H10",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H11",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H12",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H13",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H14",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H15",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H16",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H17",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H18",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H19",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H20",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H21",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H22",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H23",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H24",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H25",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H26",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H27",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H28",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!H5",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!H6",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!H7",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!H8",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!H9",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      }
+    ]
+  },
+  {
+    "id": "appropriation-template::Annual.I31",
+    "workbook": "corpus/appropriation-template.xlsx",
+    "target": "Annual!I31",
+    "formula_nodes": 4,
+    "screen": "59 distinct, 60/60 nonzero",
+    "inputs": [
+      {
+        "key": "Annual!I10",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I11",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I12",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I13",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I14",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I15",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I16",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I17",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I18",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I19",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I20",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I21",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I22",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I23",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I24",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I25",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I26",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I27",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I28",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Annual!I5",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!I6",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!I7",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!I8",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Annual!I9",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I10",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I11",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I12",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I13",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I14",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I15",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I16",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I17",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I18",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I19",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I20",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I21",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I22",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I23",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I24",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I25",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I26",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I27",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I28",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Special!I5",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!I6",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!I7",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!I8",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Special!I9",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      }
+    ]
+  },
+  {
+    "id": "appropriation-template::Impact.C33",
+    "workbook": "corpus/appropriation-template.xlsx",
+    "target": "Impact!C33",
+    "formula_nodes": 4,
+    "screen": "43 distinct, 42/60 nonzero",
+    "inputs": [
+      {
+        "key": "Impact!C10",
+        "kind": "number",
+        "observed": -25000,
+        "interesting": [
+          0,
+          -25000,
+          -25000,
+          -50000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Impact!C11",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Impact!C12",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Impact!C13",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Impact!C14",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Impact!C15",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Impact!C16",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Impact!C17",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Impact!C22",
+        "kind": "number",
+        "observed": -150,
+        "interesting": [
+          0,
+          -150,
+          -150,
+          -300,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Impact!C23",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Impact!C24",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Impact!C25",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Impact!C26",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Impact!C27",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Impact!C28",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Impact!C4",
+        "kind": "number",
+        "observed": 100000,
+        "interesting": [
+          0,
+          -100000,
+          100000,
+          200000,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Impact!C8",
+        "kind": "number",
+        "observed": -35000,
+        "interesting": [
+          0,
+          -35000,
+          -35000,
+          -70000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Impact!C9",
+        "kind": "number",
+        "observed": -25000,
+        "interesting": [
+          0,
+          -25000,
+          -25000,
+          -50000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      }
+    ]
+  },
+  {
     "id": "budget-and-tax-rate-planning-tool::Recap Page 2.L52",
     "workbook": "corpus/budget-and-tax-rate-planning-tool.xlsx",
     "target": "Recap Page 2!L52",
@@ -171,6 +3286,776 @@
         "used_by": [
           "SUM"
         ]
+      }
+    ]
+  },
+  {
+    "id": "budget-and-tax-rate-planning-tool::Levy Limit.E31",
+    "workbook": "corpus/budget-and-tax-rate-planning-tool.xlsx",
+    "target": "Levy Limit!E31",
+    "formula_nodes": 5,
+    "screen": "17 distinct, 19/60 nonzero",
+    "inputs": [
+      {
+        "key": "Levy Limit!C25",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "ROUND",
+          "SUM"
+        ]
+      },
+      {
+        "key": "Levy Limit!C27",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Levy Limit!C28",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Levy Limit!C29",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "budget-and-tax-rate-planning-tool::Recap Page 2.L22",
+    "workbook": "corpus/budget-and-tax-rate-planning-tool.xlsx",
+    "target": "Recap Page 2!L22",
+    "formula_nodes": 3,
+    "screen": "60 distinct, 59/60 nonzero",
+    "inputs": [
+      {
+        "key": "Recap Page 2!K10",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!K11",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!K12",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!K13",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!K14",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!K15",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!K16",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!K7",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!K8",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!K9",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!L19",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Recap Page 2!L20",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Recap Page 2!L21",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "budget-and-tax-rate-planning-tool::Levy Limit.E19",
+    "workbook": "corpus/budget-and-tax-rate-planning-tool.xlsx",
+    "target": "Levy Limit!E19",
+    "formula_nodes": 3,
+    "screen": "18 distinct, 23/60 nonzero",
+    "inputs": [
+      {
+        "key": "Levy Limit!C12",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "ROUND",
+          "SUM"
+        ]
+      },
+      {
+        "key": "Levy Limit!C13",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "ROUND",
+          "SUM"
+        ]
+      },
+      {
+        "key": "Levy Limit!C15",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Levy Limit!C16",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Levy Limit!C17",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Levy Limit!C20",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "IF"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "capital-planning-and-budgeting-workbook::Financial Targets.F60",
+    "workbook": "corpus/capital-planning-and-budgeting-workbook.xlsx",
+    "target": "Financial Targets!F60",
+    "formula_nodes": 5,
+    "screen": "23 distinct, 21/60 nonzero",
+    "inputs": [
+      {
+        "key": "Financial Targets!F12",
+        "kind": "number",
+        "observed": 543317,
+        "interesting": [
+          0,
+          -543317,
+          543317,
+          1086634,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Financial Targets!F13",
+        "kind": "number",
+        "observed": 61822,
+        "interesting": [
+          0,
+          -61822,
+          61822,
+          123644,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Financial Targets!F14",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Financial Targets!F15",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Financial Targets!F9",
+        "kind": "number",
+        "observed": 10086812.51,
+        "interesting": [
+          0,
+          -10086812.51,
+          10086812.51,
+          20173625.02,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Financial Targets!K16",
+        "kind": "number",
+        "observed": 0.03,
+        "interesting": [
+          0,
+          -0.03,
+          0.03,
+          0.06,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Financial Targets!K17",
+        "kind": "number",
+        "observed": 0.035,
+        "interesting": [
+          0,
+          -0.035,
+          0.035,
+          0.07,
+          null,
+          ""
+        ],
+        "used_by": []
+      }
+    ]
+  },
+  {
+    "id": "capital-planning-and-budgeting-workbook::Financial Targets.J60",
+    "workbook": "corpus/capital-planning-and-budgeting-workbook.xlsx",
+    "target": "Financial Targets!J60",
+    "formula_nodes": 5,
+    "screen": "23 distinct, 21/60 nonzero",
+    "inputs": [
+      {
+        "key": "Financial Targets!F12",
+        "kind": "number",
+        "observed": 543317,
+        "interesting": [
+          0,
+          -543317,
+          543317,
+          1086634,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Financial Targets!F13",
+        "kind": "number",
+        "observed": 61822,
+        "interesting": [
+          0,
+          -61822,
+          61822,
+          123644,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Financial Targets!F14",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Financial Targets!F15",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Financial Targets!F9",
+        "kind": "number",
+        "observed": 10086812.51,
+        "interesting": [
+          0,
+          -10086812.51,
+          10086812.51,
+          20173625.02,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Financial Targets!K16",
+        "kind": "number",
+        "observed": 0.03,
+        "interesting": [
+          0,
+          -0.03,
+          0.03,
+          0.06,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Financial Targets!K17",
+        "kind": "number",
+        "observed": 0.035,
+        "interesting": [
+          0,
+          -0.035,
+          0.035,
+          0.07,
+          null,
+          ""
+        ],
+        "used_by": []
+      }
+    ]
+  },
+  {
+    "id": "capital-planning-and-budgeting-workbook::Financial Targets.F41",
+    "workbook": "corpus/capital-planning-and-budgeting-workbook.xlsx",
+    "target": "Financial Targets!F41",
+    "formula_nodes": 5,
+    "screen": "26 distinct, 24/60 nonzero",
+    "inputs": [
+      {
+        "key": "Financial Targets!F12",
+        "kind": "number",
+        "observed": 543317,
+        "interesting": [
+          0,
+          -543317,
+          543317,
+          1086634,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Financial Targets!F13",
+        "kind": "number",
+        "observed": 61822,
+        "interesting": [
+          0,
+          -61822,
+          61822,
+          123644,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Financial Targets!F14",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Financial Targets!F15",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Financial Targets!F9",
+        "kind": "number",
+        "observed": 10086812.51,
+        "interesting": [
+          0,
+          -10086812.51,
+          10086812.51,
+          20173625.02,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Financial Targets!K12",
+        "kind": "number",
+        "observed": 0.01,
+        "interesting": [
+          0,
+          -0.01,
+          0.01,
+          0.02,
+          null,
+          ""
+        ],
+        "used_by": []
+      }
+    ]
+  },
+  {
+    "id": "capital-targets-template::Amortization.B48",
+    "workbook": "corpus/capital-targets-template.xlsx",
+    "target": "Amortization!B48",
+    "formula_nodes": 35,
+    "screen": "15 distinct, 42/60 nonzero",
+    "inputs": [
+      {
+        "key": "Amortization!B13",
+        "kind": "number",
+        "observed": 2020,
+        "interesting": [
+          0,
+          -2020,
+          2020,
+          4040,
+          null,
+          ""
+        ],
+        "used_by": []
+      }
+    ]
+  },
+  {
+    "id": "capital-targets-template::Amortization.A48",
+    "workbook": "corpus/capital-targets-template.xlsx",
+    "target": "Amortization!A48",
+    "formula_nodes": 26,
+    "screen": "15 distinct, 42/60 nonzero",
+    "inputs": [
+      {
+        "key": "Amortization!A22",
+        "kind": "number",
+        "observed": 10,
+        "interesting": [
+          0,
+          -10,
+          10,
+          20,
+          null,
+          ""
+        ],
+        "used_by": []
       }
     ]
   },
@@ -865,14 +4750,78 @@
     ]
   },
   {
-    "id": "capital-targets-template::CIP.C68",
+    "id": "capital-targets-template::Debt.I8",
     "workbook": "corpus/capital-targets-template.xlsx",
-    "target": "CIP!C68",
-    "formula_nodes": 11,
-    "screen": "47 distinct, 46/60 nonzero",
+    "target": "Debt!I8",
+    "formula_nodes": 14,
+    "screen": "60 distinct, 60/60 nonzero",
     "inputs": [
       {
-        "key": "CIP!C10",
+        "key": "Debt!I11",
+        "kind": "number",
+        "observed": 58907.75,
+        "interesting": [
+          0,
+          -58907.75,
+          58907.75,
+          117815.5,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!I12",
+        "kind": "number",
+        "observed": 45000,
+        "interesting": [
+          0,
+          -45000,
+          45000,
+          90000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!I13",
+        "kind": "number",
+        "observed": 17000,
+        "interesting": [
+          0,
+          -17000,
+          17000,
+          34000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!I14",
+        "kind": "number",
+        "observed": 20000,
+        "interesting": [
+          0,
+          -20000,
+          20000,
+          40000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!I15",
         "kind": "number",
         "observed": 0,
         "interesting": [
@@ -888,7 +4837,7 @@
         ]
       },
       {
-        "key": "CIP!C11",
+        "key": "Debt!I16",
         "kind": "number",
         "observed": 0,
         "interesting": [
@@ -904,7 +4853,39 @@
         ]
       },
       {
-        "key": "CIP!C14",
+        "key": "Debt!I19",
+        "kind": "number",
+        "observed": 17992.25,
+        "interesting": [
+          0,
+          -17992.25,
+          17992.25,
+          35984.5,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!I22",
+        "kind": "number",
+        "observed": 2000,
+        "interesting": [
+          0,
+          -2000,
+          2000,
+          4000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!I23",
         "kind": "number",
         "observed": 0,
         "interesting": [
@@ -920,7 +4901,7 @@
         ]
       },
       {
-        "key": "CIP!C15",
+        "key": "Debt!I24",
         "kind": "number",
         "observed": 0,
         "interesting": [
@@ -936,7 +4917,39 @@
         ]
       },
       {
-        "key": "CIP!C16",
+        "key": "Debt!I31",
+        "kind": "number",
+        "observed": 155000,
+        "interesting": [
+          0,
+          -155000,
+          155000,
+          310000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!I32",
+        "kind": "number",
+        "observed": 40000,
+        "interesting": [
+          0,
+          -40000,
+          40000,
+          80000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!I33",
         "kind": "number",
         "observed": 0,
         "interesting": [
@@ -952,7 +4965,39 @@
         ]
       },
       {
-        "key": "CIP!C19",
+        "key": "Debt!I34",
+        "kind": "number",
+        "observed": 338000,
+        "interesting": [
+          0,
+          -338000,
+          338000,
+          676000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!I35",
+        "kind": "number",
+        "observed": 85000,
+        "interesting": [
+          0,
+          -85000,
+          85000,
+          170000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!I36",
         "kind": "number",
         "observed": 0,
         "interesting": [
@@ -968,7 +5013,7 @@
         ]
       },
       {
-        "key": "CIP!C20",
+        "key": "Debt!I37",
         "kind": "number",
         "observed": 0,
         "interesting": [
@@ -984,23 +5029,7 @@
         ]
       },
       {
-        "key": "CIP!C21",
-        "kind": "number",
-        "observed": 25000,
-        "interesting": [
-          0,
-          -25000,
-          25000,
-          50000,
-          null,
-          ""
-        ],
-        "used_by": [
-          "SUM"
-        ]
-      },
-      {
-        "key": "CIP!C22",
+        "key": "Debt!I38",
         "kind": "number",
         "observed": 0,
         "interesting": [
@@ -1016,7 +5045,23 @@
         ]
       },
       {
-        "key": "CIP!C27",
+        "key": "Debt!I41",
+        "kind": "number",
+        "observed": 1743.75,
+        "interesting": [
+          0,
+          -1743.75,
+          1743.75,
+          3487.5,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!I43",
         "kind": "number",
         "observed": 0,
         "interesting": [
@@ -1026,11 +5071,471 @@
           1,
           null,
           ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!I46",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!I47",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!I48",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "capital-targets-template::Debt.J8",
+    "workbook": "corpus/capital-targets-template.xlsx",
+    "target": "Debt!J8",
+    "formula_nodes": 14,
+    "screen": "60 distinct, 60/60 nonzero",
+    "inputs": [
+      {
+        "key": "Debt!J11",
+        "kind": "number",
+        "observed": 63503.47,
+        "interesting": [
+          0,
+          -63503.47,
+          63503.47,
+          127006.94,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J12",
+        "kind": "number",
+        "observed": 45000,
+        "interesting": [
+          0,
+          -45000,
+          45000,
+          90000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J13",
+        "kind": "number",
+        "observed": 17000,
+        "interesting": [
+          0,
+          -17000,
+          17000,
+          34000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J14",
+        "kind": "number",
+        "observed": 20000,
+        "interesting": [
+          0,
+          -20000,
+          20000,
+          40000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J15",
+        "kind": "number",
+        "observed": 17858,
+        "interesting": [
+          0,
+          -17858,
+          17858,
+          35716,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J16",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J19",
+        "kind": "number",
+        "observed": 16496.53,
+        "interesting": [
+          0,
+          -16496.53,
+          16496.53,
+          32993.06,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J22",
+        "kind": "number",
+        "observed": 1600,
+        "interesting": [
+          0,
+          -1600,
+          1600,
+          3200,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J23",
+        "kind": "number",
+        "observed": 2500,
+        "interesting": [
+          0,
+          -2500,
+          2500,
+          5000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J24",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J31",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J32",
+        "kind": "number",
+        "observed": 40000,
+        "interesting": [
+          0,
+          -40000,
+          40000,
+          80000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J33",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J34",
+        "kind": "number",
+        "observed": 338000,
+        "interesting": [
+          0,
+          -338000,
+          338000,
+          676000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J35",
+        "kind": "number",
+        "observed": 85000,
+        "interesting": [
+          0,
+          -85000,
+          85000,
+          170000,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J36",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J37",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J38",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J41",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J43",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J46",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J47",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Debt!J48",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "financial-forecasting-template-10-year::COLA.J122",
+    "workbook": "corpus/financial-forecasting-template-10-year.xlsx",
+    "target": "COLA!J122",
+    "formula_nodes": 33,
+    "screen": "21 distinct, 22/60 nonzero",
+    "inputs": [
+      {
+        "key": "COLA!J107",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
         ],
         "used_by": []
       },
       {
-        "key": "CIP!C31",
+        "key": "COLA!J110",
+        "kind": "text",
+        "observed": " ",
+        "interesting": [
+          "",
+          " ",
+          "0"
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Position Control!J454",
         "kind": "number",
         "observed": 0,
         "interesting": [
@@ -1046,7 +5551,18 @@
         ]
       },
       {
-        "key": "CIP!C32",
+        "key": "Position Control!J455",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J458",
         "kind": "number",
         "observed": 0,
         "interesting": [
@@ -1062,7 +5578,40 @@
         ]
       },
       {
-        "key": "CIP!C33",
+        "key": "Position Control!J459",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J460",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J461",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J464",
         "kind": "number",
         "observed": 0,
         "interesting": [
@@ -1078,7 +5627,29 @@
         ]
       },
       {
-        "key": "CIP!C34",
+        "key": "Position Control!J465",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J466",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J469",
         "kind": "number",
         "observed": 0,
         "interesting": [
@@ -1094,7 +5665,139 @@
         ]
       },
       {
-        "key": "CIP!C35",
+        "key": "Position Control!J470",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J471",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J472",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J473",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J474",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J475",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J476",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J477",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J478",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J479",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J480",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J481",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J484",
         "kind": "number",
         "observed": 0,
         "interesting": [
@@ -1110,7 +5813,106 @@
         ]
       },
       {
-        "key": "CIP!C38",
+        "key": "Position Control!J485",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J486",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J487",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J488",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J489",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J490",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J491",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J492",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J493",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J507",
         "kind": "number",
         "observed": 0,
         "interesting": [
@@ -1126,7 +5928,128 @@
         ]
       },
       {
-        "key": "CIP!C39",
+        "key": "Position Control!J508",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J516",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J521",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J528",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J529",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J530",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J531",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J532",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J533",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J534",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J535",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J538",
         "kind": "number",
         "observed": 0,
         "interesting": [
@@ -1142,340 +6065,103 @@
         ]
       },
       {
-        "key": "CIP!C40",
-        "kind": "number",
-        "observed": 0,
+        "key": "Position Control!J539",
+        "kind": "blank",
+        "observed": null,
         "interesting": [
           0,
-          -1,
-          0,
-          1,
-          null,
-          ""
+          "",
+          null
         ],
-        "used_by": [
-          "SUM"
-        ]
+        "used_by": []
       },
       {
-        "key": "CIP!C41",
-        "kind": "number",
-        "observed": 0,
+        "key": "Position Control!J540",
+        "kind": "blank",
+        "observed": null,
         "interesting": [
           0,
-          -1,
-          0,
-          1,
-          null,
-          ""
+          "",
+          null
         ],
-        "used_by": [
-          "SUM"
-        ]
+        "used_by": []
       },
       {
-        "key": "CIP!C42",
-        "kind": "number",
-        "observed": 0,
+        "key": "Position Control!J541",
+        "kind": "blank",
+        "observed": null,
         "interesting": [
           0,
-          -1,
-          0,
-          1,
-          null,
-          ""
+          "",
+          null
         ],
-        "used_by": [
-          "SUM"
-        ]
+        "used_by": []
       },
       {
-        "key": "CIP!C45",
-        "kind": "number",
-        "observed": 0,
+        "key": "Position Control!J542",
+        "kind": "blank",
+        "observed": null,
         "interesting": [
           0,
-          -1,
-          0,
-          1,
-          null,
-          ""
+          "",
+          null
         ],
-        "used_by": [
-          "SUM"
-        ]
+        "used_by": []
       },
       {
-        "key": "CIP!C46",
-        "kind": "number",
-        "observed": 0,
+        "key": "Position Control!J543",
+        "kind": "blank",
+        "observed": null,
         "interesting": [
           0,
-          -1,
-          0,
-          1,
-          null,
-          ""
+          "",
+          null
         ],
-        "used_by": [
-          "SUM"
-        ]
+        "used_by": []
       },
       {
-        "key": "CIP!C49",
-        "kind": "number",
-        "observed": 0,
+        "key": "Position Control!J544",
+        "kind": "blank",
+        "observed": null,
         "interesting": [
           0,
-          -1,
-          0,
-          1,
-          null,
-          ""
+          "",
+          null
         ],
-        "used_by": [
-          "SUM"
-        ]
+        "used_by": []
       },
       {
-        "key": "CIP!C50",
-        "kind": "number",
-        "observed": 0,
+        "key": "Position Control!J545",
+        "kind": "blank",
+        "observed": null,
         "interesting": [
           0,
-          -1,
-          0,
-          1,
-          null,
-          ""
+          "",
+          null
         ],
-        "used_by": [
-          "SUM"
-        ]
+        "used_by": []
       },
       {
-        "key": "CIP!C51",
-        "kind": "number",
-        "observed": 0,
+        "key": "Position Control!J546",
+        "kind": "blank",
+        "observed": null,
         "interesting": [
           0,
-          -1,
-          0,
-          1,
-          null,
-          ""
+          "",
+          null
         ],
-        "used_by": [
-          "SUM"
-        ]
+        "used_by": []
       },
       {
-        "key": "CIP!C52",
-        "kind": "number",
-        "observed": 0,
+        "key": "Position Control!J547",
+        "kind": "blank",
+        "observed": null,
         "interesting": [
           0,
-          -1,
-          0,
-          1,
-          null,
-          ""
+          "",
+          null
         ],
-        "used_by": [
-          "SUM"
-        ]
-      },
-      {
-        "key": "CIP!C57",
-        "kind": "number",
-        "observed": 0,
-        "interesting": [
-          0,
-          -1,
-          0,
-          1,
-          null,
-          ""
-        ],
-        "used_by": [
-          "SUM"
-        ]
-      },
-      {
-        "key": "CIP!C58",
-        "kind": "number",
-        "observed": 0,
-        "interesting": [
-          0,
-          -1,
-          0,
-          1,
-          null,
-          ""
-        ],
-        "used_by": [
-          "SUM"
-        ]
-      },
-      {
-        "key": "CIP!C59",
-        "kind": "number",
-        "observed": 0,
-        "interesting": [
-          0,
-          -1,
-          0,
-          1,
-          null,
-          ""
-        ],
-        "used_by": [
-          "SUM"
-        ]
-      },
-      {
-        "key": "CIP!C60",
-        "kind": "number",
-        "observed": 0,
-        "interesting": [
-          0,
-          -1,
-          0,
-          1,
-          null,
-          ""
-        ],
-        "used_by": [
-          "SUM"
-        ]
-      },
-      {
-        "key": "CIP!C61",
-        "kind": "number",
-        "observed": 0,
-        "interesting": [
-          0,
-          -1,
-          0,
-          1,
-          null,
-          ""
-        ],
-        "used_by": [
-          "SUM"
-        ]
-      },
-      {
-        "key": "CIP!C62",
-        "kind": "number",
-        "observed": 0,
-        "interesting": [
-          0,
-          -1,
-          0,
-          1,
-          null,
-          ""
-        ],
-        "used_by": [
-          "SUM"
-        ]
-      },
-      {
-        "key": "CIP!C63",
-        "kind": "number",
-        "observed": 0,
-        "interesting": [
-          0,
-          -1,
-          0,
-          1,
-          null,
-          ""
-        ],
-        "used_by": [
-          "SUM"
-        ]
-      },
-      {
-        "key": "CIP!C64",
-        "kind": "number",
-        "observed": 0,
-        "interesting": [
-          0,
-          -1,
-          0,
-          1,
-          null,
-          ""
-        ],
-        "used_by": [
-          "SUM"
-        ]
-      },
-      {
-        "key": "CIP!C65",
-        "kind": "number",
-        "observed": 0,
-        "interesting": [
-          0,
-          -1,
-          0,
-          1,
-          null,
-          ""
-        ],
-        "used_by": [
-          "SUM"
-        ]
-      },
-      {
-        "key": "CIP!C66",
-        "kind": "number",
-        "observed": 0,
-        "interesting": [
-          0,
-          -1,
-          0,
-          1,
-          null,
-          ""
-        ],
-        "used_by": [
-          "SUM"
-        ]
-      },
-      {
-        "key": "CIP!C8",
-        "kind": "number",
-        "observed": 0,
-        "interesting": [
-          0,
-          -1,
-          0,
-          1,
-          null,
-          ""
-        ],
-        "used_by": [
-          "SUM"
-        ]
-      },
-      {
-        "key": "CIP!C9",
-        "kind": "number",
-        "observed": 0,
-        "interesting": [
-          0,
-          -1,
-          0,
-          1,
-          null,
-          ""
-        ],
-        "used_by": [
-          "SUM"
-        ]
+        "used_by": []
       }
     ]
   },
@@ -1540,6 +6226,971 @@
     ]
   },
   {
+    "id": "financial-forecasting-template-10-year::Available Funds.T53",
+    "workbook": "corpus/financial-forecasting-template-10-year.xlsx",
+    "target": "Available Funds!T53",
+    "formula_nodes": 18,
+    "screen": "23 distinct, 31/60 nonzero",
+    "inputs": [
+      {
+        "key": "Fiscal Years!B16",
+        "kind": "date",
+        "observed": "2014-06-30 00:00:00",
+        "interesting": [
+          "2014-06-30 00:00:00"
+        ],
+        "used_by": [
+          "EDATE"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "financial-forecasting-template-10-year::Available Funds.S48",
+    "workbook": "corpus/financial-forecasting-template-10-year.xlsx",
+    "target": "Available Funds!S48",
+    "formula_nodes": 17,
+    "screen": "23 distinct, 31/60 nonzero",
+    "inputs": [
+      {
+        "key": "Fiscal Years!B13",
+        "kind": "date",
+        "observed": "2014-07-01 00:00:00",
+        "interesting": [
+          "2014-07-01 00:00:00"
+        ],
+        "used_by": [
+          "EDATE"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "financial-forecasting-template-5-year::COLA.J122",
+    "workbook": "corpus/financial-forecasting-template-5-year.xlsx",
+    "target": "COLA!J122",
+    "formula_nodes": 25,
+    "screen": "28 distinct, 26/60 nonzero",
+    "inputs": [
+      {
+        "key": "COLA!J107",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "COLA!J110",
+        "kind": "text",
+        "observed": " ",
+        "interesting": [
+          "",
+          " ",
+          "0"
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "COLA!J92",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J189",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Position Control!J190",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J454",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Position Control!J455",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J458",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Position Control!J459",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J460",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J461",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J484",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Position Control!J485",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J486",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J487",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J488",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J489",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J490",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J491",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J492",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J493",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J516",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J521",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J528",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J529",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J530",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J531",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J532",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J533",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J534",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J535",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J538",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "Position Control!J539",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J540",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J541",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J542",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J543",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J544",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J545",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J546",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "Position Control!J547",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      }
+    ]
+  },
+  {
+    "id": "financial-forecasting-template-5-year::CPF.Q20",
+    "workbook": "corpus/financial-forecasting-template-5-year.xlsx",
+    "target": "CPF!Q20",
+    "formula_nodes": 16,
+    "screen": "17 distinct, 16/60 nonzero",
+    "inputs": [
+      {
+        "key": "CPF!G16",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!G17",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!G18",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!G7",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!G8",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!G9",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!H16",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!H17",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!H18",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!H7",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!H8",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!H9",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!I16",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!I17",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!I18",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!I7",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "ROUND",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!I8",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "ROUND",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!I9",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "ROUND",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!J16",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!J17",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!J18",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "AVERAGE",
+          "IFERROR",
+          "SUM"
+        ]
+      },
+      {
+        "key": "CPF!R7",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "ROUND"
+        ]
+      },
+      {
+        "key": "CPF!R8",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "ROUND"
+        ]
+      },
+      {
+        "key": "CPF!R9",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "ROUND"
+        ]
+      }
+    ]
+  },
+  {
     "id": "financial-forecasting-template-5-year::Available Funds.N48",
     "workbook": "corpus/financial-forecasting-template-5-year.xlsx",
     "target": "Available Funds!N48",
@@ -1564,6 +7215,46 @@
     "workbook": "corpus/financial-forecasting-template-5-year.xlsx",
     "target": "Available Funds!N53",
     "formula_nodes": 12,
+    "screen": "23 distinct, 31/60 nonzero",
+    "inputs": [
+      {
+        "key": "Fiscal Years!B16",
+        "kind": "date",
+        "observed": "2019-06-30 00:00:00",
+        "interesting": [
+          "2019-06-30 00:00:00"
+        ],
+        "used_by": [
+          "EDATE"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "financial-forecasting-template-5-year::Available Funds.M48",
+    "workbook": "corpus/financial-forecasting-template-5-year.xlsx",
+    "target": "Available Funds!M48",
+    "formula_nodes": 11,
+    "screen": "23 distinct, 31/60 nonzero",
+    "inputs": [
+      {
+        "key": "Fiscal Years!B13",
+        "kind": "date",
+        "observed": "2019-07-01 00:00:00",
+        "interesting": [
+          "2019-07-01 00:00:00"
+        ],
+        "used_by": [
+          "EDATE"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "financial-forecasting-template-5-year::Available Funds.M53",
+    "workbook": "corpus/financial-forecasting-template-5-year.xlsx",
+    "target": "Available Funds!M53",
+    "formula_nodes": 11,
     "screen": "23 distinct, 31/60 nonzero",
     "inputs": [
       {
@@ -1936,6 +7627,1692 @@
       },
       {
         "key": "6 - Operating Expenditures!R51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "financial-indicators-template-0::6 - Operating Expenditures.K36",
+    "workbook": "corpus/financial-indicators-template-0.xlsx",
+    "target": "6 - Operating Expenditures!K36",
+    "formula_nodes": 5,
+    "screen": "18 distinct, 22/60 nonzero",
+    "inputs": [
+      {
+        "key": "6 - Operating Expenditures!H51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!H52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!I35",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "6 - Operating Expenditures!I36",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "6 - Operating Expenditures!I51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!I52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!J51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!J52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!K51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!K52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!L51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!L52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!M51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!M52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!N51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!N52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!O51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!O52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!P51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!P52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!Q51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!Q52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!R51",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!R52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "financial-indicators-template-0::6 - Operating Expenditures.K37",
+    "workbook": "corpus/financial-indicators-template-0.xlsx",
+    "target": "6 - Operating Expenditures!K37",
+    "formula_nodes": 5,
+    "screen": "18 distinct, 22/60 nonzero",
+    "inputs": [
+      {
+        "key": "6 - Operating Expenditures!H52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!H53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!I36",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "6 - Operating Expenditures!I37",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "6 - Operating Expenditures!I52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!I53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!J52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!J53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!K52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!K53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!L52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!L53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!M52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!M53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!N52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!N53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!O52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!O53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!P52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!P53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!Q52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!Q53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!R52",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!R53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "financial-indicators-template-0::6 - Operating Expenditures.K38",
+    "workbook": "corpus/financial-indicators-template-0.xlsx",
+    "target": "6 - Operating Expenditures!K38",
+    "formula_nodes": 5,
+    "screen": "18 distinct, 22/60 nonzero",
+    "inputs": [
+      {
+        "key": "6 - Operating Expenditures!H53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!H54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!I37",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "6 - Operating Expenditures!I38",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "6 - Operating Expenditures!I53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!I54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!J53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!J54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!K53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!K54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!L53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!L54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!M53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!M54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!N53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!N54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!O53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!O54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!P53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!P54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!Q53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!Q54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!R53",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!R54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "financial-indicators-template-0::6 - Operating Expenditures.K39",
+    "workbook": "corpus/financial-indicators-template-0.xlsx",
+    "target": "6 - Operating Expenditures!K39",
+    "formula_nodes": 5,
+    "screen": "18 distinct, 22/60 nonzero",
+    "inputs": [
+      {
+        "key": "6 - Operating Expenditures!H54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!H55",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!I38",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "6 - Operating Expenditures!I39",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "6 - Operating Expenditures!I54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!I55",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!J54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!J55",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!K54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!K55",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!L54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!L55",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!M54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!M55",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!N54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!N55",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!O54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!O55",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!P54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!P55",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!Q54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!Q55",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!R54",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "6 - Operating Expenditures!R55",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "financial-indicators-template-0::10 - Debt Service.P31",
+    "workbook": "corpus/financial-indicators-template-0.xlsx",
+    "target": "10 - Debt Service!P31",
+    "formula_nodes": 5,
+    "screen": "22 distinct, 19/60 nonzero",
+    "inputs": [
+      {
+        "key": "1 - Net Operating Revenues!I33",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "1 - Net Operating Revenues!J33",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "1 - Net Operating Revenues!K33",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "1 - Net Operating Revenues!L33",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "1 - Net Operating Revenues!M33",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": [
+          "SUM"
+        ]
+      },
+      {
+        "key": "1 - Net Operating Revenues!N33",
+        "kind": "blank",
+        "observed": null,
+        "interesting": [
+          0,
+          "",
+          null
+        ],
+        "used_by": []
+      },
+      {
+        "key": "10 - Debt Service!K31",
+        "kind": "number",
+        "observed": 0,
+        "interesting": [
+          0,
+          -1,
+          0,
+          1,
+          null,
+          ""
+        ],
+        "used_by": []
+      },
+      {
+        "key": "6 - Operating Expenditures!I51",
         "kind": "number",
         "observed": 0,
         "interesting": [
