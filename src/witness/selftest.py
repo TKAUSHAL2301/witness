@@ -21,7 +21,6 @@ from witness.oracle import WorkbookOracle
 
 MUTANTS = {
     "blank_as_zero": lambda vs: [0 if v is None else v for v in vs],
-    "off_by_rounding": None,  # applied to the output, below
     "drop_last_input": lambda vs: vs[:-1] + [0] if vs else vs,
 }
 

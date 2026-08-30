@@ -20,8 +20,6 @@ Reported: repairs-to-certify, and certified-or-not at the same trial budget.
 from __future__ import annotations
 
 import json
-import re
-import subprocess
 import sys
 import textwrap
 from pathlib import Path

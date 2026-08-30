@@ -20,7 +20,6 @@ Redacts absolute home paths. Contains no credentials (Ground Rule 08).
 from __future__ import annotations
 
 import json
-import os
 import re
 import sys
 from pathlib import Path

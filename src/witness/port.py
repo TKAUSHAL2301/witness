@@ -77,7 +77,6 @@ def _cone_source(case: dict) -> str:
     from witness import dag as D
 
     g = D.build(Path(case["workbook"]))
-    sl = D.slice_for_output(g, case["target"], max_inputs=10_000)
     keys, stack, seen = [], [case["target"]], set()
     while stack:
         k = stack.pop()
@@ -93,7 +92,6 @@ def _cone_source(case: dict) -> str:
     for k in sorted(keys):
         c = g.cells[k]
         lines.append(f"  {k}  :  {c.formula}")
-    _ = sl
     return "\n".join(lines[:400])
 
 
