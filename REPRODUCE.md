@@ -10,7 +10,7 @@ project. Every command below is meant to be pasted verbatim.
 |         |                                                                      |
 | ------- | -------------------------------------------------------------------- |
 | OS      | macOS or Linux (developed on macOS 15, arm64)                        |
-| Python  | **3.11+** — `uv` installs it for you; your system Python is not used |
+| Python  | **3.12+** (3.13.14 used for every number here) — `uv` installs it; your system Python is not used |
 | Disk    | ~400 MB (deps + the vendored workbook corpus)                        |
 | Network | **Only for `uv sync`.** The evaluation itself needs no network.      |
 | API key | **Not required** to reproduce the results. See §5 for regeneration.  |

@@ -195,7 +195,34 @@ That is a property of those files, not an engine failure, and the exclusion is a
 
 ---
 
+## Result
+
+Command: `uv run python -m witness.evaluate 10000` · Raw: `results/evaluation.json`
+
+| METRIC | SIMPLE BASELINE | AGENT SOLUTION | CHANGE |
+| --- | --- | --- | --- |
+| **Certified-equivalence rate** (`pass^10000`, all 3 seeds) | **40%** | **80%** | **+40 pp** |
+| Ports certified | 4 / 10 | 8 / 10 | +4 |
+| Largest undetected error in a self-certified baseline port | **$50,951** | — | — |
+| Human time to verify one port | ~2–4 h manual tie-out | ~3 min automated | ~40–80× |
+
+Paired: **5 Witness wins, 1 loss, 3 both-certified, 1 both-failed.** McNemar
+exact two-sided **p = 0.219 — not significant at α = 0.05.** The direction is
+consistent and the effect large, but ten cases is underpowered to establish it,
+and saying otherwise would be overclaiming.
+
+Every one of those four baseline ports had **self-certified as correct** before
+the fuzzer touched it. That is the entire thesis in one line.
+
+Verified from a clean clone (`git clone` → `uv sync` → run): identical numbers.
+
+Full evolution, removed experiments, the null-result ablation, and the failure
+analysis: [CHANGELOG.md](CHANGELOG.md).
+
+---
+
 ## Status
+
 
 | Stage                     | State                                                  |
 | ------------------------- | ------------------------------------------------------ |
