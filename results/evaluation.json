@@ -1,6 +1,6 @@
 {
   "summary": {
-    "trials": 400,
+    "trials": 10000,
     "seeds": [
       11,
       23,
@@ -9,9 +9,9 @@
     "cases": 10,
     "arms": {
       "baseline": {
-        "certified": 6,
+        "certified": 4,
         "total": 10,
-        "rate": 0.6
+        "rate": 0.4
       },
       "witness": {
         "certified": 8,
@@ -31,94 +31,94 @@
           "runs": [
             {
               "case_id": "budget-and-tax-rate-planning-tool::Recap Page 2.L52",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.8,
+              "seconds": 22.4,
               "seed": 11
             },
             {
               "case_id": "budget-and-tax-rate-planning-tool::Recap Page 2.L52",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.7,
+              "seconds": 22.2,
               "seed": 23
             },
             {
               "case_id": "budget-and-tax-rate-planning-tool::Recap Page 2.L52",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.8,
+              "seconds": 19.7,
               "seed": 47
             }
           ],
           "first_failing_trial": null,
           "max_abs_delta": 0.0,
-          "mean_agreed": 400
+          "mean_agreed": 10000
         },
         "witness": {
           "certified": true,
           "runs": [
             {
               "case_id": "budget-and-tax-rate-planning-tool::Recap Page 2.L52",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.7,
+              "seconds": 22.6,
               "seed": 11
             },
             {
               "case_id": "budget-and-tax-rate-planning-tool::Recap Page 2.L52",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.7,
+              "seconds": 20.4,
               "seed": 23
             },
             {
               "case_id": "budget-and-tax-rate-planning-tool::Recap Page 2.L52",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.7,
+              "seconds": 20.4,
               "seed": 47
             }
           ],
           "first_failing_trial": null,
           "max_abs_delta": 0.0,
-          "mean_agreed": 400
+          "mean_agreed": 10000
         }
       }
     },
@@ -128,55 +128,98 @@
       "inputs": 21,
       "arms": {
         "baseline": {
-          "import_failed": true,
-          "certified": false
+          "certified": true,
+          "runs": [
+            {
+              "case_id": "capital-targets-template::Debt.G8",
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
+              "certified": true,
+              "error": "",
+              "port_exceptions": 0,
+              "oracle_exceptions": 0,
+              "notes": [],
+              "seconds": 16.9,
+              "seed": 11
+            },
+            {
+              "case_id": "capital-targets-template::Debt.G8",
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
+              "certified": true,
+              "error": "",
+              "port_exceptions": 0,
+              "oracle_exceptions": 0,
+              "notes": [],
+              "seconds": 19.2,
+              "seed": 23
+            },
+            {
+              "case_id": "capital-targets-template::Debt.G8",
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
+              "certified": true,
+              "error": "",
+              "port_exceptions": 0,
+              "oracle_exceptions": 0,
+              "notes": [],
+              "seconds": 21.3,
+              "seed": 47
+            }
+          ],
+          "first_failing_trial": null,
+          "max_abs_delta": 0.0,
+          "mean_agreed": 10000
         },
         "witness": {
           "certified": true,
           "runs": [
             {
               "case_id": "capital-targets-template::Debt.G8",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.6,
+              "seconds": 30.3,
               "seed": 11
             },
             {
               "case_id": "capital-targets-template::Debt.G8",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.7,
+              "seconds": 28.7,
               "seed": 23
             },
             {
               "case_id": "capital-targets-template::Debt.G8",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.7,
+              "seconds": 31.5,
               "seed": 47
             }
           ],
           "first_failing_trial": null,
           "max_abs_delta": 0.0,
-          "mean_agreed": 400
+          "mean_agreed": 10000
         }
       }
     },
@@ -186,8 +229,51 @@
       "inputs": 21,
       "arms": {
         "baseline": {
-          "import_failed": true,
-          "certified": false
+          "certified": true,
+          "runs": [
+            {
+              "case_id": "capital-targets-template::Debt.H8",
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
+              "certified": true,
+              "error": "",
+              "port_exceptions": 0,
+              "oracle_exceptions": 0,
+              "notes": [],
+              "seconds": 30.4,
+              "seed": 11
+            },
+            {
+              "case_id": "capital-targets-template::Debt.H8",
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
+              "certified": true,
+              "error": "",
+              "port_exceptions": 0,
+              "oracle_exceptions": 0,
+              "notes": [],
+              "seconds": 23.3,
+              "seed": 23
+            },
+            {
+              "case_id": "capital-targets-template::Debt.H8",
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
+              "certified": true,
+              "error": "",
+              "port_exceptions": 0,
+              "oracle_exceptions": 0,
+              "notes": [],
+              "seconds": 19.0,
+              "seed": 47
+            }
+          ],
+          "first_failing_trial": null,
+          "max_abs_delta": 0.0,
+          "mean_agreed": 10000
         },
         "witness": {
           "certified": false,
@@ -195,7 +281,7 @@
             {
               "case_id": "capital-targets-template::Debt.H8",
               "trials_run": 11,
-              "trials_target": 400,
+              "trials_target": 10000,
               "agreed": 10,
               "certified": false,
               "error": "",
@@ -239,7 +325,7 @@
             {
               "case_id": "capital-targets-template::Debt.H8",
               "trials_run": 17,
-              "trials_target": 400,
+              "trials_target": 10000,
               "agreed": 16,
               "certified": false,
               "error": "",
@@ -283,7 +369,7 @@
             {
               "case_id": "capital-targets-template::Debt.H8",
               "trials_run": 22,
-              "trials_target": 400,
+              "trials_target": 10000,
               "agreed": 21,
               "certified": false,
               "error": "",
@@ -341,94 +427,94 @@
           "runs": [
             {
               "case_id": "capital-targets-template::CIP.C68",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.9,
+              "seconds": 25.8,
               "seed": 11
             },
             {
               "case_id": "capital-targets-template::CIP.C68",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.8,
+              "seconds": 35.1,
               "seed": 23
             },
             {
               "case_id": "capital-targets-template::CIP.C68",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.8,
+              "seconds": 29.0,
               "seed": 47
             }
           ],
           "first_failing_trial": null,
           "max_abs_delta": 0.0,
-          "mean_agreed": 400
+          "mean_agreed": 10000
         },
         "witness": {
           "certified": true,
           "runs": [
             {
               "case_id": "capital-targets-template::CIP.C68",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.8,
+              "seconds": 33.8,
               "seed": 11
             },
             {
               "case_id": "capital-targets-template::CIP.C68",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.8,
+              "seconds": 30.6,
               "seed": 23
             },
             {
               "case_id": "capital-targets-template::CIP.C68",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.8,
+              "seconds": 28.1,
               "seed": 47
             }
           ],
           "first_failing_trial": null,
           "max_abs_delta": 0.0,
-          "mean_agreed": 400
+          "mean_agreed": 10000
         }
       }
     },
@@ -443,7 +529,7 @@
             {
               "case_id": "financial-forecasting-template-10-year::Fiscal Years.AA13",
               "trials_run": 1,
-              "trials_target": 400,
+              "trials_target": 10000,
               "agreed": 0,
               "certified": false,
               "error": "",
@@ -453,8 +539,8 @@
               "disagreement": {
                 "trial": 0,
                 "expected": 50952,
-                "actual": null,
-                "delta": -50952.0,
+                "actual": "2039-07-01 00:00:00",
+                "delta": null,
                 "minimal_change": "(baseline inputs)",
                 "shrunk_from": 0,
                 "vector": {
@@ -467,7 +553,7 @@
             {
               "case_id": "financial-forecasting-template-10-year::Fiscal Years.AA13",
               "trials_run": 1,
-              "trials_target": 400,
+              "trials_target": 10000,
               "agreed": 0,
               "certified": false,
               "error": "",
@@ -477,8 +563,8 @@
               "disagreement": {
                 "trial": 0,
                 "expected": 50952,
-                "actual": null,
-                "delta": -50952.0,
+                "actual": "2039-07-01 00:00:00",
+                "delta": null,
                 "minimal_change": "(baseline inputs)",
                 "shrunk_from": 0,
                 "vector": {
@@ -491,7 +577,7 @@
             {
               "case_id": "financial-forecasting-template-10-year::Fiscal Years.AA13",
               "trials_run": 1,
-              "trials_target": 400,
+              "trials_target": 10000,
               "agreed": 0,
               "certified": false,
               "error": "",
@@ -501,8 +587,8 @@
               "disagreement": {
                 "trial": 0,
                 "expected": 50952,
-                "actual": null,
-                "delta": -50952.0,
+                "actual": "2039-07-01 00:00:00",
+                "delta": null,
                 "minimal_change": "(baseline inputs)",
                 "shrunk_from": 0,
                 "vector": {
@@ -514,7 +600,7 @@
             }
           ],
           "first_failing_trial": 0,
-          "max_abs_delta": 50952.0,
+          "max_abs_delta": 0,
           "mean_agreed": 0
         },
         "witness": {
@@ -522,47 +608,47 @@
           "runs": [
             {
               "case_id": "financial-forecasting-template-10-year::Fiscal Years.AA13",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 1.0,
+              "seconds": 39.5,
               "seed": 11
             },
             {
               "case_id": "financial-forecasting-template-10-year::Fiscal Years.AA13",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.9,
+              "seconds": 34.6,
               "seed": 23
             },
             {
               "case_id": "financial-forecasting-template-10-year::Fiscal Years.AA13",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.9,
+              "seconds": 41.0,
               "seed": 47
             }
           ],
           "first_failing_trial": null,
           "max_abs_delta": 0.0,
-          "mean_agreed": 400
+          "mean_agreed": 10000
         }
       }
     },
@@ -572,51 +658,84 @@
       "inputs": 1,
       "arms": {
         "baseline": {
-          "certified": true,
+          "certified": false,
           "runs": [
             {
               "case_id": "financial-forecasting-template-10-year::Fiscal Years.AA16",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
-              "certified": true,
+              "trials_run": 1,
+              "trials_target": 10000,
+              "agreed": 0,
+              "certified": false,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.9,
+              "disagreement": {
+                "trial": 0,
+                "expected": 50951,
+                "actual": null,
+                "delta": -50951.0,
+                "minimal_change": "(baseline inputs)",
+                "shrunk_from": 0,
+                "vector": {
+                  "Fiscal Years!B16": "2014-06-30 00:00:00"
+                }
+              },
+              "seconds": 0.0,
               "seed": 11
             },
             {
               "case_id": "financial-forecasting-template-10-year::Fiscal Years.AA16",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
-              "certified": true,
+              "trials_run": 1,
+              "trials_target": 10000,
+              "agreed": 0,
+              "certified": false,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.9,
+              "disagreement": {
+                "trial": 0,
+                "expected": 50951,
+                "actual": null,
+                "delta": -50951.0,
+                "minimal_change": "(baseline inputs)",
+                "shrunk_from": 0,
+                "vector": {
+                  "Fiscal Years!B16": "2014-06-30 00:00:00"
+                }
+              },
+              "seconds": 0.0,
               "seed": 23
             },
             {
               "case_id": "financial-forecasting-template-10-year::Fiscal Years.AA16",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
-              "certified": true,
+              "trials_run": 1,
+              "trials_target": 10000,
+              "agreed": 0,
+              "certified": false,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.9,
+              "disagreement": {
+                "trial": 0,
+                "expected": 50951,
+                "actual": null,
+                "delta": -50951.0,
+                "minimal_change": "(baseline inputs)",
+                "shrunk_from": 0,
+                "vector": {
+                  "Fiscal Years!B16": "2014-06-30 00:00:00"
+                }
+              },
+              "seconds": 0.0,
               "seed": 47
             }
           ],
-          "first_failing_trial": null,
-          "max_abs_delta": 0.0,
-          "mean_agreed": 400
+          "first_failing_trial": 0,
+          "max_abs_delta": 50951.0,
+          "mean_agreed": 0
         },
         "witness": {
           "certified": false,
@@ -624,7 +743,7 @@
             {
               "case_id": "financial-forecasting-template-10-year::Fiscal Years.AA16",
               "trials_run": 5,
-              "trials_target": 400,
+              "trials_target": 10000,
               "agreed": 4,
               "certified": false,
               "error": "",
@@ -642,13 +761,13 @@
                   "Fiscal Years!B16": 0
                 }
               },
-              "seconds": 0.0,
+              "seconds": 0.1,
               "seed": 11
             },
             {
               "case_id": "financial-forecasting-template-10-year::Fiscal Years.AA16",
               "trials_run": 4,
-              "trials_target": 400,
+              "trials_target": 10000,
               "agreed": 3,
               "certified": false,
               "error": "",
@@ -666,13 +785,13 @@
                   "Fiscal Years!B16": 0
                 }
               },
-              "seconds": 0.0,
+              "seconds": 0.1,
               "seed": 23
             },
             {
               "case_id": "financial-forecasting-template-10-year::Fiscal Years.AA16",
               "trials_run": 9,
-              "trials_target": 400,
+              "trials_target": 10000,
               "agreed": 8,
               "certified": false,
               "error": "",
@@ -690,7 +809,7 @@
                   "Fiscal Years!B16": 0
                 }
               },
-              "seconds": 0.0,
+              "seconds": 0.1,
               "seed": 47
             }
           ],
@@ -706,55 +825,131 @@
       "inputs": 1,
       "arms": {
         "baseline": {
-          "import_failed": true,
-          "certified": false
+          "certified": false,
+          "runs": [
+            {
+              "case_id": "financial-forecasting-template-10-year::Available Funds.T48",
+              "trials_run": 1,
+              "trials_target": 10000,
+              "agreed": 0,
+              "certified": false,
+              "error": "",
+              "port_exceptions": 0,
+              "oracle_exceptions": 0,
+              "notes": [],
+              "disagreement": {
+                "trial": 0,
+                "expected": 48030,
+                "actual": null,
+                "delta": -48030.0,
+                "minimal_change": "(baseline inputs)",
+                "shrunk_from": 0,
+                "vector": {
+                  "Fiscal Years!B13": "2014-07-01 00:00:00"
+                }
+              },
+              "seconds": 0.0,
+              "seed": 11
+            },
+            {
+              "case_id": "financial-forecasting-template-10-year::Available Funds.T48",
+              "trials_run": 1,
+              "trials_target": 10000,
+              "agreed": 0,
+              "certified": false,
+              "error": "",
+              "port_exceptions": 0,
+              "oracle_exceptions": 0,
+              "notes": [],
+              "disagreement": {
+                "trial": 0,
+                "expected": 48030,
+                "actual": null,
+                "delta": -48030.0,
+                "minimal_change": "(baseline inputs)",
+                "shrunk_from": 0,
+                "vector": {
+                  "Fiscal Years!B13": "2014-07-01 00:00:00"
+                }
+              },
+              "seconds": 0.0,
+              "seed": 23
+            },
+            {
+              "case_id": "financial-forecasting-template-10-year::Available Funds.T48",
+              "trials_run": 1,
+              "trials_target": 10000,
+              "agreed": 0,
+              "certified": false,
+              "error": "",
+              "port_exceptions": 0,
+              "oracle_exceptions": 0,
+              "notes": [],
+              "disagreement": {
+                "trial": 0,
+                "expected": 48030,
+                "actual": null,
+                "delta": -48030.0,
+                "minimal_change": "(baseline inputs)",
+                "shrunk_from": 0,
+                "vector": {
+                  "Fiscal Years!B13": "2014-07-01 00:00:00"
+                }
+              },
+              "seconds": 0.0,
+              "seed": 47
+            }
+          ],
+          "first_failing_trial": 0,
+          "max_abs_delta": 48030.0,
+          "mean_agreed": 0
         },
         "witness": {
           "certified": true,
           "runs": [
             {
               "case_id": "financial-forecasting-template-10-year::Available Funds.T48",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.6,
+              "seconds": 33.2,
               "seed": 11
             },
             {
               "case_id": "financial-forecasting-template-10-year::Available Funds.T48",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.6,
+              "seconds": 17.0,
               "seed": 23
             },
             {
               "case_id": "financial-forecasting-template-10-year::Available Funds.T48",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.6,
+              "seconds": 20.1,
               "seed": 47
             }
           ],
           "first_failing_trial": null,
           "max_abs_delta": 0.0,
-          "mean_agreed": 400
+          "mean_agreed": 10000
         }
       }
     },
@@ -764,98 +959,131 @@
       "inputs": 1,
       "arms": {
         "baseline": {
-          "certified": true,
+          "certified": false,
           "runs": [
             {
               "case_id": "financial-forecasting-template-5-year::Available Funds.N48",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
-              "certified": true,
+              "trials_run": 1,
+              "trials_target": 10000,
+              "agreed": 0,
+              "certified": false,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "disagreement": {
+                "trial": 0,
+                "expected": 47665,
+                "actual": null,
+                "delta": -47665.0,
+                "minimal_change": "(baseline inputs)",
+                "shrunk_from": 0,
+                "vector": {
+                  "Fiscal Years!B13": "2019-07-01 00:00:00"
+                }
+              },
+              "seconds": 0.0,
               "seed": 11
             },
             {
               "case_id": "financial-forecasting-template-5-year::Available Funds.N48",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
-              "certified": true,
+              "trials_run": 1,
+              "trials_target": 10000,
+              "agreed": 0,
+              "certified": false,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "disagreement": {
+                "trial": 0,
+                "expected": 47665,
+                "actual": null,
+                "delta": -47665.0,
+                "minimal_change": "(baseline inputs)",
+                "shrunk_from": 0,
+                "vector": {
+                  "Fiscal Years!B13": "2019-07-01 00:00:00"
+                }
+              },
+              "seconds": 0.0,
               "seed": 23
             },
             {
               "case_id": "financial-forecasting-template-5-year::Available Funds.N48",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
-              "certified": true,
+              "trials_run": 1,
+              "trials_target": 10000,
+              "agreed": 0,
+              "certified": false,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "disagreement": {
+                "trial": 0,
+                "expected": 47665,
+                "actual": null,
+                "delta": -47665.0,
+                "minimal_change": "(baseline inputs)",
+                "shrunk_from": 0,
+                "vector": {
+                  "Fiscal Years!B13": "2019-07-01 00:00:00"
+                }
+              },
+              "seconds": 0.0,
               "seed": 47
             }
           ],
-          "first_failing_trial": null,
-          "max_abs_delta": 0.0,
-          "mean_agreed": 400
+          "first_failing_trial": 0,
+          "max_abs_delta": 47665.0,
+          "mean_agreed": 0
         },
         "witness": {
           "certified": true,
           "runs": [
             {
               "case_id": "financial-forecasting-template-5-year::Available Funds.N48",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "seconds": 13.8,
               "seed": 11
             },
             {
               "case_id": "financial-forecasting-template-5-year::Available Funds.N48",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "seconds": 10.7,
               "seed": 23
             },
             {
               "case_id": "financial-forecasting-template-5-year::Available Funds.N48",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "seconds": 14.6,
               "seed": 47
             }
           ],
           "first_failing_trial": null,
           "max_abs_delta": 0.0,
-          "mean_agreed": 400
+          "mean_agreed": 10000
         }
       }
     },
@@ -865,98 +1093,131 @@
       "inputs": 1,
       "arms": {
         "baseline": {
-          "certified": true,
+          "certified": false,
           "runs": [
             {
               "case_id": "financial-forecasting-template-5-year::Available Funds.N53",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
-              "certified": true,
+              "trials_run": 1,
+              "trials_target": 10000,
+              "agreed": 0,
+              "certified": false,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "disagreement": {
+                "trial": 0,
+                "expected": 47664,
+                "actual": null,
+                "delta": -47664.0,
+                "minimal_change": "(baseline inputs)",
+                "shrunk_from": 0,
+                "vector": {
+                  "Fiscal Years!B16": "2019-06-30 00:00:00"
+                }
+              },
+              "seconds": 0.0,
               "seed": 11
             },
             {
               "case_id": "financial-forecasting-template-5-year::Available Funds.N53",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
-              "certified": true,
+              "trials_run": 1,
+              "trials_target": 10000,
+              "agreed": 0,
+              "certified": false,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "disagreement": {
+                "trial": 0,
+                "expected": 47664,
+                "actual": null,
+                "delta": -47664.0,
+                "minimal_change": "(baseline inputs)",
+                "shrunk_from": 0,
+                "vector": {
+                  "Fiscal Years!B16": "2019-06-30 00:00:00"
+                }
+              },
+              "seconds": 0.0,
               "seed": 23
             },
             {
               "case_id": "financial-forecasting-template-5-year::Available Funds.N53",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
-              "certified": true,
+              "trials_run": 1,
+              "trials_target": 10000,
+              "agreed": 0,
+              "certified": false,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "disagreement": {
+                "trial": 0,
+                "expected": 47664,
+                "actual": null,
+                "delta": -47664.0,
+                "minimal_change": "(baseline inputs)",
+                "shrunk_from": 0,
+                "vector": {
+                  "Fiscal Years!B16": "2019-06-30 00:00:00"
+                }
+              },
+              "seconds": 0.0,
               "seed": 47
             }
           ],
-          "first_failing_trial": null,
-          "max_abs_delta": 0.0,
-          "mean_agreed": 400
+          "first_failing_trial": 0,
+          "max_abs_delta": 47664.0,
+          "mean_agreed": 0
         },
         "witness": {
           "certified": true,
           "runs": [
             {
               "case_id": "financial-forecasting-template-5-year::Available Funds.N53",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "seconds": 10.3,
               "seed": 11
             },
             {
               "case_id": "financial-forecasting-template-5-year::Available Funds.N53",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "seconds": 10.0,
               "seed": 23
             },
             {
               "case_id": "financial-forecasting-template-5-year::Available Funds.N53",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "seconds": 9.8,
               "seed": 47
             }
           ],
           "first_failing_trial": null,
           "max_abs_delta": 0.0,
-          "mean_agreed": 400
+          "mean_agreed": 10000
         }
       }
     },
@@ -966,98 +1227,197 @@
       "inputs": 23,
       "arms": {
         "baseline": {
-          "certified": true,
+          "certified": false,
           "runs": [
             {
               "case_id": "financial-indicators-template-0::6 - Operating Expenditures.K35",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
-              "certified": true,
+              "trials_run": 6,
+              "trials_target": 10000,
+              "agreed": 5,
+              "certified": false,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "disagreement": {
+                "trial": 5,
+                "expected": -1.0046488144960732,
+                "actual": -1.004678821268577,
+                "delta": -3.000677250386552e-05,
+                "minimal_change": "6 - Operating Expenditures!I35, 6 - Operating Expenditures!P51",
+                "shrunk_from": 21,
+                "vector": {
+                  "6 - Operating Expenditures!H50": 22690243,
+                  "6 - Operating Expenditures!H51": 0,
+                  "6 - Operating Expenditures!I34": 1.019273868220529,
+                  "6 - Operating Expenditures!I35": 643.1349722723168,
+                  "6 - Operating Expenditures!I50": 3279382,
+                  "6 - Operating Expenditures!I51": 0,
+                  "6 - Operating Expenditures!J50": 8128547,
+                  "6 - Operating Expenditures!J51": 0,
+                  "6 - Operating Expenditures!K50": 3358161,
+                  "6 - Operating Expenditures!K51": 0,
+                  "6 - Operating Expenditures!L50": 2692665,
+                  "6 - Operating Expenditures!L51": 0,
+                  "6 - Operating Expenditures!M50": 1754128,
+                  "6 - Operating Expenditures!M51": 0,
+                  "6 - Operating Expenditures!N50": 659002,
+                  "6 - Operating Expenditures!N51": 0,
+                  "6 - Operating Expenditures!O50": 636052,
+                  "6 - Operating Expenditures!O51": 0,
+                  "6 - Operating Expenditures!P50": 531562,
+                  "6 - Operating Expenditures!P51": -339.224018669533,
+                  "6 - Operating Expenditures!Q50": 2017127,
+                  "6 - Operating Expenditures!Q51": 0,
+                  "6 - Operating Expenditures!R51": 0
+                }
+              },
+              "seconds": 0.0,
               "seed": 11
             },
             {
               "case_id": "financial-indicators-template-0::6 - Operating Expenditures.K35",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
-              "certified": true,
+              "trials_run": 3,
+              "trials_target": 10000,
+              "agreed": 2,
+              "certified": false,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "disagreement": {
+                "trial": 2,
+                "expected": -1.0407665767138714,
+                "actual": -1.041029713346715,
+                "delta": -0.000263136632843608,
+                "minimal_change": "6 - Operating Expenditures!I35, 6 - Operating Expenditures!R51",
+                "shrunk_from": 20,
+                "vector": {
+                  "6 - Operating Expenditures!H50": 22690243,
+                  "6 - Operating Expenditures!H51": 0,
+                  "6 - Operating Expenditures!I34": 1.019273868220529,
+                  "6 - Operating Expenditures!I35": 3367.235725115947,
+                  "6 - Operating Expenditures!I50": 3279382,
+                  "6 - Operating Expenditures!I51": 0,
+                  "6 - Operating Expenditures!J50": 8128547,
+                  "6 - Operating Expenditures!J51": 0,
+                  "6 - Operating Expenditures!K50": 3358161,
+                  "6 - Operating Expenditures!K51": 0,
+                  "6 - Operating Expenditures!L50": 2692665,
+                  "6 - Operating Expenditures!L51": 0,
+                  "6 - Operating Expenditures!M50": 1754128,
+                  "6 - Operating Expenditures!M51": 0,
+                  "6 - Operating Expenditures!N50": 659002,
+                  "6 - Operating Expenditures!N51": 0,
+                  "6 - Operating Expenditures!O50": 636052,
+                  "6 - Operating Expenditures!O51": 0,
+                  "6 - Operating Expenditures!P50": 531562,
+                  "6 - Operating Expenditures!P51": 0,
+                  "6 - Operating Expenditures!Q50": 2017127,
+                  "6 - Operating Expenditures!Q51": 0,
+                  "6 - Operating Expenditures!R51": -568.1685990216276
+                }
+              },
+              "seconds": 0.0,
               "seed": 23
             },
             {
               "case_id": "financial-indicators-template-0::6 - Operating Expenditures.K35",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
-              "certified": true,
+              "trials_run": 3,
+              "trials_target": 10000,
+              "agreed": 2,
+              "certified": false,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "disagreement": {
+                "trial": 2,
+                "expected": -0.999895249839294,
+                "actual": -0.9998939083185656,
+                "delta": 1.3415207283928865e-06,
+                "minimal_change": "6 - Operating Expenditures!H50, 6 - Operating Expenditures!I35, 6 - Operating Expenditures!K51, 6 - Operating Expenditures!O51",
+                "shrunk_from": 22,
+                "vector": {
+                  "6 - Operating Expenditures!H50": null,
+                  "6 - Operating Expenditures!H51": 0,
+                  "6 - Operating Expenditures!I34": 1.019273868220529,
+                  "6 - Operating Expenditures!I35": 1,
+                  "6 - Operating Expenditures!I50": 3279382,
+                  "6 - Operating Expenditures!I51": 0,
+                  "6 - Operating Expenditures!J50": 8128547,
+                  "6 - Operating Expenditures!J51": 0,
+                  "6 - Operating Expenditures!K50": 3358161,
+                  "6 - Operating Expenditures!K51": 663.3181727762611,
+                  "6 - Operating Expenditures!L50": 2692665,
+                  "6 - Operating Expenditures!L51": 0,
+                  "6 - Operating Expenditures!M50": 1754128,
+                  "6 - Operating Expenditures!M51": 0,
+                  "6 - Operating Expenditures!N50": 659002,
+                  "6 - Operating Expenditures!N51": 0,
+                  "6 - Operating Expenditures!O50": 636052,
+                  "6 - Operating Expenditures!O51": 1829.9441694532002,
+                  "6 - Operating Expenditures!P50": 531562,
+                  "6 - Operating Expenditures!P51": 0,
+                  "6 - Operating Expenditures!Q50": 2017127,
+                  "6 - Operating Expenditures!Q51": 0,
+                  "6 - Operating Expenditures!R51": 0
+                }
+              },
+              "seconds": 0.0,
               "seed": 47
             }
           ],
-          "first_failing_trial": null,
-          "max_abs_delta": 0.0,
-          "mean_agreed": 400
+          "first_failing_trial": 2,
+          "max_abs_delta": 0.000263136632843608,
+          "mean_agreed": 3
         },
         "witness": {
           "certified": true,
           "runs": [
             {
               "case_id": "financial-indicators-template-0::6 - Operating Expenditures.K35",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "seconds": 9.5,
               "seed": 11
             },
             {
               "case_id": "financial-indicators-template-0::6 - Operating Expenditures.K35",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "seconds": 9.5,
               "seed": 23
             },
             {
               "case_id": "financial-indicators-template-0::6 - Operating Expenditures.K35",
-              "trials_run": 400,
-              "trials_target": 400,
-              "agreed": 400,
+              "trials_run": 10000,
+              "trials_target": 10000,
+              "agreed": 10000,
               "certified": true,
               "error": "",
               "port_exceptions": 0,
               "oracle_exceptions": 0,
               "notes": [],
-              "seconds": 0.4,
+              "seconds": 9.4,
               "seed": 47
             }
           ],
           "first_failing_trial": null,
           "max_abs_delta": 0.0,
-          "mean_agreed": 400
+          "mean_agreed": 10000
         }
       }
     }

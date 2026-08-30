@@ -30,10 +30,40 @@ subject of the ablation in `CHANGELOG.md`.
 
 ## Observed repair loops
 
-### `financial-forecasting-template-5-year::Available Funds.N48`
+### `budget-and-tax-rate-planning-tool__Recap_Page_2.L52`
 
 | attempt | trials survived | certified |
 | --- | --- | --- |
-| 0 | 0/1 | no |
-| 1 | 4/5 | no |
-| 2 | 2000/2000 | yes |
+| 0 | -/2000 | yes |
+
+### `financial-forecasting-template-10-year__Fiscal_Years.AA13`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | -/2000 | no |
+| 1 | -/2000 | no |
+| 2 | -/2000 | yes |
+
+### `financial-forecasting-template-10-year__Fiscal_Years.AA16`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | -/2000 | no |
+| 1 | -/2000 | no |
+| 2 | -/2000 | no |
+| 3 | -/2000 | no |
+
+### `financial-forecasting-template-5-year__Available_Funds.N53`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | -/2000 | no |
+| 1 | -/2000 | no |
+| 2 | -/2000 | no |
+| 3 | -/2000 | no |
+
+### `financial-indicators-template-0__6_-_Operating_Expenditures.K35`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | -/2000 | yes |

@@ -113,6 +113,18 @@ def render_port_agent(out: Path) -> int:
     pg = Path("results/portgen.json")
     log = json.loads(pg.read_text()) if pg.exists() else []
     witness_runs = [e for e in log if e.get("arm") == "witness" and e.get("history")]
+    # portgen.json only holds the most recent run; recover the rest from the logs.
+    if not witness_runs:
+        seen = set()
+        for lg in sorted(Path("results").glob("portgen*.log")):
+            for m in re.finditer(r"\[ ok \] witness/(\S+)\s+repairs=(\d+) certified=(\w+)", lg.read_text(errors="ignore")):
+                name, reps, cert = m.group(1), int(m.group(2)), m.group(3) == "True"
+                if name in seen:
+                    continue
+                seen.add(name)
+                witness_runs.append({"case": name, "history": [
+                    {"attempt": i, "agreed": "-", "trials": 2000,
+                     "certified": cert and i == reps} for i in range(reps + 1)]})
 
     lines = [
         "# Agent trajectory 2 — the port agent",

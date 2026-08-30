@@ -1,0 +1,215 @@
+{
+  "summary": {
+    "counterexample": {
+      "certified": 4,
+      "total": 4,
+      "mean_repairs_when_certified": 0.5
+    },
+    "prose": {
+      "certified": 4,
+      "total": 4,
+      "mean_repairs_when_certified": 0.5
+    },
+    "both": {
+      "certified": 4,
+      "total": 4,
+      "mean_repairs_when_certified": 0.5
+    }
+  },
+  "cases": [
+    {
+      "case_id": "budget-and-tax-rate-planning-tool::Recap Page 2.L52",
+      "arms": {
+        "counterexample": {
+          "arm": "counterexample",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "prose": {
+          "arm": "prose",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "both": {
+          "arm": "both",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "capital-targets-template::Debt.G8",
+      "arms": {
+        "counterexample": {
+          "arm": "counterexample",
+          "certified": true,
+          "repairs": 1,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 0,
+              "certified": false
+            },
+            {
+              "attempt": 1,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "prose": {
+          "arm": "prose",
+          "certified": true,
+          "repairs": 1,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 0,
+              "certified": false
+            },
+            {
+              "attempt": 1,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "both": {
+          "arm": "both",
+          "certified": true,
+          "repairs": 1,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 0,
+              "certified": false
+            },
+            {
+              "attempt": 1,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "capital-targets-template::Debt.H8",
+      "arms": {
+        "counterexample": {
+          "arm": "counterexample",
+          "certified": true,
+          "repairs": 1,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 10,
+              "certified": false
+            },
+            {
+              "attempt": 1,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "prose": {
+          "arm": "prose",
+          "certified": true,
+          "repairs": 1,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 10,
+              "certified": false
+            },
+            {
+              "attempt": 1,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "both": {
+          "arm": "both",
+          "certified": true,
+          "repairs": 1,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 10,
+              "certified": false
+            },
+            {
+              "attempt": 1,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "capital-targets-template::CIP.C68",
+      "arms": {
+        "counterexample": {
+          "arm": "counterexample",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "prose": {
+          "arm": "prose",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "both": {
+          "arm": "both",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
