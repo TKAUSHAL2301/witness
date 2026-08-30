@@ -1,22 +1,268 @@
 {
   "summary": {
     "counterexample": {
-      "certified": 4,
-      "total": 4,
-      "mean_repairs_when_certified": 0.5
+      "certified": 12,
+      "total": 12,
+      "mean_repairs_when_certified": 0.08
     },
     "prose": {
-      "certified": 4,
-      "total": 4,
-      "mean_repairs_when_certified": 0.5
+      "certified": 11,
+      "total": 12,
+      "mean_repairs_when_certified": 0.0
     },
     "both": {
-      "certified": 4,
-      "total": 4,
-      "mean_repairs_when_certified": 0.5
+      "certified": 12,
+      "total": 12,
+      "mean_repairs_when_certified": 0.08
     }
   },
   "cases": [
+    {
+      "case_id": "appropriation-template::Annual.D31",
+      "arms": {
+        "counterexample": {
+          "arm": "counterexample",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "prose": {
+          "arm": "prose",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "both": {
+          "arm": "both",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "appropriation-template::Annual.E31",
+      "arms": {
+        "counterexample": {
+          "arm": "counterexample",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "prose": {
+          "arm": "prose",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "both": {
+          "arm": "both",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "appropriation-template::Annual.F31",
+      "arms": {
+        "counterexample": {
+          "arm": "counterexample",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "prose": {
+          "arm": "prose",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "both": {
+          "arm": "both",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "appropriation-template::Annual.H31",
+      "arms": {
+        "counterexample": {
+          "arm": "counterexample",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "prose": {
+          "arm": "prose",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "both": {
+          "arm": "both",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "appropriation-template::Annual.I31",
+      "arms": {
+        "counterexample": {
+          "arm": "counterexample",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "prose": {
+          "arm": "prose",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "both": {
+          "arm": "both",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "appropriation-template::Impact.C33",
+      "arms": {
+        "counterexample": {
+          "arm": "counterexample",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "prose": {
+          "arm": "prose",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "both": {
+          "arm": "both",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        }
+      }
+    },
     {
       "case_id": "budget-and-tax-rate-planning-tool::Recap Page 2.L52",
       "arms": {
@@ -59,7 +305,89 @@
       }
     },
     {
-      "case_id": "capital-targets-template::Debt.G8",
+      "case_id": "budget-and-tax-rate-planning-tool::Levy Limit.E31",
+      "arms": {
+        "counterexample": {
+          "arm": "counterexample",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "prose": {
+          "arm": "prose",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "both": {
+          "arm": "both",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "budget-and-tax-rate-planning-tool::Recap Page 2.L22",
+      "arms": {
+        "counterexample": {
+          "arm": "counterexample",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "prose": {
+          "arm": "prose",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        },
+        "both": {
+          "arm": "both",
+          "certified": true,
+          "repairs": 0,
+          "history": [
+            {
+              "attempt": 0,
+              "agreed": 2000,
+              "certified": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "budget-and-tax-rate-planning-tool::Levy Limit.E19",
       "arms": {
         "counterexample": {
           "arm": "counterexample",
@@ -68,7 +396,7 @@
           "history": [
             {
               "attempt": 0,
-              "agreed": 0,
+              "agreed": 3,
               "certified": false
             },
             {
@@ -80,18 +408,23 @@
         },
         "prose": {
           "arm": "prose",
-          "certified": true,
-          "repairs": 1,
+          "certified": false,
+          "repairs": 3,
           "history": [
             {
               "attempt": 0,
-              "agreed": 0,
+              "agreed": 3,
               "certified": false
             },
             {
               "attempt": 1,
-              "agreed": 2000,
-              "certified": true
+              "agreed": 5,
+              "certified": false
+            },
+            {
+              "attempt": 2,
+              "agreed": 3,
+              "certified": false
             }
           ]
         },
@@ -102,7 +435,7 @@
           "history": [
             {
               "attempt": 0,
-              "agreed": 0,
+              "agreed": 3,
               "certified": false
             },
             {
@@ -115,20 +448,15 @@
       }
     },
     {
-      "case_id": "capital-targets-template::Debt.H8",
+      "case_id": "capital-planning-and-budgeting-workbook::Financial Targets.F60",
       "arms": {
         "counterexample": {
           "arm": "counterexample",
           "certified": true,
-          "repairs": 1,
+          "repairs": 0,
           "history": [
             {
               "attempt": 0,
-              "agreed": 10,
-              "certified": false
-            },
-            {
-              "attempt": 1,
               "agreed": 2000,
               "certified": true
             }
@@ -137,15 +465,10 @@
         "prose": {
           "arm": "prose",
           "certified": true,
-          "repairs": 1,
+          "repairs": 0,
           "history": [
             {
               "attempt": 0,
-              "agreed": 10,
-              "certified": false
-            },
-            {
-              "attempt": 1,
               "agreed": 2000,
               "certified": true
             }
@@ -154,15 +477,10 @@
         "both": {
           "arm": "both",
           "certified": true,
-          "repairs": 1,
+          "repairs": 0,
           "history": [
             {
               "attempt": 0,
-              "agreed": 10,
-              "certified": false
-            },
-            {
-              "attempt": 1,
               "agreed": 2000,
               "certified": true
             }
@@ -171,7 +489,7 @@
       }
     },
     {
-      "case_id": "capital-targets-template::CIP.C68",
+      "case_id": "capital-planning-and-budgeting-workbook::Financial Targets.J60",
       "arms": {
         "counterexample": {
           "arm": "counterexample",

@@ -1,52 +1,606 @@
 [
   {
     "arm": "baseline",
-    "case": "budget-and-tax-rate-planning-tool::Recap Page 2.L52",
+    "case": "appropriation-template::Annual.D31",
     "ok": true
   },
   {
-    "arm": "baseline",
-    "case": "capital-targets-template::Debt.G8",
-    "ok": true
+    "arm": "witness",
+    "case": "appropriation-template::Annual.D31",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
   },
   {
     "arm": "baseline",
-    "case": "capital-targets-template::Debt.H8",
+    "case": "appropriation-template::Annual.E31",
     "ok": true
   },
   {
-    "arm": "baseline",
-    "case": "capital-targets-template::CIP.C68",
-    "ok": true
+    "arm": "witness",
+    "case": "appropriation-template::Annual.E31",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
   },
   {
     "arm": "baseline",
-    "case": "financial-forecasting-template-10-year::Fiscal Years.AA13",
+    "case": "appropriation-template::Annual.F31",
     "ok": true
   },
   {
-    "arm": "baseline",
-    "case": "financial-forecasting-template-10-year::Fiscal Years.AA16",
-    "ok": true
+    "arm": "witness",
+    "case": "appropriation-template::Annual.F31",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
   },
   {
     "arm": "baseline",
-    "case": "financial-forecasting-template-10-year::Available Funds.T48",
+    "case": "appropriation-template::Annual.H31",
     "ok": true
   },
   {
-    "arm": "baseline",
-    "case": "financial-forecasting-template-5-year::Available Funds.N48",
-    "ok": true
+    "arm": "witness",
+    "case": "appropriation-template::Annual.H31",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
   },
   {
     "arm": "baseline",
-    "case": "financial-forecasting-template-5-year::Available Funds.N53",
+    "case": "appropriation-template::Annual.I31",
     "ok": true
   },
   {
+    "arm": "witness",
+    "case": "appropriation-template::Annual.I31",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
     "arm": "baseline",
-    "case": "financial-indicators-template-0::6 - Operating Expenditures.K35",
+    "case": "appropriation-template::Impact.C33",
     "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "appropriation-template::Impact.C33",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "budget-and-tax-rate-planning-tool::Levy Limit.E31",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "budget-and-tax-rate-planning-tool::Levy Limit.E31",
+    "ok": true,
+    "repairs": 2,
+    "history": [
+      {
+        "attempt": 2,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "budget-and-tax-rate-planning-tool::Recap Page 2.L22",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "budget-and-tax-rate-planning-tool::Recap Page 2.L22",
+    "ok": true,
+    "repairs": 1,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 1,
+        "trials": 2,
+        "certified": false
+      },
+      {
+        "attempt": 1,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "budget-and-tax-rate-planning-tool::Levy Limit.E19",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "budget-and-tax-rate-planning-tool::Levy Limit.E19",
+    "ok": true,
+    "repairs": 1,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 3,
+        "trials": 4,
+        "certified": false
+      },
+      {
+        "attempt": 1,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "capital-planning-and-budgeting-workbook::Financial Targets.F60",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "capital-planning-and-budgeting-workbook::Financial Targets.F60",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "capital-planning-and-budgeting-workbook::Financial Targets.J60",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "capital-planning-and-budgeting-workbook::Financial Targets.J60",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "capital-planning-and-budgeting-workbook::Financial Targets.F41",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "capital-planning-and-budgeting-workbook::Financial Targets.F41",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "capital-targets-template::Amortization.B48",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "capital-targets-template::Amortization.B48",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "capital-targets-template::Amortization.A48",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "capital-targets-template::Amortization.A48",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "capital-targets-template::Debt.I8",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "capital-targets-template::Debt.I8",
+    "ok": true,
+    "repairs": 1,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 20,
+        "trials": 21,
+        "certified": false
+      },
+      {
+        "attempt": 1,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "capital-targets-template::Debt.J8",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "capital-targets-template::Debt.J8",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-forecasting-template-10-year::COLA.J122",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "financial-forecasting-template-10-year::COLA.J122",
+    "ok": true,
+    "repairs": 1,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 37,
+        "trials": 38,
+        "certified": false
+      },
+      {
+        "attempt": 1,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-forecasting-template-10-year::Available Funds.T53",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "financial-forecasting-template-10-year::Available Funds.T53",
+    "ok": true,
+    "repairs": 2,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 0,
+        "trials": 1,
+        "certified": false
+      },
+      {
+        "attempt": 1,
+        "agreed": 4,
+        "trials": 5,
+        "certified": false
+      },
+      {
+        "attempt": 2,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-forecasting-template-10-year::Available Funds.S48",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "financial-forecasting-template-10-year::Available Funds.S48",
+    "ok": true,
+    "repairs": 1,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 4,
+        "trials": 5,
+        "certified": false
+      },
+      {
+        "attempt": 1,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-forecasting-template-5-year::COLA.J122",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "financial-forecasting-template-5-year::COLA.J122",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-forecasting-template-5-year::CPF.Q20",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "financial-forecasting-template-5-year::CPF.Q20",
+    "ok": true,
+    "repairs": 3,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 6,
+        "trials": 7,
+        "certified": false
+      },
+      {
+        "attempt": 1,
+        "agreed": 7,
+        "trials": 8,
+        "certified": false
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-forecasting-template-5-year::Available Funds.M48",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "financial-forecasting-template-5-year::Available Funds.M48",
+    "ok": true,
+    "repairs": 2,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 0,
+        "trials": 1,
+        "certified": false
+      },
+      {
+        "attempt": 1,
+        "agreed": 4,
+        "trials": 5,
+        "certified": false
+      },
+      {
+        "attempt": 2,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-forecasting-template-5-year::Available Funds.M53",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "financial-forecasting-template-5-year::Available Funds.M53",
+    "ok": true,
+    "repairs": 3,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 0,
+        "trials": 1,
+        "certified": false
+      },
+      {
+        "attempt": 1,
+        "agreed": 1,
+        "trials": 2,
+        "certified": false
+      },
+      {
+        "attempt": 2,
+        "agreed": 4,
+        "trials": 5,
+        "certified": false
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-indicators-template-0::6 - Operating Expenditures.K36",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "financial-indicators-template-0::6 - Operating Expenditures.K36",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-indicators-template-0::6 - Operating Expenditures.K37",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "financial-indicators-template-0::6 - Operating Expenditures.K37",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-indicators-template-0::6 - Operating Expenditures.K38",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "financial-indicators-template-0::6 - Operating Expenditures.K38",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-indicators-template-0::6 - Operating Expenditures.K39",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "financial-indicators-template-0::6 - Operating Expenditures.K39",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-indicators-template-0::10 - Debt Service.P31",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "financial-indicators-template-0::10 - Debt Service.P31",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
   }
 ]
