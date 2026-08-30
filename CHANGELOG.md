@@ -49,6 +49,12 @@ it itself.
 | **5a · Sensitivity screen**                | Reject any target that does not respond to its inputs — require ≥3 distinct values and non-zero in ≥25% of draws.                                                                                       | Cases 16 → **10**. Always-zero shortcut now caught **10/10**                                                                             | **Kept.** This is the exact defect the NeurIPS agentic-benchmark audit documents in τ-bench and SWE-Lancer. Fewer cases, but every one measures something.                                                                                                               |
 | **6 · Differential fuzzer + shrinking**    | The core. Generate a vector, run both the workbook and the port on it, and on disagreement shrink to the minimal set of inputs responsible.                                                             | Repair trace on a real case: **0/1 → 4/5 → 2000/2000 certified**                                                                         | **Kept.** Fed only counterexamples, the agent independently derived Excel's phantom 1900-02-29 leap-year bug. It was never told about it.                                                                                                                                |
 | **7 · Baseline capture defect**            | Reviewed the baseline arm before believing its score. The agent _wrote its module to disk_ and printed a prose summary; the harness read stdout and stored the prose.                                   | **3 of 10** baseline ports were unimportable prose                                                                                       | **Fixed, not reported.** Scoring the baseline as broken because of my own capture bug would have violated the fairness requirement. Sandboxed the agent, told it where to write, regenerated all 10. **10/10 now import.** v1 kept in `ports/_baseline_v1/` as evidence. |
+| **8 · Corpus growth** | McNemar p=0.219 on 10 cases meant the result was underpowered. The legitimate fix is more evidence, not a different number: 3 more workbooks, and relaxed selection (min depth 6→3, max inputs 40→60, per-sheet cap 2→5). | **10 → 37 cases** across 7 workbooks | **Kept.** Every added case still passes the sensitivity screen and the always-zero shortcut check. |
+| **9 · Oracle cache** | The evaluator rebuilt the full workbook model per case. 37 cases over 7 workbooks meant recompiling the same large workbook a dozen times. | evaluation wall-clock from multi-hour to ~2 h; fuzzing itself is ~1 ms/vector | **Kept.** The bottleneck was never the fuzzing. |
+| **10 · Invariant layer** | Point equality on sampled vectors is blind to a port that is structurally wrong but agrees on the values drawn. Derive scale-homogeneity and monotonicity from the DAG. | each invariant is **confirmed against the oracle first**; one the workbook does not satisfy is discarded, never enforced | **Kept.** This is the component cut for time in the first pass, now shipped. |
+| **11 · Mutation suite** | The first suite used one mutant (blank-as-zero) and killed 0/10 — the wrong mutant for this corpus, not a weak fuzzer. Rebuild it around the families the corpus actually exhibits. | 7 semantic mutants (banker's rounding, date-serial off-by-one, truncation, sign, scale…) + **5 equivalent mutants as false-alarm controls** | **Kept.** Without equivalent-mutant controls a mutation score just rewards paranoia. |
+| **12 · Coverage map** | "10,000 vectors agreed" is weak if every vector drove the calculation down the same branch. Measure which cells and IF-branches actually varied. | **91.4% mean cell coverage, 100% branch coverage** | **Kept.** The certificate's limits section is now a number, not a disclaimer. |
+| **13 · pytest plugin** | A report is a deliverable; a CI gate is a tool. `certify_equivalent(workbook, target, port)` produces a normal pytest test whose failure message *is* the shrunk counterexample. | tests pass for a certified port and **fail for a banker's-rounding mutant** | **Kept.** Turns a migration project into a regression gate. |
 | **8 · Final comparison**                   | Both arms, 10 cases, 3 seeds, 10,000 vectors each.                                                                                                                                                      | See [Final result](#final-result)                                                                                                        | —                                                                                                                                                                                                                                                                        |
 
 ---
@@ -75,28 +81,38 @@ wrong. Three arms, same cases, same budget:
 
 | Repair signal | Certified | Mean repairs when certified |
 | --- | --- | --- |
-| `counterexample` — shrunk failing vector only | **4/4** | **0.5** |
-| `prose` — an LLM critique of the failure | **4/4** | **0.5** |
-| `both` — counterexample plus critique | **4/4** | **0.5** |
+| `counterexample` — shrunk failing vector only | **12/12** | 0.08 |
+| `prose` — an LLM critique of the failure | **11/12** | 0.00 |
+| `both` — counterexample plus critique | **12/12** | 0.08 |
 
-### This is a null result, and it does not support my hypothesis.
+Command: `uv run python -m witness.ablation 12` · Raw: `results/ablation.json`
+
+### Still a null result — and now I can say why.
 
 I designed the repair loop around the claim that a shrunk counterexample beats a
-critique. **The ablation does not show that.** All three arms certified all four
-cases in the same mean number of repairs.
+critique. **Twelve cases do not support it.** The counterexample and both-arms
+certified 12/12 against prose's 11/12 — a one-case difference, which on twelve
+paired cases is indistinguishable from noise.
 
-The honest read: these four cases were too easy to discriminate between the arms
-— most certified in 0 or 1 repairs, so there was barely any repair signal to
-differentiate. The experiment as run cannot distinguish the hypothesis from the
-null, and a larger, harder case set is needed before the claim means anything.
+The first run of this ablation used four cases and I wrote it up as
+"underpowered." That was the right call but the wrong diagnosis. Tripling to
+twelve cases did not move it, and the reason is visible in the second column:
+**mean repairs is 0.08.** Across twelve cases the loop performed roughly one
+repair in total. You cannot compare two repair signals on a case set that almost
+never needs repairing — the experiment has no exposure to the variable it is
+supposed to measure.
 
-I am shipping the counterexample design anyway, for a reason the ablation does
-*not* prove and which I am labelling as unproven: a counterexample is a fact the
-agent can execute against and costs one deterministic function call, whereas a
-critique costs an extra LLM round-trip per repair. On these cases it bought
-nothing measurable. **Claiming it as a win would have been a fabricated result.**
+So the honest finding is not "counterexamples do not help." It is:
+**this corpus is too easy to discriminate repair strategies, and adding cases of
+the same difficulty will never fix that.** The experiment that would settle it
+needs cases selected *for* requiring 2+ repairs — deep formula cones with
+rounding and date semantics, not more shallow SUMs.
 
-Command: `uv run python -m witness.ablation 4` · Raw: `results/ablation.json`
+I am shipping the counterexample design anyway, on a cost argument the ablation
+does *not* prove and which I am labelling unproven: it is one deterministic
+function call, where the prose arm spends an extra LLM round-trip per repair.
+On this corpus it bought nothing measurable. **Reporting it as a win would have
+been fabrication.**
 
 ---
 
