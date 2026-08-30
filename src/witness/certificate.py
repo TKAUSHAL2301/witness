@@ -31,7 +31,7 @@ def _fmt(v):
     return repr(v)
 
 
-def build(case: dict, arm_result: dict, nodes: int, generated_at: str) -> str:
+def build(case: dict, arm_result: dict, nodes: int, generated_at: str, cov: dict | None = None) -> str:
     certified = arm_result.get("certified", False)
     runs = arm_result.get("runs", [])
     trials = runs[0]["trials_target"] if runs else 0
@@ -87,6 +87,37 @@ def build(case: dict, arm_result: dict, nodes: int, generated_at: str) -> str:
             L.append("```")
 
     L.append("")
+    if cov:
+        L.append("## Coverage — what the trials actually exercised")
+        L.append("")
+        L.append("Agreement on N vectors means little if every vector drove the")
+        L.append("calculation down the same branch. Measured on the oracle:")
+        L.append("")
+        L.append("| | |")
+        L.append("| --- | --- |")
+        L.append(f"| Formula cells in this target's cone | {cov['cone_cells']} |")
+        L.append(f"| Cells whose value varied across sampling | **{cov['varied']} ({cov['cell_coverage']:.0%})** |")
+        L.append(f"| Cells constant for this input domain | {cov['constant']} |")
+        if cov.get("branching_cells"):
+            bc = cov["branch_coverage"]
+            L.append(f"| Branching cells (IF/IFS/CHOOSE) | {cov['branching_cells']} |")
+            L.append(f"| Branches observed both ways | **{cov['branches_both_ways']}"
+                     + (f" ({bc:.0%})" if bc is not None else "") + "** |")
+            L.append(f"| Branches observed one way only | {cov['branches_one_way']} |")
+        L.append("")
+        if cov.get("one_way_branches_sample"):
+            L.append("Branches taken only one way — **untested in the other direction**:")
+            L.append("")
+            for k in cov["one_way_branches_sample"]:
+                L.append(f"- `{k}`")
+            L.append("")
+        elif cov.get("constant_cells_sample"):
+            L.append("Cells that never varied — effectively constants over this domain:")
+            L.append("")
+            for k in cov["constant_cells_sample"][:5]:
+                L.append(f"- `{k}`")
+            L.append("")
+
     L.append("## What this certificate does NOT cover")
     L.append("")
     L.append("- **Only the target cell above.** Other outputs in this workbook are")
@@ -128,6 +159,10 @@ def main(argv: list[str]) -> int:
         return 2
     data = json.loads(ev.read_text())
     at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    cov_path = Path("results/coverage.json")
+    covmap = {}
+    if cov_path.exists():
+        covmap = {c["case_id"]: c for c in json.loads(cov_path.read_text())}
 
     out = Path("certificates") / arm
     out.mkdir(parents=True, exist_ok=True)
@@ -137,7 +172,7 @@ def main(argv: list[str]) -> int:
         if not res or res.get("missing") or res.get("import_failed"):
             continue
         slug = c["case_id"].replace("::", "__").replace("!", ".").replace(" ", "_")
-        (out / f"{slug}.md").write_text(build(c, res, c["nodes"], at))
+        (out / f"{slug}.md").write_text(build(c, res, c["nodes"], at, covmap.get(c["case_id"])))
         n += 1
     print(f"{n} certificates -> certificates/{arm}/")
     return 0

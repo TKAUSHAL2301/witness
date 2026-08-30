@@ -15,7 +15,8 @@ import sys
 import time
 from pathlib import Path
 
-from witness.fuzz import fuzz_case
+from witness.fuzz import VectorSampler, fuzz_case
+from witness.invariants import check as check_invariants
 from witness.oracle import WorkbookOracle
 from witness.port import load_port, slugify
 
@@ -58,7 +59,13 @@ def evaluate(trials: int = 10_000, seeds: list[int] = None, arms=("baseline", "w
                 d["seconds"] = round(time.time() - t0, 1)
                 d["seed"] = sd
                 runs.append(d)
-            certified_all = all(r["certified"] for r in runs)
+            try:
+                inv = check_invariants(
+                    case, oracle_fn, port_fn, VectorSampler(case["inputs"], seed=97)
+                ).to_dict()
+            except Exception as e:  # noqa: BLE001
+                inv = {"error": f"{type(e).__name__}: {str(e)[:120]}"}
+            certified_all = all(r["certified"] for r in runs) and not inv.get("violations")
             first_fail = min(
                 (r["disagreement"]["trial"] for r in runs if r.get("disagreement")), default=None
             )
@@ -72,8 +79,12 @@ def evaluate(trials: int = 10_000, seeds: list[int] = None, arms=("baseline", "w
                 "first_failing_trial": first_fail,
                 "max_abs_delta": worst,
                 "mean_agreed": statistics.mean(r["agreed"] for r in runs),
+                "invariants": inv,
             }
-            mark = "CERTIFIED" if certified_all else f"FAILED@{first_fail}"
+            nviol = len(inv.get("violations", []))
+            mark = "CERTIFIED" if certified_all else (
+                f"INVARIANT-VIOLATION x{nviol}" if nviol and first_fail is None else f"FAILED@{first_fail}"
+            )
             extra = f"  Δ={worst:,.2f}" if worst else ""
             print(f"[{arm[:4]}] {case['id']:<52} {mark}{extra}")
         rows.append(row)
