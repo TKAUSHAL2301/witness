@@ -1,25 +1,36 @@
 def compute(inputs: dict):
-    def num(key):
+    """Port of 'Recap Page 2'!L52 from budget-and-tax-rate-planning-tool.xlsx.
+
+    L52 = SUM(L29 + L36 + L42 + L49)
+      L29 = SUM(K27:K28)
+      L36 = SUM(K32:K35)   -- K32 is a named-range formula (ESTREC), not an input; treated as 0
+      L42 = SUM(K38:K41)   -- K40 (FREECASHTOT), K41 (OTHERAVAILTOT) are named-range formulas; treated as 0
+      L49 = SUM(K45:K48)
+
+    Net result: sum of the 11 input cells.
+    """
+    keys = [
+        "Recap Page 2!K27",
+        "Recap Page 2!K28",
+        "Recap Page 2!K33",
+        "Recap Page 2!K34",
+        "Recap Page 2!K35",
+        "Recap Page 2!K38",
+        "Recap Page 2!K39",
+        "Recap Page 2!K45",
+        "Recap Page 2!K46",
+        "Recap Page 2!K47",
+        "Recap Page 2!K48",
+    ]
+
+    total = 0
+    for key in keys:
         v = inputs.get(key)
-        if v is None:
-            return 0.0
+        if v is None or isinstance(v, bool) or isinstance(v, str):
+            # Excel SUM over a cell range ignores blanks, booleans, and text
+            continue
         try:
-            return float(v)
-        except (ValueError, TypeError):
-            return 0.0
-
-    # L29 = SUM(K27:K28)
-    l29 = num("Recap Page 2!K27") + num("Recap Page 2!K28")
-
-    # L36 = SUM(K32:K35); K32 is =ESTREC (cross-sheet, not an input, constant 0)
-    l36 = num("Recap Page 2!K33") + num("Recap Page 2!K34") + num("Recap Page 2!K35")
-
-    # L42 = SUM(K38:K41); K40=FREECASHTOT, K41=OTHERAVAILTOT (cross-sheet, constant 0)
-    l42 = num("Recap Page 2!K38") + num("Recap Page 2!K39")
-
-    # L49 = SUM(K45:K48)
-    l49 = (num("Recap Page 2!K45") + num("Recap Page 2!K46")
-         + num("Recap Page 2!K47") + num("Recap Page 2!K48"))
-
-    # L52 = SUM(L29 + L36 + L42 + L49)
-    return l29 + l36 + l42 + l49
+            total += float(v)
+        except (TypeError, ValueError):
+            continue
+    return total

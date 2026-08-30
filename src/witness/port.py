@@ -109,20 +109,44 @@ def _input_block(case: dict) -> str:
 
 
 def gen_baseline(case: dict, out: Path) -> str:
-    prompt = textwrap.dedent(f"""\
-        Port one calculation out of an Excel workbook into Python, and make sure it is correct.
+    """One general-purpose agent with basic tools, in an isolated sandbox.
 
-        Workbook: {case["workbook"]}
-        Target cell: {case["target"]}
-        Input cells: {", ".join(s["key"] for s in case["inputs"])}
+    The agent is given file tools on purpose — that is what the PDF's allowed
+    baseline ("one general purpose agent with basic tools") means, and it is
+    what a real engineer would have. It runs in a temp directory containing a
+    copy of the workbook so it cannot reach the repo, and it is told exactly
+    where to write its answer. The first version of this harness read the
+    agent's stdout instead, which silently captured its prose summary rather
+    than its code on 3 of 10 cases and scored the baseline as broken. That was
+    a defect in the measurement, not in the baseline.
+    """
+    import shutil
+    import tempfile
 
-        Read the workbook, work out what the target cell computes, and write the port.
-        Check your work however you think best.
+    src = Path(case["workbook"])
+    with tempfile.TemporaryDirectory() as td:
+        work = Path(td)
+        shutil.copy2(src, work / src.name)
+        target_file = work / "port.py"
+        prompt = textwrap.dedent(f"""\
+            Port one calculation out of an Excel workbook into Python, and make sure it is correct.
 
-        {CONTRACT}
-        """)
-    txt = _run_agent(prompt, Path.cwd(), turns=30, tools="Read,Bash,Glob,Grep")
-    code = _extract_code(txt)
+            Workbook: ./{src.name}   (in the current directory)
+            Target cell: {case["target"]}
+            Input cells: {", ".join(s["key"] for s in case["inputs"])}
+
+            Read the workbook, work out what the target cell computes, and write the port.
+            Check your work however you think best — you have Python available.
+
+            Write your finished module to ./port.py in this directory.
+
+            {CONTRACT}
+            """)
+        txt = _run_agent(prompt, work, turns=30, tools="Read,Write,Edit,Bash,Glob,Grep")
+        if target_file.exists() and target_file.stat().st_size > 0:
+            code = target_file.read_text()
+        else:
+            code = _extract_code(txt)
     out.write_text(code)
     return code
 

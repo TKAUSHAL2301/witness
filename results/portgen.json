@@ -1,7 +1,46 @@
 [
   {
+    "arm": "baseline",
+    "case": "budget-and-tax-rate-planning-tool::Recap Page 2.L52",
+    "ok": true
+  },
+  {
     "arm": "witness",
-    "case": "financial-forecasting-template-5-year::Available Funds.N48",
+    "case": "budget-and-tax-rate-planning-tool::Recap Page 2.L52",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "capital-targets-template::Debt.G8",
+    "ok": true
+  },
+  {
+    "arm": "baseline",
+    "case": "capital-targets-template::Debt.H8",
+    "ok": true
+  },
+  {
+    "arm": "baseline",
+    "case": "capital-targets-template::CIP.C68",
+    "ok": true
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-forecasting-template-10-year::Fiscal Years.AA13",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "financial-forecasting-template-10-year::Fiscal Years.AA13",
     "ok": true,
     "repairs": 2,
     "history": [
@@ -19,6 +58,97 @@
       },
       {
         "attempt": 2,
+        "agreed": 2000,
+        "trials": 2000,
+        "certified": true
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-forecasting-template-10-year::Fiscal Years.AA16",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "financial-forecasting-template-10-year::Fiscal Years.AA16",
+    "ok": true,
+    "repairs": 3,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 0,
+        "trials": 1,
+        "certified": false
+      },
+      {
+        "attempt": 1,
+        "agreed": 1,
+        "trials": 2,
+        "certified": false
+      },
+      {
+        "attempt": 2,
+        "agreed": 0,
+        "trials": 1,
+        "certified": false
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-forecasting-template-10-year::Available Funds.T48",
+    "ok": true
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-forecasting-template-5-year::Available Funds.N48",
+    "ok": true
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-forecasting-template-5-year::Available Funds.N53",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "financial-forecasting-template-5-year::Available Funds.N53",
+    "ok": true,
+    "repairs": 3,
+    "history": [
+      {
+        "attempt": 0,
+        "agreed": 0,
+        "trials": 1,
+        "certified": false
+      },
+      {
+        "attempt": 1,
+        "agreed": 1,
+        "trials": 2,
+        "certified": false
+      },
+      {
+        "attempt": 2,
+        "agreed": 4,
+        "trials": 5,
+        "certified": false
+      }
+    ]
+  },
+  {
+    "arm": "baseline",
+    "case": "financial-indicators-template-0::6 - Operating Expenditures.K35",
+    "ok": true
+  },
+  {
+    "arm": "witness",
+    "case": "financial-indicators-template-0::6 - Operating Expenditures.K35",
+    "ok": true,
+    "repairs": 0,
+    "history": [
+      {
+        "attempt": 0,
         "agreed": 2000,
         "trials": 2000,
         "certified": true
