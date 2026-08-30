@@ -28,6 +28,11 @@ import sys
 import textwrap
 from pathlib import Path
 
+def slugify(case_id: str) -> str:
+    """Stable filename for a case id. Shared with the evaluator."""
+    return re.sub(r"[^A-Za-z0-9_.-]", "_", case_id)
+
+
 CONTRACT = """\
 Write a single self-contained Python module. It must define exactly:
 
@@ -219,7 +224,7 @@ def main(argv: list[str]) -> int:
 
     log = []
     for c in cases:
-        slug = re.sub(r"[^A-Za-z0-9_.-]", "_", c["id"])
+        slug = slugify(c["id"])
         for a in (["baseline", "witness"] if arm == "both" else [arm]):
             d = Path("ports") / a
             d.mkdir(parents=True, exist_ok=True)
