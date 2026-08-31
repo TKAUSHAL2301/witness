@@ -47,6 +47,35 @@ Expected output: `ok`
 
 ---
 
+## 1b. The 10-second check — start here
+
+If you only run one command, run this one:
+
+```bash
+uv run python -m witness.verify
+```
+
+It reads the committed artifacts in `results/`, re-derives every figure this
+project publishes, and compares each against the value claimed in `README.md`.
+Green means the claim is backed by the raw evidence; red means it is not. It
+exits non-zero on red, so it also works as a CI gate.
+
+```
+[GREEN]  engine-trust gate     12/17 workbooks · 36,500 cells · 0 disagreements
+[GREEN]  harness self-test     37/37 cases · identity 300/300 · shortcut caught
+[GREEN]  rejection tests       3 passed
+[GREEN]  experiment            baseline 24/37 → witness 32/37 (+22pp) at pass^3000
+[GREEN]  mutation score        189/231 semantic mutants killed (81.8%) · 0/165 false alarms
+[GREEN]  oracle coverage       91.4% mean cell coverage · 100% branch coverage
+ALL 6 CHECKS GREEN — every figure in README.md is backed by results/.
+```
+
+To regenerate the artifacts rather than read the committed ones, add `--run`
+(about 10 minutes). Sections 2 through 4 below run the same stages
+individually, with their full output explained.
+
+---
+
 ## 2. The engine-trust gate — run this first
 
 Nothing else in this project means anything unless the acceptance oracle is
@@ -189,6 +218,8 @@ model used here. The evaluation is free.
 | Step                     | Time      | Network | Credentials |
 | ------------------------ | --------- | ------- | ----------- |
 | `uv sync`                | ~60 s     | yes     | no          |
+| **`witness.verify`**     | **~10 s** | no      | no          |
+| `witness.verify --run`   | ~10 min   | no      | no          |
 | `witness.gate`           | ~2 min    | no      | no          |
 | `witness.selftest 300`   | ~3 min    | no      | no          |
 | `witness.evaluate 400`   | ~3 min    | no      | no          |

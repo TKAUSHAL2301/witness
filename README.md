@@ -176,12 +176,34 @@ scorer.
 
 ## Can another person reproduce the result
 
-Three commands, no Docker, no database, no network at judge time. All 14
+Three commands, no Docker, no database, no network at judge time. All 17
 workbooks are vendored into `corpus/`.
 
 ```bash
 git clone <repo> && cd witness
 uv sync
+uv run python -m witness.verify
+```
+
+`verify` re-derives every figure published below from the raw artifacts in
+`results/` and turns red if any of them no longer holds. It is the fastest way
+to check that this README is telling the truth, and it exits non-zero when it
+is not:
+
+```
+[GREEN]  engine-trust gate     12/17 workbooks · 36,500 cells · 0 disagreements
+[GREEN]  harness self-test     37/37 cases · identity 300/300 · shortcut caught
+[GREEN]  rejection tests       3 passed
+[GREEN]  experiment            baseline 24/37 → witness 32/37 (+22pp) at pass^3000
+[GREEN]  mutation score        189/231 semantic mutants killed (81.8%) · 0/165 false alarms
+[GREEN]  oracle coverage       91.4% mean cell coverage · 100% branch coverage
+ALL 6 CHECKS GREEN — every figure in README.md is backed by results/.
+```
+
+Add `--run` to regenerate those artifacts first instead of reading the
+committed ones. To run the engine-trust gate alone:
+
+```bash
 uv run python -m witness.gate corpus
 ```
 
@@ -196,7 +218,7 @@ total disagreements: 0
 
 The five excluded workbooks carry no cached formula values at all — they were
 saved without calculation, so there is nothing to validate the engine against.
-They were saved without calculation. That is a property of those files, not an engine failure, and the exclusion is a
+That is a property of those files, not an engine failure, and the exclusion is a
 **disclosed case-selection criterion**, not a hidden filter.
 
 ---
@@ -261,6 +283,7 @@ analysis: [CHANGELOG.md](CHANGELOG.md).
 | 8 · **Mutation suite** | ✅ 7 semantic mutants + 5 equivalent false-alarm controls |
 | 9 · **Coverage map** | ✅ 91.4% mean cell coverage, 100% branch coverage |
 | 10 · **pytest plugin** | ✅ `certify_equivalent()` — ships as a CI gate |
+| 11 · **Claim verifier** | ✅ `witness.verify` — all 6 published figures re-derived from the raw artifacts, exits non-zero on drift |
 
 Data: 17 municipal finance workbooks published by the Commonwealth of
 Massachusetts, Division of Local Services. Public records. Provenance and
