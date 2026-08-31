@@ -119,11 +119,11 @@ seeds, the same tolerance, and the same scorer. The only difference is how the
 port was produced. This uses the **committed** ports, so it needs no API key.
 
 ```bash
-uv run python -m witness.evaluate 10000
+uv run python -m witness.evaluate 3000
 ```
 
-**Runtime:** roughly 60–90 minutes. A port that disagrees stops early; a port
-that certifies runs the full 10,000 vectors × 3 seeds. For a fast smoke check
+**Runtime:** roughly 2 hours for the full 37 cases. A port that disagrees stops early; a port
+that certifies runs the full 3,000 vectors x 3 seeds = 9,000. For a fast smoke check
 that finishes in ~3 minutes, use a smaller budget — the shape of the result is
 the same, the confidence is lower:
 
@@ -135,7 +135,7 @@ uv run python -m witness.evaluate 400
 
 ```
 ==========================================================================
-CERTIFIED-EQUIVALENCE RATE  (pass^10000, all of seeds [11, 23, 47])
+CERTIFIED-EQUIVALENCE RATE  (pass^3000, all of seeds [11, 23, 47])
 ==========================================================================
 METRIC                                    BASELINE     WITNESS      CHANGE
 Ports certified                                ...         ...         ...
@@ -187,7 +187,7 @@ model used here. The evaluation is free.
 | `witness.gate`           | ~2 min    | no      | no          |
 | `witness.selftest 300`   | ~3 min    | no      | no          |
 | `witness.evaluate 400`   | ~3 min    | no      | no          |
-| `witness.evaluate 10000` | 60–90 min | no      | no          |
+| `witness.evaluate 3000` | ~2 h | no | no |
 | `witness.certificate`    | < 5 s     | no      | no          |
 | `witness.port both`      | ~25 min   | yes     | **yes**     |
 

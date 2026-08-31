@@ -3,9 +3,15 @@
 **An acceptance oracle for spreadsheet-to-code migrations.**
 
 Witness ports a finance team's Excel workbook to Python and then refuses to
-certify the port until 10,000 differentially fuzzed input vectors agree — after
-first proving its own recalculation engine can reproduce the values Excel itself
-cached inside the file. The acceptance oracle is the spreadsheet. Never a model.
+certify the port until **9,000 differentially fuzzed input vectors** agree —
+after first proving its own recalculation engine can reproduce the values Excel
+itself cached inside the file. The acceptance oracle is the spreadsheet. Never a
+model.
+
+*(9,000 = 3,000 trials × 3 independent seeds per case, the budget the reported
+experiment actually ran. The harness and the pytest gate both default to 10,000
+per seed; the reported run was capped to fit the event's clock, and every number
+below is from the 3,000 × 3 configuration.)*
 
 ---
 
