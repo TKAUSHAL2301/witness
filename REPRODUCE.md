@@ -69,7 +69,7 @@ uv run python -m witness.gate corpus
 GATE: 12/17 workbooks reproduce their own cached values
 ```
 
-**How to read it.** 12 of 14 workbooks pass. The 2 that "fail" contain no
+**How to read it.** 12 of 17 workbooks pass. The 5 that "fail" contain no
 cached formula values at all — they were saved without calculation, so there is
 nothing to validate the engine against. That is a property of those files, not
 an engine failure, and they are excluded from the corpus as a **disclosed

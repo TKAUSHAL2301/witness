@@ -1,6 +1,6 @@
 {
   "passed": 12,
-  "total": 14,
+  "total": 17,
   "reports": [
     {
       "path": "corpus/appropriation-template.xlsx",
@@ -183,6 +183,45 @@
       "disagreements": [],
       "rate": 1.0,
       "passes": true
+    },
+    {
+      "path": "corpus/municipal-accounts-payable-workflow.xlsx",
+      "loaded": false,
+      "error": "no formula cells with cached values",
+      "formula_cells": 0,
+      "compared": 0,
+      "agreed": 0,
+      "skipped_no_cache": 0,
+      "engine_errors": 0,
+      "disagreements": [],
+      "rate": 0.0,
+      "passes": false
+    },
+    {
+      "path": "corpus/municipal-revenue-turnover-workflow.xlsx",
+      "loaded": false,
+      "error": "no formula cells with cached values",
+      "formula_cells": 0,
+      "compared": 0,
+      "agreed": 0,
+      "skipped_no_cache": 0,
+      "engine_errors": 0,
+      "disagreements": [],
+      "rate": 0.0,
+      "passes": false
+    },
+    {
+      "path": "corpus/sample-city-budget-calendar-0.xlsx",
+      "loaded": false,
+      "error": "no formula cells with cached values",
+      "formula_cells": 0,
+      "compared": 0,
+      "agreed": 0,
+      "skipped_no_cache": 0,
+      "engine_errors": 0,
+      "disagreements": [],
+      "rate": 0.0,
+      "passes": false
     }
   ]
 }
