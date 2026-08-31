@@ -1,0 +1,782 @@
+{
+  "summary": {
+    "cases_scored": 33,
+    "semantic_mutants_per_case": 7,
+    "equivalent_mutants_per_case": 5,
+    "mutation_kill_rate": 0.8182,
+    "false_alarm_rate": 0.0,
+    "killed": 189,
+    "semantic_total": 231,
+    "false_alarms": 0,
+    "equivalent_total": 165
+  },
+  "cases": [
+    {
+      "case_id": "appropriation-template::Annual.D31",
+      "killed": [
+        "rounding_bankers",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "date_serial_off_by_one"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.857
+    },
+    {
+      "case_id": "appropriation-template::Annual.E31",
+      "killed": [
+        "rounding_bankers",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "date_serial_off_by_one"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.857
+    },
+    {
+      "case_id": "appropriation-template::Annual.F31",
+      "killed": [
+        "rounding_bankers",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "date_serial_off_by_one"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.857
+    },
+    {
+      "case_id": "appropriation-template::Annual.H31",
+      "killed": [
+        "rounding_bankers",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "date_serial_off_by_one"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.857
+    },
+    {
+      "case_id": "appropriation-template::Annual.I31",
+      "killed": [
+        "rounding_bankers",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "date_serial_off_by_one"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.857
+    },
+    {
+      "case_id": "appropriation-template::Impact.C33",
+      "killed": [
+        "rounding_bankers",
+        "date_serial_off_by_one",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 1.0
+    },
+    {
+      "case_id": "budget-and-tax-rate-planning-tool::Recap Page 2.L52",
+      "killed": [
+        "rounding_bankers",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "date_serial_off_by_one"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.857
+    },
+    {
+      "case_id": "budget-and-tax-rate-planning-tool::Levy Limit.E31",
+      "killed": [
+        "rounding_bankers",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "date_serial_off_by_one"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.857
+    },
+    {
+      "case_id": "budget-and-tax-rate-planning-tool::Recap Page 2.L22",
+      "killed": [
+        "rounding_bankers",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "date_serial_off_by_one"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.857
+    },
+    {
+      "case_id": "budget-and-tax-rate-planning-tool::Levy Limit.E19",
+      "killed": [
+        "rounding_bankers",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "date_serial_off_by_one"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.857
+    },
+    {
+      "case_id": "capital-planning-and-budgeting-workbook::Financial Targets.F60",
+      "killed": [
+        "rounding_bankers",
+        "date_serial_off_by_one",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 1.0
+    },
+    {
+      "case_id": "capital-planning-and-budgeting-workbook::Financial Targets.J60",
+      "killed": [
+        "rounding_bankers",
+        "date_serial_off_by_one",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 1.0
+    },
+    {
+      "case_id": "capital-planning-and-budgeting-workbook::Financial Targets.F41",
+      "killed": [
+        "rounding_bankers",
+        "date_serial_off_by_one",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 1.0
+    },
+    {
+      "case_id": "capital-targets-template::Amortization.B48",
+      "killed": [
+        "rounding_bankers",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "date_serial_off_by_one"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.857
+    },
+    {
+      "case_id": "capital-targets-template::Amortization.A48",
+      "killed": [
+        "rounding_bankers",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "date_serial_off_by_one"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.857
+    },
+    {
+      "case_id": "capital-targets-template::Debt.G8",
+      "killed": [
+        "date_serial_off_by_one",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "rounding_bankers",
+        "truncate_not_round"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.714
+    },
+    {
+      "case_id": "capital-targets-template::Debt.H8",
+      "skipped": "port not certified"
+    },
+    {
+      "case_id": "capital-targets-template::Debt.I8",
+      "killed": [
+        "date_serial_off_by_one",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "rounding_bankers",
+        "truncate_not_round"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.714
+    },
+    {
+      "case_id": "capital-targets-template::Debt.J8",
+      "killed": [
+        "date_serial_off_by_one",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "rounding_bankers",
+        "truncate_not_round"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.714
+    },
+    {
+      "case_id": "financial-forecasting-template-10-year::COLA.J122",
+      "killed": [
+        "rounding_bankers",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "date_serial_off_by_one"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.857
+    },
+    {
+      "case_id": "financial-forecasting-template-10-year::Fiscal Years.AA13",
+      "killed": [
+        "date_serial_off_by_one",
+        "off_by_one",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "rounding_bankers",
+        "sign_flip_on_negative",
+        "truncate_not_round"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.571
+    },
+    {
+      "case_id": "financial-forecasting-template-10-year::Fiscal Years.AA16",
+      "skipped": "port not certified"
+    },
+    {
+      "case_id": "financial-forecasting-template-10-year::Available Funds.T48",
+      "killed": [
+        "date_serial_off_by_one",
+        "off_by_one",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "rounding_bankers",
+        "sign_flip_on_negative",
+        "truncate_not_round"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.571
+    },
+    {
+      "case_id": "financial-forecasting-template-10-year::Available Funds.T53",
+      "killed": [
+        "date_serial_off_by_one",
+        "off_by_one",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "rounding_bankers",
+        "sign_flip_on_negative",
+        "truncate_not_round"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.571
+    },
+    {
+      "case_id": "financial-forecasting-template-10-year::Available Funds.S48",
+      "killed": [
+        "date_serial_off_by_one",
+        "off_by_one",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "rounding_bankers",
+        "sign_flip_on_negative",
+        "truncate_not_round"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.571
+    },
+    {
+      "case_id": "financial-forecasting-template-5-year::COLA.J122",
+      "killed": [
+        "rounding_bankers",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "date_serial_off_by_one"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.857
+    },
+    {
+      "case_id": "financial-forecasting-template-5-year::CPF.Q20",
+      "skipped": "port not certified"
+    },
+    {
+      "case_id": "financial-forecasting-template-5-year::Available Funds.N48",
+      "killed": [
+        "date_serial_off_by_one",
+        "off_by_one",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "rounding_bankers",
+        "sign_flip_on_negative",
+        "truncate_not_round"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.571
+    },
+    {
+      "case_id": "financial-forecasting-template-5-year::Available Funds.N53",
+      "killed": [
+        "date_serial_off_by_one",
+        "off_by_one",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "rounding_bankers",
+        "sign_flip_on_negative",
+        "truncate_not_round"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.571
+    },
+    {
+      "case_id": "financial-forecasting-template-5-year::Available Funds.M48",
+      "killed": [
+        "date_serial_off_by_one",
+        "off_by_one",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "rounding_bankers",
+        "sign_flip_on_negative",
+        "truncate_not_round"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.571
+    },
+    {
+      "case_id": "financial-forecasting-template-5-year::Available Funds.M53",
+      "skipped": "port not certified"
+    },
+    {
+      "case_id": "financial-indicators-template-0::6 - Operating Expenditures.K35",
+      "killed": [
+        "rounding_bankers",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "date_serial_off_by_one"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.857
+    },
+    {
+      "case_id": "financial-indicators-template-0::6 - Operating Expenditures.K36",
+      "killed": [
+        "rounding_bankers",
+        "date_serial_off_by_one",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 1.0
+    },
+    {
+      "case_id": "financial-indicators-template-0::6 - Operating Expenditures.K37",
+      "killed": [
+        "rounding_bankers",
+        "date_serial_off_by_one",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 1.0
+    },
+    {
+      "case_id": "financial-indicators-template-0::6 - Operating Expenditures.K38",
+      "killed": [
+        "rounding_bankers",
+        "date_serial_off_by_one",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 1.0
+    },
+    {
+      "case_id": "financial-indicators-template-0::6 - Operating Expenditures.K39",
+      "killed": [
+        "rounding_bankers",
+        "date_serial_off_by_one",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 1.0
+    },
+    {
+      "case_id": "financial-indicators-template-0::10 - Debt Service.P31",
+      "killed": [
+        "rounding_bankers",
+        "off_by_one",
+        "sign_flip_on_negative",
+        "truncate_not_round",
+        "scale_percent",
+        "epsilon_drift"
+      ],
+      "missed": [
+        "date_serial_off_by_one"
+      ],
+      "false_alarms": [],
+      "clean": [
+        "identity",
+        "float_cast",
+        "add_zero",
+        "negate_twice",
+        "sub_tiny_below_tolerance"
+      ],
+      "kill_rate": 0.857
+    }
+  ]
+}

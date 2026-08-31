@@ -51,7 +51,7 @@ it itself.
 | **7 · Baseline capture defect**            | Reviewed the baseline arm before believing its score. The agent _wrote its module to disk_ and printed a prose summary; the harness read stdout and stored the prose.                                   | **3 of 10** baseline ports were unimportable prose                                                                                       | **Fixed, not reported.** Scoring the baseline as broken because of my own capture bug would have violated the fairness requirement. Sandboxed the agent, told it where to write, regenerated all 10. **10/10 now import.** v1 kept in `ports/_baseline_v1/` as evidence. |
 | **8 · Corpus growth** | McNemar p=0.219 on 10 cases meant the result was underpowered. The legitimate fix is more evidence, not a different number: 3 more workbooks, and relaxed selection (min depth 6→3, max inputs 40→60, per-sheet cap 2→5). | **10 → 37 cases** across 7 workbooks | **Kept.** Every added case still passes the sensitivity screen and the always-zero shortcut check. |
 | **9 · Oracle cache** | The evaluator rebuilt the full workbook model per case. 37 cases over 7 workbooks meant recompiling the same large workbook a dozen times. | evaluation wall-clock from multi-hour to ~2 h; fuzzing itself is ~1 ms/vector | **Kept.** The bottleneck was never the fuzzing. |
-| **10 · Invariant layer** | Point equality on sampled vectors is blind to a port that is structurally wrong but agrees on the values drawn. Derive scale-homogeneity and monotonicity from the DAG. | each invariant is **confirmed against the oracle first**; one the workbook does not satisfy is discarded, never enforced | **Kept.** This is the component cut for time in the first pass, now shipped. |
+| **10 · Invariant layer** | Point equality on sampled vectors is blind to a port that is structurally wrong but agrees on the values drawn. Derive scale-homogeneity and monotonicity from the DAG. | 212 invariants proposed, **106 confirmed against the oracle** (18 scale, 88 monotone), **0 violated by any port** | **Kept, and it found nothing.** Reported as a null contribution rather than presented as a success — see below. |
 | **11 · Mutation suite** | The first suite used one mutant (blank-as-zero) and killed 0/10 — the wrong mutant for this corpus, not a weak fuzzer. Rebuild it around the families the corpus actually exhibits. | 7 semantic mutants (banker's rounding, date-serial off-by-one, truncation, sign, scale…) + **5 equivalent mutants as false-alarm controls** | **Kept.** Without equivalent-mutant controls a mutation score just rewards paranoia. |
 | **12 · Coverage map** | "9,000 vectors agreed" is weak if every vector drove the calculation down the same branch. Measure which cells and IF-branches actually varied. | **91.4% mean cell coverage, 100% branch coverage** | **Kept.** The certificate's limits section is now a number, not a disclaimer. |
 | **13 · pytest plugin** | A report is a deliverable; a CI gate is a tool. `certify_equivalent(workbook, target, port)` produces a normal pytest test whose failure message *is* the shrunk counterexample. | tests pass for a certified port and **fail for a banker's-rounding mutant** | **Kept.** Turns a migration project into a regression gate. |
@@ -160,6 +160,27 @@ A verifier that turns a $47,000 silent error into a $1 disclosed one has done
 its job even when it does not reach GREEN.
 
 ---
+
+## The invariant layer found nothing, and that is worth saying
+
+The invariant layer proposed 212 properties and confirmed 106 of them against
+the oracle — 18 scale-homogeneity, 88 monotonicity. **Ports violated zero of
+them.**
+
+Every case that the invariants could have caught, the differential fuzzer had
+already caught by value comparison. On this corpus the component contributed no
+additional detection.
+
+I am shipping it anyway, and labelling its contribution as **zero on this
+evidence**, for two reasons. It is a per-run structural guarantee rather than a
+probabilistic one, so it covers a failure mode sampling cannot reach in
+principle. And its design is the defensible part: each invariant is confirmed
+against the workbook *before* it is enforced against the port, so an invariant
+the spreadsheet does not itself satisfy is discarded rather than used to fail
+correct code — which is how this kind of check usually goes wrong.
+
+A component with no number is decoration. This one has a number, and the number
+is zero.
 
 ## Main failure mode
 
