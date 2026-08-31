@@ -186,7 +186,7 @@ Three commands, no Docker, no database, no network at judge time. All 17
 workbooks are vendored into `corpus/`.
 
 ```bash
-git clone <repo> && cd witness
+git clone https://github.com/TKAUSHAL2301/witness.git && cd witness
 uv sync
 uv run python -m witness.verify
 ```
@@ -203,7 +203,8 @@ is not:
 [GREEN]  experiment            baseline 24/37 → witness 32/37 (+22pp) at pass^3000
 [GREEN]  mutation score        189/231 semantic mutants killed (81.8%) · 0/165 false alarms
 [GREEN]  oracle coverage       91.4% mean cell coverage · 100% branch coverage
-ALL 6 CHECKS GREEN — every figure in README.md is backed by results/.
+[GREEN]  document claims       8 documents clean · corpus 17 · cases 37 · LICENSE present
+ALL 7 CHECKS GREEN — every published figure is backed by results/.
 ```
 
 Add `--run` to regenerate those artifacts first instead of reading the
@@ -253,7 +254,8 @@ Command: `uv run python -m witness.evaluate 3000` · Raw: `results/evaluation.js
 | **Certified-equivalence rate** (`pass^3000`, 3 seeds, 37 cases) | **65%**         | **86%**        | **+22 pp** |
 | Ports certified                                                 | 24 / 37         | 32 / 37        | +8         |
 | **Median error when it failed**                                 | **$47,482**     | **$1**         | —          |
-| Largest undetected error in a self-certified port               | **$50,951**     | $9,132         | —          |
+| Worst error on the hardest case (`Fiscal Years.AA16`)           | **$50,951**     | $9,132         | —          |
+| …and what each arm did with it                                  | **shipped as correct** | **refused certification** | —   |
 
 Paired: **9 Witness wins, 1 loss, 23 both-certified, 4 both-failed.**
 **McNemar exact two-sided p = 0.0215 — significant at α = 0.05.**
@@ -296,10 +298,12 @@ experiment, not this one.
 it fails by a median of $1.**
 
 Both arms produce imperfect ports. The difference is the size of what survives.
-Thirteen baseline ports certified _themselves_ as correct while sitting on
-five-figure errors — chained `EDATE` date arithmetic landing years off the
-correct value. Witness's five failures are dominated by ±1 rounding-mode
-disagreements that it found and reported rather than shipped.
+Thirteen baseline ports certified _themselves_ as correct and were wrong; **six
+of those thirteen were sitting on five-figure errors** — chained `EDATE` date
+arithmetic landing years off the correct value — and the largest was $50,951.
+The remaining seven are smaller ($2,340 and below). Witness's five failures are
+dominated by ±1 rounding-mode disagreements that it found and reported rather
+than shipped.
 
 A verifier that turns a $47,000 silent error into a $1 disclosed one has done its
 job even when it does not reach GREEN.
@@ -325,7 +329,7 @@ analysis: [CHANGELOG.md](CHANGELOG.md).
 | Stage                                 | State                                                                                                    |
 | ------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | 0 · Engine-trust gate                 | ✅ 12/12 usable workbooks, 36,500 cells, 0 disagreements                                                 |
-| 1 · Formula-DAG extractor             | ✅ 17 workbooks parsed, inputs typed                                                                     |
+| 1 · Formula-DAG extractor             | ✅ 14 workbooks parsed (`results/dag.json`), inputs typed — the other 3 hold **0 formula cells** |
 | 2 · Case scoping + sensitivity screen | ✅ **37 cases**, always-zero shortcut caught on every one                                                |
 | 3 · Differential fuzzer               | ✅ 9,000 vectors per certified case (3,000 trials × 3 seeds)                                             |
 | 4 · Shrink + repair loop              | ✅ only the shrunk counterexample is fed back                                                            |
@@ -337,6 +341,7 @@ analysis: [CHANGELOG.md](CHANGELOG.md).
 | 10 · **pytest plugin**                | ✅ `certify_equivalent()` — ships as a CI gate                                                           |
 | 11 · **Claim verifier**               | ✅ `witness.verify` — all 6 published figures re-derived from the raw artifacts, exits non-zero on drift |
 | 12 · **Single-case walkthrough**      | ✅ `witness.demo` — historical tie-out, live fuzz, shrunk counterexample, on one cell                    |
+| 13 · **Document-claim check**         | ✅ the verifier's 7th check — 16 superseded claims scanned across every prose document, red on any reappearance |
 
 Data: 17 municipal finance workbooks published by the Commonwealth of
 Massachusetts, Division of Local Services. Public records. Provenance and

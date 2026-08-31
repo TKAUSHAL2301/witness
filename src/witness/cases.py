@@ -13,7 +13,7 @@ from pathlib import Path
 
 from witness import dag as D
 from witness.fuzz import VectorSampler
-from witness.oracle import get_oracle
+from witness.oracle import WorkbookOracle, get_oracle
 
 SCREEN_DRAWS = 60
 MIN_DISTINCT = 3

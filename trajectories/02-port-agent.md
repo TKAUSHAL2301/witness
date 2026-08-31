@@ -30,6 +30,15 @@ subject of the ablation in `CHANGELOG.md`.
 
 ## Observed repair loops
 
+Repair histories are shown for **28 of the 37 cases**. The other 9 reused a port
+that already existed from an earlier generation run (`[skip] … exists` in
+`results/portgen_v3.log`), so there is no loop to render for them. The
+`certified` column is the port agent's own verdict at generation time, at 2,000
+trials — **not** the reported result. The reported result is `pass^3000` across
+3 seeds, and per-case verdicts for all 37 cases are in `certificates/witness/`,
+where the Witness arm certified 32 of 37.
+
+
 ### `appropriation-template::Annual.D31`
 
 | attempt | trials survived | certified |

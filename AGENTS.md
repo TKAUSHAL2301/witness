@@ -8,9 +8,10 @@ is the complete list.
 | Agent                                               | Where                                       | What it did                                                                                                                  |
 | --------------------------------------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | **Claude Code** (interactive), Opus 5 (1M context)  | my terminal                                 | Wrote every module in `src/witness/`, chose the case-selection criteria, ran every experiment, and wrote this documentation. |
-| **Claude Code** (headless, `claude -p`), same model | subprocess, driven by `src/witness/port.py` | Generated all 20 candidate ports — 10 baseline, 10 Witness — and the 12 ablation ports.                                      |
+| **Claude Code** (headless, `claude -p`), same model | subprocess, driven by `src/witness/port.py` | Generated all 74 candidate ports — 37 baseline, 37 Witness — and the ablation ports (12 reported cases × 3 repair-signal arms).                                      |
+| **Claude Code** (subagent fan-out), same model            | documentation audit only                    | Re-read every prose document against the raw artifacts in `results/` and reported claim drift. Wrote no code and touched no result. Its findings are the stage-16 changelog row. |
 
-Both are the same product and the same model. That is deliberate: **the
+All three are the same product and the same model. For the two experiment arms that is deliberate: **the
 baseline and the Witness arm must differ only in the scaffolding around the
 agent, not in the agent itself.** If the arms used different models, the
 comparison would measure the model, not the method.
@@ -50,9 +51,14 @@ redacted and the renderer asserts no leakage before writing.
 
 - They did not choose the evaluation metric, the tolerance, the seeds, or the
   pass criterion. I did.
+- The audit fan-out did not change a single number. It could only flag a
+  document that disagreed with an artifact; every correction it prompted moved
+  the *prose* toward `results/`, never the reverse. Its checks are now frozen
+  into `witness.verify` as the document-claims check, so a judge can rerun them
+  in ten seconds rather than take this paragraph on trust.
 - They did not label any ground truth. **Nothing in this project has
   agent-authored ground truth** — the oracle is the workbook.
-- They did not write the corpus. It is 14 public-record workbooks published by
+- They did not write the corpus. It is 17 public-record workbooks published by
   the Commonwealth of Massachusetts.
 
 ## Human checkpoints
@@ -62,14 +68,15 @@ produced, and each is visible in the trajectory:
 
 1. **The engine-trust gate came back 9/14** and I did not accept it. Inspecting
    the failures showed a date-serial bug in my own comparator, not the engine.
-   → 12/12 usable.
+   → 12/12 usable at the time, and 12/12 usable of 17 today.
 2. **The harness self-test showed 9 of 16 cases certifying a do-nothing port.**
    I stopped and added a sensitivity screen rather than publishing the number.
-   → cases 16 → 10, shortcut caught 10/10.
+   → cases 16 → 10 at the time. The screen still holds at today's 37 cases:
+      shortcut caught 37/37 (`results/selftest.json`).
 3. **The baseline arm scored artificially badly** because my harness captured
    the agent's prose summary instead of its code. I found it while reviewing the
    baseline before believing its score, and regenerated all 10 baselines.
-   → 10/10 import cleanly.
+   → all 10 imported cleanly at the time; 37/37 do at today's corpus size.
 
 Each of those would have produced a _better-looking_ result if left alone. That
 is the point of checking.

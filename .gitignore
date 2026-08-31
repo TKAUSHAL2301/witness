@@ -1,8 +1,27 @@
+# Python
 .venv/
 __pycache__/
 *.pyc
-.hypothesis/
+*.egg-info/
+build/
+dist/
 
-# Raw run logs: transient, and they embed absolute local paths (Ground Rule 08).
-# Every number that matters is in the committed results/*.json.
+# Test / lint caches
+.pytest_cache/
+.hypothesis/
+.ruff_cache/
+.mypy_cache/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.code-workspace
+
+# Agent tooling scratch
+.playwright-mcp/
+
+# Raw run logs: transient, superseded between runs, and they embed absolute
+# local paths (Ground Rule 08). Every number that matters is in the
+# committed results/*.json, which `witness verify` checks.
 results/*.log

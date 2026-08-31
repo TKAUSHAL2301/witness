@@ -26,7 +26,7 @@ from pathlib import Path
 
 from witness.fuzz import fuzz_case
 from witness.gate import _to_serial
-from witness.oracle import cell_key, get_oracle
+from witness.oracle import get_oracle
 from witness.port import load_port, slugify
 
 # Chained EDATE arithmetic: the baseline agrees on the workbook's own fiscal
@@ -151,7 +151,7 @@ def run(case_id: str, trials: int = 3000, seed: int = 11) -> int:
         arm = failed[0]
         d = verdicts[arm].disagreement
         _rule()
-        print(f"STEP 3 — Shrink the failure to the smallest input that still breaks it")
+        print("STEP 3 — Shrink the failure to the smallest input that still breaks it")
         _rule()
         if d.shrunk_from:
             print(f"  Reduced from the raw failing vector (trial {d.shrunk_from}) to:")

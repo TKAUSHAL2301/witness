@@ -28,7 +28,7 @@ No Docker. No database. No `ffmpeg`. Nothing to configure.
 ## 1. Set up (about 60 seconds)
 
 ```bash
-git clone <REPO-URL> witness
+git clone https://github.com/TKAUSHAL2301/witness.git witness
 cd witness
 uv sync
 ```
@@ -67,7 +67,8 @@ exits non-zero on red, so it also works as a CI gate.
 [GREEN]  experiment            baseline 24/37 → witness 32/37 (+22pp) at pass^3000
 [GREEN]  mutation score        189/231 semantic mutants killed (81.8%) · 0/165 false alarms
 [GREEN]  oracle coverage       91.4% mean cell coverage · 100% branch coverage
-ALL 6 CHECKS GREEN — every figure in README.md is backed by results/.
+[GREEN]  document claims       8 documents clean · corpus 17 · cases 37 · LICENSE present
+ALL 7 CHECKS GREEN — every published figure is backed by results/.
 ```
 
 To regenerate the artifacts rather than read the committed ones, add `--run`
@@ -129,8 +130,8 @@ uv run python -m witness.selftest 300
 
 ```
 [PASS] budget-and-tax-rate-planning-tool::Recap Page 2.L52   identity=300/300 shortcut=caught
-... (10 cases)
-harness valid on 10/10 cases  (300 trials each)
+... (37 cases)
+harness valid on 37/37 cases  (300 trials each)
 ```
 
 If `identity` is ever less than `300/300`, the environment is leaking
@@ -205,7 +206,7 @@ themselves you need a working `claude` CLI:
 
 ```bash
 uv run python -m witness.port both
-uv run python -m witness.ablation 4
+uv run python -m witness.ablation 12
 ```
 
 Approximate cost of a full regeneration: **under $5** of agent usage on the
@@ -231,11 +232,17 @@ model used here. The evaluation is free.
 
 ## 8. Data
 
-`corpus/` contains 14 municipal finance workbooks published by the
+`corpus/` contains 17 municipal finance workbooks published by the
 **Commonwealth of Massachusetts, Division of Local Services** — debt-service
-schedules, tax-rate planning tools, and 5- and 10-year financial forecasting
-templates. Public records of a US state government, downloaded 2026-08-29 from
-`mass.gov/info-details/municipal-finance-tools-templates-calculators`.
+schedules, tax-rate planning tools, budget calendars, and 5- and 10-year
+financial forecasting templates. Public records of a US state government,
+downloaded from `mass.gov/info-details/municipal-finance-tools-templates-calculators`
+on 2026-08-29 (14 workbooks) and 2026-08-30 (3 more).
+
+Of the 17, **12 carry cached formula values** and are the ones the engine-trust
+gate can validate against; the other 5 — including all 3 added on 2026-08-30 —
+hold **no formula cells at all**, so they contribute no cases. The 37 evaluation
+cases come from 7 workbooks, all of them in the original 14.
 
 They are vendored into the repository, so **no network access is required at
 evaluation time** and the corpus cannot drift underneath the results.

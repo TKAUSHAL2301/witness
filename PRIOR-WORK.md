@@ -17,7 +17,12 @@ Input data — public records, not authored by me:
 
 | Source                         | Provenance                                                                                                                                                                                                     |
 | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 14 municipal finance workbooks | Commonwealth of Massachusetts, Division of Local Services, published at `mass.gov/info-details/municipal-finance-tools-templates-calculators`, downloaded 2026-08-29. Public records of a US state government. |
+| 17 municipal finance workbooks | Commonwealth of Massachusetts, Division of Local Services, published at `mass.gov/info-details/municipal-finance-tools-templates-calculators`. Downloaded 2026-08-29 (14 workbooks, commit `494343f`) and 2026-08-30 (3 more, commit `5442840`). Public records of a US state government. |
+
+All 3 workbooks added on 2026-08-30 turned out to contain **no formula cells**, so
+they contribute no evaluation cases; the 37 cases come from 7 of the original 14.
+They are kept in `corpus/` because the engine-trust gate reports on all 17 and the
+exclusion is meant to be visible rather than tidied away.
 
 ## Written during the competition — mine
 

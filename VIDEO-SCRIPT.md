@@ -33,7 +33,7 @@ uv sync
 uv run python -m witness.verify
 ```
 
-That last command warms every cache and confirms all six checks are green, so
+That last command warms every cache and confirms all seven checks are green, so
 nothing surprises you on camera. Have three tabs open: (1) terminal,
 (2) `CHANGELOG.md`, (3) `certificates/witness/appropriation-template__Annual.D31.md`.
 
@@ -101,9 +101,11 @@ When **Step 3** lands:
 uv run python -m witness.verify
 ```
 
-> "Six checks. Every number this project publishes, re-derived from the raw
-> artifacts and compared against what the README claims — so you are not taking
-> my word for any of it. It exits non-zero if a single figure has drifted.
+> "Seven checks. Every number this project publishes, re-derived from the raw
+> artifacts and compared against what the documents claim — so you are not taking
+> my word for any of it. It exits non-zero if a single figure has drifted. The
+> last check reads every document in the repo and goes red if a superseded claim
+> reappears anywhere in the prose, because that already happened to me twice."
 >
 > Baseline twenty-four of thirty-seven. Witness thirty-two of thirty-seven.
 > **Twenty-two percentage points, McNemar exact p equals 0.0215.**
@@ -179,11 +181,13 @@ _Switch to `CHANGELOG.md`._
 
 ## Recording notes
 
-- `witness.demo` takes about a minute and is safe to run live. `witness.verify`
-  takes ten seconds. Neither needs the network. This whole video can be one take.
-- If you would rather show the full experiment, `witness.evaluate 400` runs in
-  ~4 minutes and reproduces the published headline exactly — **cut it in**, do
-  not wait on camera.
+- `witness.demo` takes **30 seconds** (timed) and is safe to run live. `witness.verify`
+  takes **7 seconds** (timed). Neither needs the network. This whole video can be one take.
+- If you would rather show the experiment running, `witness.evaluate 400` runs in
+  ~3 minutes. Say on camera that it is a **smoke check at a smaller budget** —
+  it reproduces the *shape* of the result at lower confidence, not the published
+  headline, which is `pass^3000` across all three seeds. **Cut it in**, do not
+  wait on camera.
 - Do **not** speed the terminal up so far the numbers are unreadable.
 - If a command fails on camera, keep going and say what happened. Judges score
   honesty above polish.

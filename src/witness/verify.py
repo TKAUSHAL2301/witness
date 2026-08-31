@@ -12,6 +12,12 @@ So this module does not re-run the science. It reads the artifacts the science
 left behind, re-derives each headline figure from the raw rows, and checks it
 against the value published in README.md. A stale artifact turns the check red.
 
+That was still not enough. An audit before submission found the same figures had
+drifted a third time — in CHANGELOG.md, AGENTS.md, PRIOR-WORK.md and REPRODUCE.md,
+documents no check had ever read, while all six checks stayed green. The seventh
+check closes that gap: it reads every prose document and turns red if a superseded
+claim reappears in any of them.
+
   uv run python -m witness.verify           read committed artifacts (seconds)
   uv run python -m witness.verify --run     regenerate them first (~10 min)
 
@@ -22,6 +28,7 @@ the last thing to run before submitting.
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -158,7 +165,7 @@ def check_experiment() -> Check:
         if not cs["arms"].get("baseline", {}).get("certified")
     ]
     if deltas:
-        c.notes.append(f"largest error the baseline certified as correct: ${max(deltas):,.0f}")
+        c.notes.append(f"largest error the fuzzer found in a failing baseline port: ${max(deltas):,.0f}")
     return c.pas(f"baseline {b}/{tot} → witness {w}/{tot} (+{pp}pp) at pass^{s['trials']}")
 
 
@@ -198,6 +205,119 @@ def check_coverage() -> Check:
     return c.pas(f"{mc:.1%} mean cell coverage · {mb:.0%} branch coverage")
 
 
+# ---------------------------------------------------------------------------
+# Document consistency.
+#
+# The six checks above compare README.md against results/. That is necessary
+# and it is not sufficient: an audit before submission found the same figures
+# had drifted in CHANGELOG.md, AGENTS.md, PRIOR-WORK.md, REPRODUCE.md and the
+# trajectories — documents no check had ever read. Every green run had missed
+# them, because the claims and the evidence were still never compared.
+#
+# So this check reads every prose document in the repository and fails on a
+# superseded claim reappearing anywhere in it. Each pattern below is a fact
+# that was once true and no longer is; the reason is recorded beside it so a
+# future reader knows what corrected it rather than only that it is banned.
+# ---------------------------------------------------------------------------
+
+DOCS = [
+    "README.md",
+    "CHANGELOG.md",
+    "AGENTS.md",
+    "PRIOR-WORK.md",
+    "REPRODUCE.md",
+    "VIDEO-SCRIPT.md",
+]
+
+# The rendered agent transcripts are deliberately NOT scanned for superseded
+# claims. A transcript is a record of what was said at the time, so it is
+# supposed to contain numbers that were later corrected — the first run of this
+# check flagged three, and every one was a verbatim tool call from an earlier
+# session. Editing them to satisfy a linter would falsify the very deliverable
+# they exist to provide. They are scanned only for the two things that must
+# never appear in them regardless: an unfilled placeholder, and a leaked
+# absolute path from the machine this was built on.
+TRANSCRIPTS = [
+    "trajectories/01-build-agent.md",
+    "trajectories/02-port-agent.md",
+]
+
+LEAKS = [
+    (r"<YOUR NAME>|<REPO-URL>", "an unfilled placeholder"),
+    (r"/Users/[A-Za-z0-9._-]+/", "a leaked absolute home path"),
+]
+
+SUPERSEDED = [
+    (r"14 (?:municipal finance|public-record) workbooks", "the corpus is 17 workbooks"),
+    (r"20 candidate ports", "74 candidate ports: 37 baseline + 37 witness"),
+    (r"10 baseline, 10 Witness", "37 baseline, 37 witness"),
+    (r"10 cases is thin", "37 cases; the corpus is too easy, not too small"),
+    (r"10/10 cases", "37/37 cases"),
+    (r"\(10 cases\)", "the self-test covers 37 cases"),
+    (r"30,000 vectors", "9,000 vectors per case (3,000 trials x 3 seeds)"),
+    (r"17 workbooks parsed", "results/dag.json covers 14; the other 3 hold no formula cells"),
+    (r"33 certified ports", "33 mutated ports: the 32 certified plus Available Funds.S48"),
+    (r"Five cases have a single free input", "eleven of the 37 cases have a single free input"),
+    (r"6.38 inputs, 8.366 formula nodes", "1-56 inputs, 14-118 formula nodes"),
+    (r"witness\.ablation 4\b", "the committed ablation artifact is a 12-case run"),
+    (r"certified (?:_?themselves_?|itself) as correct while sitting on",
+     "13 baseline ports self-certified and were wrong; only 6 by five figures"),
+    (r"certified as correct: \$", "a certified port has zero error by construction"),
+    (r"<YOUR NAME>", "the entrant is named in README.md"),
+    (r"<REPO-URL>|git clone <repo>", "the clone URL must be a real, reachable URL"),
+]
+
+
+def check_docs() -> Check:
+    c = Check("document claims")
+    n_workbooks = len(sorted(Path("corpus").glob("*.xlsx")))
+    cases = _load("cases.json")
+    n_cases = len(cases) if cases else 0
+
+    hits: list[str] = []
+    read = 0
+    for name in DOCS:
+        p = Path(name)
+        if not p.exists():
+            hits.append(f"{name} is missing")
+            continue
+        read += 1
+        for i, line in enumerate(p.read_text().splitlines(), 1):
+            for pat, why in SUPERSEDED:
+                if re.search(pat, line):
+                    hits.append(f"{name}:{i} superseded claim — {why}")
+
+    for name in TRANSCRIPTS:
+        p = Path(name)
+        if not p.exists():
+            hits.append(f"{name} is missing")
+            continue
+        read += 1
+        for i, line in enumerate(p.read_text().splitlines(), 1):
+            for pat, why in LEAKS:
+                if re.search(pat, line):
+                    hits.append(f"{name}:{i} {why}")
+
+    if not Path("LICENSE").exists():
+        hits.append("LICENSE is missing — required for the licence-compliance rule")
+
+    if hits:
+        for h in hits[1:6]:
+            c.notes.append(h)
+        if len(hits) > 6:
+            c.notes.append(f"...and {len(hits) - 6} more")
+        return c.fail(hits[0])
+
+    if n_workbooks != 17 or n_cases != CLAIMED_SELFTEST_CASES:
+        return c.fail(
+            f"corpus holds {n_workbooks} workbooks and cases.json {n_cases} cases; "
+            f"the documents are written for 17 and {CLAIMED_SELFTEST_CASES}"
+        )
+
+    c.notes.append(f"{len(SUPERSEDED)} superseded claims, each checked in every document")
+    return c.pas(f"{read} documents clean · corpus {n_workbooks} · cases {n_cases} · LICENSE present")
+
+
 CHECKS = [
     check_gate,
     check_selftest,
@@ -205,6 +325,7 @@ CHECKS = [
     check_experiment,
     check_mutation,
     check_coverage,
+    check_docs,
 ]
 
 
@@ -251,7 +372,7 @@ def main(argv: list[str]) -> int:
     n_ok = sum(1 for c in results if c.ok)
     print(bar)
     if n_ok == len(results):
-        print(f"{grn}ALL {len(results)} CHECKS GREEN{off} — every figure in README.md is backed by results/.")
+        print(f"{grn}ALL {len(results)} CHECKS GREEN{off} — every published figure is backed by results/.")
     else:
         print(f"{red}{len(results) - n_ok} OF {len(results)} CHECKS RED{off} — see above.")
     print(f"{bar}\n")
