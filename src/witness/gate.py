@@ -4,7 +4,9 @@ Before any fuzzing, the pure-Python recalculation engine must be shown to
 reproduce the values Excel itself last cached inside the .xlsx. If it cannot,
 the acceptance oracle is untrustworthy and the whole approach is void.
 
-Exit criterion (plan §9): >= 10 of 15 workbooks reproduce within tolerance.
+Exit criterion (plan §9, pre-registered when the corpus held 15 workbooks):
+>= 10 must reproduce within tolerance. The corpus later grew to 17; the bar
+was deliberately NOT moved with it.
 """
 
 from __future__ import annotations
@@ -240,7 +242,7 @@ def main(argv: list[str]) -> int:
     )
 
     print(f"\n{'=' * 64}\nGATE: {passed}/{total} workbooks reproduce their own cached values")
-    print("Criterion (plan §9): >= 10 of 15 -> proceed with Witness")
+    print("Criterion (plan §9, pre-registered at 15 workbooks): >= 10 -> proceed")
     print("results/gate.json written")
     return 0 if passed >= 10 else 1
 
