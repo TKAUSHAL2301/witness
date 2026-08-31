@@ -165,7 +165,7 @@ def check_experiment() -> Check:
         if not cs["arms"].get("baseline", {}).get("certified")
     ]
     if deltas:
-        c.notes.append(f"largest error the fuzzer found in a failing baseline port: ${max(deltas):,.0f}")
+        c.notes.append(f"largest delta in a failing baseline port: {max(deltas):,.0f} (a date-serial day count, not dollars)")
     return c.pas(f"baseline {b}/{tot} → witness {w}/{tot} (+{pp}pp) at pass^{s['trials']}")
 
 
@@ -226,7 +226,6 @@ DOCS = [
     "AGENTS.md",
     "PRIOR-WORK.md",
     "REPRODUCE.md",
-    "VIDEO-SCRIPT.md",
 ]
 
 # The rendered agent transcripts are deliberately NOT scanned for superseded
@@ -263,6 +262,12 @@ SUPERSEDED = [
     (r"certified (?:_?themselves_?|itself) as correct while sitting on",
      "13 baseline ports self-certified and were wrong; only 6 by five figures"),
     (r"certified as correct: \$", "a certified port has zero error by construction"),
+    (r"\$47,482|median error when it failed.*\$47",
+     "that median filtered out zero deltas; the median of all 13 failures is $2,340"),
+    (r"\$50,951|\$47,000 silent error|\$48,030",
+     "those deltas are date-serial DAYS on date-formatted cells, not dollars"),
+    (r"five-figure errors?\*?\*? — chained", "the five-figure deltas are days, not dollars"),
+    (r"\b212\b|18 scale|88 monoton", "106 derived / 53 confirmed (9 scale, 44 monotone); 212/106 double-counted the arms"),
     (r"<YOUR NAME>", "the entrant is named in README.md"),
     (r"<REPO-URL>|git clone <repo>", "the clone URL must be a real, reachable URL"),
 ]

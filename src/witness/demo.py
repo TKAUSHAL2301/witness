@@ -20,6 +20,9 @@ from disk and both are fuzzed live against the workbook.
 
 from __future__ import annotations
 
+import contextlib
+import datetime as _dt
+import io
 import json
 import sys
 from pathlib import Path
@@ -30,7 +33,9 @@ from witness.oracle import get_oracle
 from witness.port import load_port, slugify
 
 # Chained EDATE arithmetic: the baseline agrees on the workbook's own fiscal
-# year and drifts by years on any other, which is worth $48,030 on this cell.
+# year and returns nothing at all on any other. The target is a DATE cell
+# (number format m/d/yyyy), so its values are Excel date serials, not dollars —
+# 48,030 is 1 July 2031.
 DEFAULT_CASE = "financial-forecasting-template-10-year::Available Funds.T48"
 
 W = 74
@@ -42,6 +47,45 @@ def _rule(ch: str = "─") -> None:
 
 def _money(v) -> str:
     return f"{v:,.2f}" if isinstance(v, (int, float)) else str(v)
+
+
+def _as_date(v):
+    """Excel date serial -> the date it denotes, or None if it is not plausibly one.
+
+    The target of this walkthrough is a date-formatted cell, so its values are
+    day counts from Excel's epoch. Printing 48,030.00 and calling it a number
+    invites exactly the unit confusion this project exists to catch.
+    """
+    if not isinstance(v, (int, float)) or isinstance(v, bool):
+        return None
+    if not (20000 <= float(v) <= 80000):
+        return None
+    try:
+        return _dt.date(1899, 12, 30) + _dt.timedelta(days=int(v))
+    except (OverflowError, ValueError):
+        return None
+
+
+def _shown(v) -> str:
+    """A value plus, when it is a date serial, the date a reader would recognise."""
+    d = _as_date(v)
+    return f"{_money(v)}  (= {d.isoformat()})" if d else _money(v)
+
+
+def _quiet(fn, *a, **kw):
+    """Run fn with the formula engine's loader chatter captured.
+
+    `formulas` prints one line per external-workbook link it cannot resolve.
+    Those sheets are not in any cell's dependency cone, so the noise is
+    irrelevant to the result — but it is the first thing on screen, and a wall
+    of red before the output reads as a broken tool. Captured, counted, and
+    reported in one honest line instead of hidden.
+    """
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf), contextlib.redirect_stderr(buf):
+        out = fn(*a, **kw)
+    noise = [ln for ln in buf.getvalue().splitlines() if ln.strip()]
+    return out, noise
 
 
 def _historical(case: dict) -> tuple[list, object]:
@@ -84,9 +128,16 @@ def run(case_id: str, trials: int = 3000, seed: int = 11) -> int:
         print(f"    · {spec['key']:<28} {spec['kind']:<6} feeds {used}")
     print()
 
-    oracle = get_oracle(case["workbook"])
+    oracle, noise = _quiet(get_oracle, case["workbook"])
     refs = [s["key"] for s in case["inputs"]]
-    oracle_fn, _ = oracle.compile_case(refs, case["target"])
+    (oracle_fn, _), noise2 = _quiet(oracle.compile_case, refs, case["target"])
+    skipped = len([ln for ln in noise + noise2 if "Error in loading" in ln])
+    if skipped:
+        print(
+            f"  note  {skipped} external-workbook link sheets could not be loaded;"
+            f" none is in this cell's dependency cone."
+        )
+        print()
 
     ports = {}
     for arm in ("baseline", "witness"):
@@ -102,8 +153,8 @@ def run(case_id: str, trials: int = 3000, seed: int = 11) -> int:
     _rule()
     print("STEP 1 — Tie out against the historical values, the way it is done today")
     _rule()
-    print(f"  Inputs as the workbook was last saved: {[_money(v) for v in hist_vector]}")
-    print(f"  Excel's own cached answer:             {_money(cached)}")
+    print(f"  Inputs as the workbook was last saved: {[_shown(v) for v in hist_vector]}")
+    print(f"  Excel's own cached answer:             {_shown(cached)}")
     tied = {}
     for arm in ("baseline", "witness"):
         try:
@@ -160,7 +211,7 @@ def run(case_id: str, trials: int = 3000, seed: int = 11) -> int:
         if d.minimal_change:
             print(f"  Minimal change: {d.minimal_change}")
         print()
-        print(f"    spreadsheet says   {_money(d.expected):>18}")
+        print(f"    spreadsheet says   {_shown(d.expected):>18}")
         if d.actual is None:
             print(f"    {arm} port says   {'no value at all':>18}")
             print()

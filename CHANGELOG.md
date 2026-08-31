@@ -77,7 +77,7 @@ to both arms, before either arm was scored, and it can only make the criterion
 | **7 · Baseline capture defect**            | Reviewed the baseline arm before believing its score. The agent _wrote its module to disk_ and printed a prose summary; the harness read stdout and stored the prose.                                   | **3 of 10** baseline ports were unimportable prose                                                                                       | **Fixed, not reported.** Scoring the baseline as broken because of my own capture bug would have violated the fairness requirement. Sandboxed the agent, told it where to write, regenerated all 10. **10/10 now import.** v1 kept in `ports/_baseline_v1/` as evidence. |
 | **8 · Corpus growth** | McNemar p=0.219 on 10 cases meant the result was underpowered. The legitimate fix is more evidence, not a different number: 3 more workbooks, and relaxed selection (min depth 6→3, max inputs 40→60, per-sheet cap 2→5). | **10 → 37 cases** across 7 workbooks. **The 3 added workbooks contributed none of them** — all 3 turned out to hold zero formula cells, so every one of the 37 cases comes from the original 14. The growth is entirely the relaxed selection. | **Kept, with the credit corrected.** Every added case still passes the sensitivity screen and the always-zero shortcut check. |
 | **9 · Oracle cache** | The evaluator rebuilt the full workbook model per case. 37 cases over 7 workbooks meant recompiling the same large workbook a dozen times. | evaluation wall-clock from multi-hour to ~2 h; fuzzing itself is ~1 ms/vector | **Kept.** The bottleneck was never the fuzzing. |
-| **10 · Invariant layer** | Point equality on sampled vectors is blind to a port that is structurally wrong but agrees on the values drawn. Derive scale-homogeneity and monotonicity from the DAG. | 212 invariants proposed, **106 confirmed against the oracle** (18 scale, 88 monotone), **0 violated by any port** | **Kept, and it found nothing.** Reported as a null contribution rather than presented as a success — see below. |
+| **10 · Invariant layer** | Point equality on sampled vectors is blind to a port that is structurally wrong but agrees on the values drawn. Derive scale-homogeneity and monotonicity from the DAG. | **106 invariants derived** across the 37 cases, **53 confirmed against the oracle** (9 scale, 44 monotone), **0 violated by any of the 74 ports**. An earlier count double-counted these by reporting them once per arm. | **Kept, and it found nothing.** Reported as a null contribution rather than presented as a success — see below. |
 | **11 · Mutation suite** | The first suite used one mutant (blank-as-zero) and killed 0/10 — the wrong mutant for this corpus, not a weak fuzzer. Rebuild around the families the corpus actually exhibits. | **189/231 semantic mutants killed (81.8%)**, **0/165 false alarms (0.0%)** across 33 mutated ports — the 32 certified, plus `Available Funds.S48`, whose sole failure is a date-serial ±1 on one seed | **Kept.** The 0% false-alarm rate is what the equivalent-mutant controls exist to prove; without them a kill rate just rewards paranoia. |
 | **12 · Coverage map** | "9,000 vectors agreed" is weak if every vector drove the calculation down the same branch. Measure which cells and IF-branches actually varied. | **91.4% mean cell coverage, 100% branch coverage** | **Kept.** The certificate's limits section is now a number, not a disclaimer. |
 | **13 · pytest plugin** | A report is a deliverable; a CI gate is a tool. `certify_equivalent(workbook, target, port)` produces a normal pytest test whose failure message *is* the shrunk counterexample. | tests pass for a certified port and **fail for a banker's-rounding mutant** | **Kept.** Turns a migration project into a regression gate. |
@@ -140,7 +140,7 @@ are the ones that did not survive.
 | Removed                                              | Why it was tried                                                                                                              | What happened                                                                                                                          | What it taught                                                                                                           |
 | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | **Prose critique as the repair signal**              | The obvious design, and what most agent repair loops do: have a model explain the failure, hand the explanation to the fixer. | See [Ablation](#ablation-what-the-repair-loop-is-fed)                                                                                  | A shrunk counterexample is a _fact_; a critique is a _hypothesis_, and a wrong hypothesis actively misdirects the fixer. |
-| **Invariant layer as a REMOVED experiment**           | Recorded here as cut for time when the schedule collapsed from 34 to ~16 build-hours.                                         | **Superseded — it was built after all.** It shipped as stage 10: 212 invariants proposed, 106 confirmed against the oracle, **0 violated**. Its null contribution is reported there, not here.                                                                   | Not a finding — an honest scope cut. It would likely have added detection power and is the first thing to build next.    |
+| **Invariant layer as a REMOVED experiment**           | Recorded here as cut for time when the schedule collapsed from 34 to ~16 build-hours.                                         | **Superseded — it was built after all.** It shipped as stage 10: 106 invariants derived, 53 confirmed against the oracle, **0 violated**. Its null contribution is reported there, not here.                                                                   | Not a finding — an honest scope cut. It would likely have added detection power and is the first thing to build next.    |
 | **Per-block (per-SCC) translation**                  | 2,300 formulas in one context window degrades badly.                                                                          | Collapsed to whole-cone translation once cases were scoped to a single output — the cone is small enough that blocking bought nothing. | Solving the right problem upstream (case scoping) removed the need for the downstream mitigation entirely.               |
 | **Whole-workbook fuzzing**                           | The first design: fuzz every input in the workbook.                                                                           | 195,141 inputs on one workbook. Not a fuzzable surface.                                                                                | Scope the verification to the claim a human actually needs to sign, not to the artifact's full surface area.             |
 
@@ -197,8 +197,9 @@ Command: `uv run python -m witness.evaluate 3000` · Raw: `results/evaluation.js
 | **Certified-equivalence rate** (`pass^3000`, all 3 seeds) | **65%** | **86%** | **+22 pp** |
 | Ports certified | 24 / 37 | 32 / 37 | +8 |
 | Ports that failed | 13 | 5 | −8 |
-| **Median error when it failed** | **$47,482** | **$1** | — |
-| Largest undetected error in a self-certified port | **$50,951** | $9,132 | — |
+| Failures wrong by more than a century on a **date** cell | **6 of 13** | **0 of 5** | **−6** |
+| Worst date error | **50,951 days (~139 y)** | 9,132 days (~25 y) | — |
+| Worst **currency** error | **$2,340** | **none** | — |
 | Machine time to certify one port | — | **236 s** (3 seeds × 3,000 vectors), measured | — |
 | Human time per port | *estimated* 2–4 h manual tie-out | **0 min** — no human in the measurement loop | *estimate, not measured* |
 | Cost per certification | — | **$0** to run; the fuzzer calls no model | — |
@@ -228,18 +229,23 @@ direction held while the interval tightened.
 
 ### The finding that matters more than the rate
 
-**When the baseline fails, it fails by a median of $47,482.
-When Witness fails, it fails by a median of $1.**
+**Six of the baseline's thirteen failures return a date more than a century away
+from the correct one.**
 
-Both arms produce imperfect ports. The difference is the *size* of what survives.
-Thirteen baseline ports certified themselves as correct and were wrong; **six of
-those thirteen were sitting on five-figure errors** — chained `EDATE` date
-arithmetic landing years off — the largest $50,951. The other seven are $2,340
-and below. Witness's five failures are dominated by ±1 rounding-mode
-disagreements it found and reported rather than shipped.
+Those six are fiscal-year cells — `=EDATE(Z16,12)` and references to it — where
+the port dropped Excel's date semantics entirely. **The unit is days, not
+dollars.** 50,951 days is the distance from Excel's epoch to 30 June 2039, the
+value the workbook actually holds. Witness's five failures are three ±1
+disagreements, one zero-delta structural failure, and one shared hard case.
+Across the whole run the baseline has exactly one currency failure, $2,340;
+Witness has none.
 
-A verifier that turns a $47,000 silent error into a $1 disclosed one has done
-its job even when it does not reach GREEN.
+**A correction, recorded rather than quietly fixed.** An earlier version of this
+changelog reported those six as dollar amounts and headlined a *"median error
+when it failed"* of five figures. That was wrong twice: the deltas are date serials, not
+money, and the median was taken over the ten nonzero failures rather than all
+thirteen — the median of all thirteen is $2,340. Both figures are now banned by
+name in the claim verifier's superseded list, so neither can return.
 
 ---
 
@@ -272,9 +278,9 @@ limitation the ablation ran into.
 
 ## The invariant layer found nothing, and that is worth saying
 
-The invariant layer proposed 212 properties and confirmed 106 of them against
-the oracle — 18 scale-homogeneity, 88 monotonicity. **Ports violated zero of
-them.**
+The invariant layer derived **106 properties** across the 37 cases and confirmed
+**53** of them against the oracle — 9 scale-homogeneity, 44 monotonicity — before
+enforcing any of them on a port. **All 74 ports violated zero.**
 
 Every case that the invariants could have caught, the differential fuzzer had
 already caught by value comparison. On this corpus the component contributed no

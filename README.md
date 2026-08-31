@@ -1,17 +1,54 @@
 # Witness
 
-**An acceptance oracle for spreadsheet-to-code migrations.**
+## Prove the code still gets the same answer as the spreadsheet — before anyone signs off on it
 
-Witness ports a finance team's Excel workbook to Python and then refuses to
-certify the port until **9,000 differentially fuzzed input vectors** agree —
-after first proving its own recalculation engine can reproduce the values Excel
-itself cached inside the file. The acceptance oracle is the spreadsheet. Never a
-model.
+Finance runs on spreadsheets. Sooner or later engineering rewrites them as code.
+The rewrite is routine. **Proving the two agree is not** — and today nobody
+really does. The industry check is _"the last three quarters still tie out, ship
+it,"_ which is how a wrong number reaches a closed quarter and comes back as a
+restatement six months later.
 
-_(9,000 = 3,000 trials × 3 independent seeds per case, the budget the reported
-experiment actually ran. The harness and the pytest gate both default to 10,000
-per seed; the reported run was capped to fit the event's clock, and every number
-below is from the 3,000 × 3 configuration.)_
+**Witness replaces that check with evidence.** Point it at a workbook and the
+cell you care about. It writes the Python, then tries 9,000 generated scenarios
+against it. If nothing breaks, you get a **one-page certificate you can put your
+name on**: what was tested, over what range, and what it does not cover. If
+something breaks, you get the exact input that broke it — and no certificate.
+
+|  | Before | With Witness |
+| -- | ------ | ------------ |
+| What proves the port is right | 3 historical quarters tie out | **9,000 generated scenarios per cell** |
+| Who decides it is safe to cut over | whoever is confident | a named reviewer, on a signed certificate |
+| What happens when it is wrong | found at the next close | found before sign-off, with the breaking input |
+| Cost per cell checked | 2–4 h of manual tie-out | **236 s of compute · $0 in model calls** |
+
+The acceptance oracle is the spreadsheet itself. Never a model — nothing here
+asks an AI whether the AI got it right.
+
+> _9,000 = 3,000 trials × 3 independent seeds (11, 23, 47), the budget the
+> reported experiment actually ran. The harness and the pytest gate default to
+> 10,000 per seed; the reported run was capped to fit the event's clock, and
+> every number below comes from the 3,000 × 3 configuration._
+
+---
+
+## Where each deliverable lives
+
+| # | Deliverable | Here |
+| - | ----------- | ---- |
+| 1 | Solution code + Improvement Changelog | [`src/witness/`](src/witness/) · [CHANGELOG.md](CHANGELOG.md) |
+| 2 | Reproduction guide | [REPRODUCE.md](REPRODUCE.md) |
+| 3 | Solution video | linked in the submission form |
+| 4 | Agent trajectories | [`trajectories/`](trajectories/) |
+| — | Prior work · AI tool disclosure · licence | [PRIOR-WORK.md](PRIOR-WORK.md) · [AGENTS.md](AGENTS.md) · [LICENSE](LICENSE) |
+
+**One command checks that every number below is still true:**
+
+```bash
+uv run python -m witness.verify
+```
+
+It re-derives each published figure from the raw artifacts in `results/` and
+exits non-zero if one has drifted.
 
 ---
 
@@ -19,11 +56,11 @@ below is from the 3,000 × 3 configuration.)_
 
 **Tanya Kaushal** — solo entrant. One person, all four deliverables.
 
-I entered as an individual under the August 2026 edition's one-person rule. Every
-line of `src/` and every evaluation case in this repository was written after
-kickoff; everything I did not write is declared in
-[PRIOR-WORK.md](PRIOR-WORK.md). The coding agents I used and the trajectories
-they produced are disclosed in [AGENTS.md](AGENTS.md).
+I entered as an individual under the August 2026 edition's one-person rule.
+Every line of `src/` and every evaluation case was written after kickoff;
+everything I did not write is declared in [PRIOR-WORK.md](PRIOR-WORK.md), and
+the coding agents I used — with the trajectories they produced — are disclosed
+in [AGENTS.md](AGENTS.md).
 
 ---
 
@@ -37,14 +74,14 @@ contractor. Owen has to personally sign that the Python matches the spreadsheet
 before the first quarter closes on it. He is not a programmer. He is the person
 whose name is on the number.
 
-## What bottleneck makes it worth solving
+### The bottleneck
 
-**Nobody can prove a port is right.** The universal industry practice is _"tie
-out three historical quarters and hope."_
+**Nobody can prove a port is right.** The universal practice is _"tie out three
+historical quarters and hope."_
 
-That practice is structurally broken, and the reason is subtle: historical
-inputs are a measure-zero slice of the input space, and they are precisely the
-slice the bug already avoided. Divergences hide where historical data never went:
+That is structurally broken, and the reason is subtle: historical inputs are a
+measure-zero slice of the input space, and they are precisely the slice the bug
+already avoided. Divergences hide where historical data never went.
 
 | Failure family           | What Excel does                           | What naive Python does              |
 | ------------------------ | ----------------------------------------- | ----------------------------------- |
@@ -52,140 +89,307 @@ slice the bug already avoided. Divergences hide where historical data never went
 | Rounding                 | `ROUND` is half-away-from-zero            | Python `round` is banker's rounding |
 | Text in a numeric column | Coerced to `0` inside `SUM`               | `TypeError`, or silently dropped    |
 | Tier boundaries          | `VLOOKUP(..., TRUE)` on an unsorted table | Exact match, or a different tier    |
+| Date arithmetic          | `EDATE` returns a serial Excel formats    | a string, a `datetime`, or nothing  |
 | Negative inputs          | Often a different branch                  | Untested path                       |
 
-These surface six months later as a restated quarter and a very bad board
-meeting. The cost is not developer time. It is a financial restatement.
+These surface six months later as a restated quarter. The cost is not developer
+time. It is a financial restatement.
 
 ---
 
 ## Architecture
 
-The design thesis in one line: **do not verify the translator — verify each
-individual translation, over the input domain.** That is _translation
-validation_, borrowed from compiler verification (Pnueli, 1998). The field is
-full of agents that write code. Almost nobody builds the thing that decides
-whether written code may be trusted.
+**Design thesis: do not verify the translator — verify each individual
+translation, over its whole input domain.** That is _translation validation_,
+borrowed from compiler verification (Pnueli, 1998). The field is full of agents
+that write code. Almost nobody builds the thing that decides whether written
+code may be trusted.
 
+**One model call sits inside eight deterministic stages.** The agent is used
+where judgement is needed — reading formulas, writing code — and is excluded
+from every step that decides whether that code is correct.
+
+### Component and data flow
+
+Nodes are real modules; edge labels are the actual types passed between them.
+
+```mermaid
+flowchart TB
+    XL[("corpus/*.xlsx")]
+
+    subgraph L0 ["Trust layer"]
+        GATE["<b>gate.check_workbook</b>(path)<br/>recalc every formula cell vs<br/>Excel's own cached value<br/>ABS_TOL 1e-6 · REL_TOL 1e-9"]
+    end
+
+    subgraph L1 ["Extraction layer — deterministic"]
+        DAGB["<b>dag.build</b>(path)<br/>regex ref/func scan over openpyxl cells"]
+        ORC["<b>oracle.get_oracle</b>(path)<br/>process-cached WorkbookOracle<br/>.compile_case(refs, target)"]
+        SCR["<b>cases.sensitivity_screen</b>(oracle, target, specs)<br/>SCREEN_DRAWS 60 · MIN_DISTINCT 3<br/>MIN_NONZERO_FRAC 0.25"]
+    end
+
+    AGENT["<b>port.gen_witness</b>(case, out, max_repairs=3)<br/><i>the only LLM step</i><br/>subprocess: claude -p --max-turns 6<br/>--allowedTools '' · timeout 900 s"]
+
+    subgraph L2 ["Verification layer — deterministic"]
+        FZ["<b>fuzz.fuzz_case</b>(case, oracle_fn, port_fn,<br/>trials, seed, time_budget_s=240)<br/>VectorSampler · values_agree"]
+        SH["<b>fuzz._shrink</b>(...)<br/>rounds=2 · budget=400 evals"]
+        IV["<b>invariants.check</b>(case, oracle_fn,<br/>port_fn, sampler, probes=6)"]
+        RG{"<b>dag.NONDETERMINISTIC</b><br/>NOW TODAY RAND RANDBETWEEN<br/>RANDARRAY OFFSET INDIRECT<br/>in the cone?"}
+    end
+
+    subgraph L3 ["Evidence layer"]
+        EV["<b>evaluate.evaluate</b>(trials,<br/>SEEDS=[11,23,47], arms)"]
+        CB["<b>certificate.build</b>(case, arm_result,<br/>nodes, generated_at, cov)"]
+        VF["<b>verify</b> — 7 checks vs CLAIMED_*<br/>exit 1 on drift"]
+    end
+
+    RJSON[("results/*.json")]
+    RPORT[("ports/&lt;arm&gt;/&lt;slug&gt;.py")]
+    RCERT[("certificates/&lt;arm&gt;/&lt;slug&gt;.md")]
+    ESC[["CANNOT CERTIFY<br/>escalate, never a silent pass"]]
+
+    XL --> GATE
+    GATE -- "WorkbookReport<br/>passes: bool" --> DAGB
+    XL --> ORC
+    DAGB -- "WorkbookDAG<br/>list[InputSpec]" --> SCR
+    ORC -- "Callable[[list], object]" --> SCR
+    SCR -- "case dict:<br/>id · workbook · target<br/>formula_nodes · inputs" --> AGENT
+    SCR -- "case dict" --> RJSON
+
+    AGENT -- "port.py source<br/>compute(inputs: dict)" --> RPORT
+    RPORT -- "load_port → Callable" --> FZ
+    FZ -- "FuzzResult<br/>certified · max_abs_delta" --> IV
+    FZ -- "Disagreement" --> SH
+    SH -- "<b>minimal failing vector only</b><br/>no prose critique" --> AGENT
+
+    IV -- "InvariantReport<br/>derived · confirmed · violations" --> RG
+    RG -- "no" --> EV
+    RG -- "yes" --> ESC
+    EV --> RJSON
+    EV --> CB
+    CB --> RCERT
+    RJSON --> VF
+    RCERT --> VF
+
+    classDef det fill:#eef4ff,stroke:#3b6bb5,color:#12263f
+    classDef llm fill:#fff3e0,stroke:#c77700,color:#3f2a00,stroke-width:2px
+    classDef store fill:#f3f0fa,stroke:#7a5fa8,color:#2c1f45
+    classDef stop fill:#fdecec,stroke:#c0392b,color:#4a1010
+    class GATE,DAGB,ORC,SCR,FZ,SH,IV,RG,EV,CB,VF det
+    class AGENT llm
+    class XL,RJSON,RPORT,RCERT store
+    class ESC stop
+    style L0 fill:#fbfbfd,stroke:#c9cfda,stroke-dasharray:4 3,color:#5a6272
+    style L1 fill:#fbfbfd,stroke:#c9cfda,stroke-dasharray:4 3,color:#5a6272
+    style L2 fill:#fbfbfd,stroke:#c9cfda,stroke-dasharray:4 3,color:#5a6272
+    style L3 fill:#fbfbfd,stroke:#c9cfda,stroke-dasharray:4 3,color:#5a6272
 ```
-                          ┌───────────────────────────────┐
-   workbook.xlsx  ───────▶│  0 · ENGINE-TRUST GATE        │  ✅ 12/12 usable
-                          │    recalc every formula cell  │     36,500 cells
-                          │    vs Excel's OWN cached      │     0 disagreements
-                          │    values. Fail ⇒ refuse.     │
-                          └───────────────┬───────────────┘
-                                          │ engine is trustworthy for this file
-                                          ▼
-                          ┌───────────────────────────────┐
-                          │  1 · FORMULA-DAG EXTRACTOR    │   deterministic,
-                          │    openpyxl. Separates true   │   NO model involved
-                          │    inputs from derived cells; │
-                          │    finds outputs; types each  │
-                          │    input's domain.            │
-                          └───────────────┬───────────────┘
-                                          │ typed input domain + topology
-                                          ▼
-                          ┌───────────────────────────────┐
-                          │  2 · PER-BLOCK TRANSLATION    │   ◀── the only
-                          │    one strongly-connected     │       LLM step
-                          │    block at a time, never the │
-                          │    whole 2,300-formula sheet  │
-                          └───────────────┬───────────────┘
-                                          │ candidate port.py
-                                          ▼
-        ┌─────────────────────────────────────────────────────────┐
-        │  3 · DIFFERENTIAL FUZZER      ← this component IS the   │
-        │      metric, not a check on it                          │
-        │                                                         │
-        │   hypothesis generates a vector from the typed domain   │
-        │        │                                                │
-        │        ├──▶ formulas engine runs the .xlsx    ──┐       │
-        │        └──▶ generated Python runs the port    ──┤       │
-        │                                                 ▼       │
-        │                                        compare, tolerance│
-        └───────────────┬─────────────────────────────────┬───────┘
-                    agree │                               │ DISAGREE
-                          │                               ▼
-                          │              ┌────────────────────────────┐
-                          │              │  4 · SHRINK                │
-                          │              │   minimise to the smallest │
-                          │              │   failing input            │
-                          │              └────────────┬───────────────┘
-                          │                           │
-                          │      ┌────────────────────┘
-                          │      │  ONLY the shrunk counterexample
-                          │      │  is fed back — never the fuzzer's
-                          │      │  prose explanation of it.
-                          │      └──────────▶ back to step 2
-                          ▼
-              ┌───────────────────────────────────┐
-              │  5 · INVARIANT LAYER              │  beyond point equality:
-              │     monotonicity, totals = Σparts │  catches bug families a
-              │     derived from the DAG          │  vector comparison misses
-              └───────────────┬───────────────────┘
-                              ▼
-              ┌───────────────────────────────────┐
-              │  6 · REFUSAL GATE                 │  any output cell depending
-              │     unsupported Excel function    │  on an unsupported function
-              │     ⇒ CANNOT CERTIFY              │  ⇒ never marked GREEN
-              └───────────────┬───────────────────┘
-                              ▼
-              ┌───────────────────────────────────┐
-              │  7 · EQUIVALENCE.md CERTIFICATE   │  trials, seed, declared
-              │     ── Owen signs this ──         │  domain, tolerance, residual
-              │     incl. "what is NOT covered"   │  disagreements, and the
-              └───────────────────────────────────┘  explicit coverage limits
+
+### Control flow for one case
+
+Every loop is bounded. The bounds are constants in the source, not conventions.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant E as evaluate.py
+    participant P as port.gen_witness
+    participant A as claude -p<br/>(subprocess)
+    participant F as fuzz.fuzz_case
+    participant O as WorkbookOracle<br/>(formulas engine)
+
+    E->>P: case dict (cone, typed inputs, target)
+    P->>A: prompt = cone source + input domains + CONTRACT
+    Note over A: --max-turns 6, --allowedTools "" <br/>no filesystem, no workbook
+    A-->>P: port.py — compute(inputs: dict)
+
+    loop attempt < max_repairs (3)
+        P->>F: oracle_fn, port_fn, trials, seed
+        loop trial < trials, wall clock < 240 s
+            F->>O: vector from VectorSampler
+            O-->>F: expected
+            F->>F: values_agree(expected, actual)<br/>rel 1e-9 / abs 1e-6
+        end
+        alt all vectors agree
+            F-->>P: FuzzResult(certified=True)
+            P-->>E: CERTIFIED — exit loop
+        else disagreement at trial n
+            F->>F: _shrink(rounds=2, budget=400)
+            F-->>P: minimal failing vector
+            P->>A: the vector, and nothing else
+            Note over P,A: no prose critique — the ablation<br/>for this choice is in CHANGELOG.md
+            A-->>P: revised port.py
+        end
+    end
+    P-->>E: NOT CERTIFIED after 3 repairs
 ```
 
-### Why each component earns its place
+### Interface contracts
 
-Every row below becomes one entry in the Improvement Changelog, tied to the
-number it moved. A component with no number is decoration and gets deleted.
+| Module | Entry point | In | Out | Writes |
+| ------ | ----------- | -- | --- | ------ |
+| `gate` | `check_workbook(path)` | `Path` | `WorkbookReport(passes, compared, agreed, disagreements)` | `results/gate.json` |
+| `dag` | `build(path)` | `Path` | `WorkbookDAG(cells, inputs: list[InputSpec], outputs)` | `results/dag.json` |
+| `oracle` | `get_oracle(path).compile_case(refs, target)` | `list[str], str` | `Callable[[list], object]` | — |
+| `cases` | `sensitivity_screen(oracle, target, specs)` | oracle, `str`, `list` | `tuple[bool, str]` | `results/cases.json` |
+| `port` | `gen_witness(case, out, max_repairs=3)` | `dict, Path` | `dict(code, repairs, history, certified)` | `ports/witness/*.py` |
+| `fuzz` | `fuzz_case(case, oracle_fn, port_fn, ...)` | callables | `FuzzResult(certified, first_failing_trial, max_abs_delta)` | — |
+| `invariants` | `check(case, oracle_fn, port_fn, sampler)` | callables | `InvariantReport(derived, confirmed, violations)` | — |
+| `evaluate` | `evaluate(trials, seeds, arms)` | `int, list[int]` | `dict(summary, cases)` | `results/evaluation.json` |
+| `certificate` | `build(case, arm_result, nodes, ...)` | `dict` | Markdown `str` | `certificates/<arm>/*.md` |
+| `coverage` | `measure(case, probes=60, seed=3)` | `dict` | `dict(cell_coverage, branch_coverage)` | `results/coverage.json` |
+| `mutation` | `run(trials=2000, seed=5, arm)` | `int, str` | `dict(summary, cases)` | `results/mutation.json` |
+| `pytest_plugin` | `certify_equivalent(workbook, target, port)` | paths | raises `CertificationError` | — |
+| `verify` | 7 checks vs `CLAIMED_*` | `results/*` + every `.md` | exit code | — |
 
-| #   | Component                                       | Why it exists                                                                                                                                                                                                                                                            |
-| --- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0   | Engine-trust gate                               | Without it the oracle could be silently wrong, and every number downstream is worthless. **Executed: 12/12 usable workbooks, 36,500 cells, 0 disagreements.**                                                                                                            |
-| 1   | Formula-DAG extractor                           | Deterministic. Porting a _derived_ cell as an _input_ is a whole failure family the model cannot see and the DAG cannot miss.                                                                                                                                            |
-| 2   | Per-block translation                           | 2,300 formulas in one context window degrades badly. Blocks also cut cost per workbook.                                                                                                                                                                                  |
-| 3   | Differential fuzzer                             | Converts "looks right" into a counterexample. This is the measurement, not a check on it.                                                                                                                                                                                |
-| 4   | Shrunk counterexample as the only repair signal | Tests the claim that a _minimal failing input_ repairs better than a critic's narrative. **The ablation that would prove it came back null** — at 0.08 repairs per case the corpus needs repairing too rarely to separate the arms. Kept and shipped, labelled UNPROVEN. |
-| 5   | Invariant layer                                 | Point equality on sampled vectors misses structural bugs; invariants derived from the DAG catch them.                                                                                                                                                                    |
-| 6   | Refusal gate                                    | Ground Rules 04/05. Unsupported function ⇒ escalate, never a silent pass.                                                                                                                                                                                                |
-| 7   | Signed certificate                              | Ground Rule 05 and the End-to-End Quality row: a human owns the decision, and the artifact says what it does _not_ cover.                                                                                                                                                |
+### Bounds and constants, and why each exists
+
+| Constant | Value | Location | Why |
+| -------- | ----- | -------- | --- |
+| `REL_TOL` / `ABS_TOL` | `1e-9` / `1e-6` | `fuzz.py`, `gate.py` | Float equality is not a decision procedure; the tolerance is declared on every certificate |
+| `SEEDS` | `[11, 23, 47]` | `evaluate.py` | A single seed can be lucky. `pass^3000` must hold on all three |
+| `max_repairs` | `3` | `port.gen_witness` | Bounds agent spend per case; a port needing four repairs is not close |
+| `time_budget_s` | `240.0` | `fuzz.fuzz_case` | Records trials actually run rather than silently truncating |
+| `_shrink` `budget` | `400` evals | `fuzz.py` | Shrinking is a search; unbounded, one pathological case stalls the run |
+| `SCREEN_DRAWS` / `MIN_DISTINCT` / `MIN_NONZERO_FRAC` | `60` / `3` / `0.25` | `cases.py` | Rejects targets constant under sampling — the defect that once let a do-nothing port certify |
+| `NONDETERMINISTIC` | 7 Excel functions | `dag.py` | A volatile function cannot have a stable oracle, so the case is refused, not scored |
+| `probes` | `6` | `invariants.check` | Each invariant is confirmed on the oracle before being enforced on a port |
+
+Each stage's justification, the evidence that kept it, and the experiments that
+were removed are in [CHANGELOG.md](CHANGELOG.md).
 
 ---
 
-## Does the agent solve it well
+## How it is measured
 
 **Primary metric: certified-equivalence rate at 9,000 fuzzed vectors per case —
 `pass^3000` across 3 independent seeds, not `pass@15`.**
 
-Ground truth is free and unbounded because _the workbook is the oracle_. Every
-generated input vector is a labelled case. No rubric, no LLM judge, no
-inter-annotator agreement, and — critically — **no step where I decided what the
-right answer was.**
+A port is CERTIFIED only if, across all three seeds, every one of 3,000
+generated input vectors matches the workbook within relative `1e-9` / absolute
+`1e-6`, and no confirmed structural invariant is violated. All-or-nothing on
+purpose: Owen gets no partial credit for a port that is right 99% of the time.
+One wrong quarter is a restatement.
 
-The baseline is a general-purpose agent with file and Python tools, told: _"port
-this workbook to Python and make sure it is correct."_ It spot-checks a few
-historical rows and declares victory — which is exactly the real-world practice
-it is meant to represent. Same workbooks, same fuzzer, same tolerance, same
-scorer.
+Ground truth is free and unbounded because **the workbook is the oracle**. Every
+generated vector is a labelled case — no rubric, no LLM judge, no
+inter-annotator agreement, and **no step where I decided what the right answer
+was**.
 
-## Can another person reproduce the result
+**The baseline** is a general-purpose agent with file and Python tools, given the
+workbook and one instruction: _"port this and make sure it is correct."_ It
+self-checks however it likes — typically by tying out historical rows. That is
+not a strawman; it is the practice this project exists to challenge.
 
-Three commands, no Docker, no database, no network at judge time. All 17
-workbooks are vendored into `corpus/`.
+**Fairness, disclosed.** Both arms get the same cases, fuzzer, tolerance, seeds,
+scorer and model. The baseline is *more* privileged in tools
+(Read/Write/Edit/Bash) and turns (30 vs 6); Witness is more privileged in context
+quality (the extracted cone, a typed domain) and gets a repair loop. That
+asymmetry **is** the comparison: better scaffolding versus more freedom.
+
+---
+
+## Result
+
+`uv run python -m witness.evaluate 3000` · raw: [`results/evaluation.json`](results/evaluation.json)
+
+| METRIC | SIMPLE BASELINE | WITNESS | CHANGE |
+| ------ | --------------- | ------- | ------ |
+| **Certified-equivalence rate** (`pass^3000`, 3 seeds, 37 cases) | **65%** | **86%** | **+22 pp** |
+| Ports certified | 24 / 37 | 32 / 37 | +8 |
+| Ports that failed | 13 | 5 | −8 |
+| Failures wrong by **over a century on a date cell** | **6 of 13** | **0 of 5** | **−6** |
+| Worst **date** error | **50,951 days (~139 y)** | 9,132 days (~25 y) | — |
+| Worst **currency** error | **$2,340** | **none** | — |
+| Machine time to certify one port | — | **236 s** (3 seeds × 3,000 vectors) | — |
+| Cost per certification | — | **$0** — the fuzzer calls no model | — |
+
+Paired: **9 Witness wins, 1 loss, 23 both-certified, 4 both-failed.**
+**McNemar exact two-sided p = 0.0215 — significant at α = 0.05.**
+
+### What this number attributes, and what it does not
+
+The +22 pp is the **whole scaffold** against the whole baseline. It is not
+evidence that any one component caused the gain, and it is not offered as such.
+
+The Witness arm differs in four ways at once: the extracted formula cone instead
+of a raw file, a typed input domain, a repair loop, and a shrunk counterexample
+as that loop's only feedback. Model, cases, fuzzer, tolerance, seeds and scorer
+are held fixed — so the gain is attributable to **scaffolding rather than to the
+model**, and to nothing finer.
+
+The one component I tried to isolate is the fourth, and **the attempt failed**.
+The ablation ([`results/ablation.json`](results/ablation.json), 12 cases) fed the
+repair loop a counterexample, a prose critique, or both:
+
+| Repair signal       | Certified | Mean repairs when certified |
+| ------------------- | --------- | --------------------------- |
+| Counterexample only | 12 / 12   | 0.08                        |
+| Prose critique only | 11 / 12   | 0.00                        |
+| Both                | 12 / 12   | 0.08                        |
+
+**Null, and diagnosably so:** 0.08 repairs per case means the loop fired roughly
+once across twelve cases. You cannot compare two repair signals on a corpus that
+almost never needs repairing. So the design claim — that a minimal failing input
+repairs better than a critic's narrative — is **stated but UNPROVEN**, and is
+labelled that way everywhere it appears.
+
+### The finding that matters more than the rate
+
+**Six of the baseline's thirteen failures return a date more than a century away
+from the correct one.**
+
+Those six are fiscal-year cells — `=EDATE(Z16,12)` and references to it — where
+the port dropped Excel's date semantics entirely. **The unit is days, not
+dollars:** 50,951 days is the distance from Excel's epoch to 30 June 2039, the
+value the workbook actually holds. Witness's five failures are three ±1
+disagreements, one zero-delta structural failure, and one shared hard case.
+Across the whole run the baseline has exactly one currency failure, **$2,340**.
+Witness has **none**.
+
+> **A correction, recorded rather than quietly fixed.** An earlier version of
+> this README reported those six as dollar amounts and headlined a *"median
+> error when it failed"* of five figures. That was wrong twice over — the deltas
+> are date serials, not money, and the median was taken over the ten nonzero
+> failures rather than all thirteen (the median of all thirteen is $2,340). Both
+> figures are now banned by name in the claim verifier, so neither can come
+> back. The full record is in [CHANGELOG.md](CHANGELOG.md).
+
+Neither arm certified the hardest case, `Fiscal Years.AA16`; both certificates
+read **NOT EQUIVALENT**. The difference is that the baseline's port is what a
+team ships today, and it is wrong by 139 years.
+
+---
+
+## Is the verifier itself trustworthy?
+
+A verifier that only ever says yes has proven nothing. Four independent checks
+say it does not:
+
+| Check | Result | Why it exists |
+| ----- | ------ | ------------- |
+| **Engine-trust gate** | **12/12 usable workbooks · 36,500 cells · 0 disagreements** | If the oracle were silently wrong, every number downstream is worthless |
+| **Harness self-test** | identity **300/300** per case; a port that always returns `0.0` is **caught on all 37** | My own eval once certified a do-nothing port on 9 of 16 cases |
+| **Mutation suite** | **189/231 semantic mutants killed (81.8%)** · **0/165 false alarms** | Kill rate alone rewards paranoia; the equivalent-mutant controls bound it |
+| **Oracle coverage** | **91.4% mean cell coverage · 100% branch coverage** | "9,000 vectors agreed" is weak if every vector drove the same branch |
+
+Five of the 17 workbooks are excluded from the gate because they carry **no
+cached formula values at all** — nothing to validate the engine against. That is
+a property of those files, and a **disclosed case-selection criterion**, not a
+hidden filter.
+
+---
+
+## Reproducing this
+
+Three commands. No Docker, no database, no API key, no network at judge time.
+All 17 workbooks are vendored into `corpus/`. Full guide:
+[REPRODUCE.md](REPRODUCE.md).
 
 ```bash
 git clone https://github.com/TKAUSHAL2301/witness.git && cd witness
 uv sync
 uv run python -m witness.verify
 ```
-
-`verify` re-derives every figure published below from the raw artifacts in
-`results/` and turns red if any of them no longer holds. It is the fastest way
-to check that this README is telling the truth, and it exits non-zero when it
-is not:
 
 ```
 [GREEN]  engine-trust gate     12/17 workbooks · 36,500 cells · 0 disagreements
@@ -198,142 +402,64 @@ is not:
 ALL 7 CHECKS GREEN — every published figure is backed by results/.
 ```
 
-Add `--run` to regenerate those artifacts first instead of reading the
-committed ones.
+The seventh check reads **every prose document in the repository** and turns red
+if a superseded claim reappears in any of them. It exists because the same
+figures drifted three times during this build while all the other checks stayed
+green — the tests and the claims were never being compared to each other.
 
-To watch the argument happen on a single cell instead of reading a scoreboard —
-both ports loaded from disk and fuzzed live against the workbook, nothing
-replayed:
+To watch the argument happen on one cell instead of reading a scoreboard — both
+ports loaded from disk and fuzzed live, nothing replayed:
 
 ```bash
-uv run python -m witness.demo
+uv run python -m witness.demo          # ~30 s
 ```
 
 It ties both ports out against the values the workbook was saved with (they
-match, which is where a migration is normally signed off), then generates 3,000
+match — exactly where a migration gets signed off today), then draws 3,000
 inputs the history never contained and shrinks the first failure to the smallest
 input that still breaks it.
 
-To run the engine-trust gate alone:
-
-```bash
-uv run python -m witness.gate corpus
-```
-
-Current output, reproducible from a clean checkout:
-
-```
-GATE: 12/17 workbooks reproduce their own cached values
-usable workbooks (had cached formula values): 12
-total formula cells compared: 36500
-total disagreements: 0
-```
-
-The five excluded workbooks carry no cached formula values at all — they were
-saved without calculation, so there is nothing to validate the engine against.
-That is a property of those files, not an engine failure, and the exclusion is a
-**disclosed case-selection criterion**, not a hidden filter.
-
 ---
 
-## Result
+## Status and honest limits
 
-Command: `uv run python -m witness.evaluate 3000` · Raw: `results/evaluation.json`
+| Stage | State |
+| ----- | ----- |
+| 0 · Engine-trust gate | 12/12 usable workbooks, 36,500 cells, 0 disagreements |
+| 1 · Formula-DAG extractor | 14 workbooks parsed ([`results/dag.json`](results/dag.json)) — the other 3 hold **0 formula cells** |
+| 2 · Case scoping + sensitivity screen | **37 cases** across 7 workbooks; always-zero shortcut caught on every one |
+| 3 · Per-block translation | the one LLM step; cone-scoped, never the raw workbook |
+| 4 · Differential fuzzer | 9,000 vectors per certified case (3,000 × 3 seeds) |
+| 5 · Shrink + repair loop | only the shrunk counterexample is fed back — **contribution UNPROVEN** |
+| 6 · Invariant layer | **106 derived, 53 confirmed** on the oracle (9 scale, 44 monotone), **0 violated by any of the 74 ports** — a reported null |
+| 7 · Refusal gate | volatile and unsupported functions rejected, never silently passed |
+| 8 · Certificate | signable, with a **quantified** coverage section |
+| 9 · Mutation suite | 7 semantic mutants + 5 equivalent false-alarm controls per case |
+| 10 · Coverage map | 91.4% mean cell, 100% branch |
+| 11 · pytest plugin | `certify_equivalent()` — ships as a CI gate |
+| 12 · Claim verifier | `witness.verify` — 7 checks, exits non-zero on drift |
 
-| METRIC                                                          | SIMPLE BASELINE | AGENT SOLUTION | CHANGE     |
-| --------------------------------------------------------------- | --------------- | -------------- | ---------- |
-| **Certified-equivalence rate** (`pass^3000`, 3 seeds, 37 cases) | **65%**         | **86%**        | **+22 pp** |
-| Ports certified                                                 | 24 / 37         | 32 / 37        | +8         |
-| **Median error when it failed**                                 | **$47,482**     | **$1**         | —          |
-| Worst error on the hardest case (`Fiscal Years.AA16`)           | **$50,951**     | $9,132         | —          |
-| …and what each arm did with it                                  | **shipped as correct** | **refused certification** | —   |
+**Main failure mode:** the oracle is a re-implementation of Excel, not Excel. A
+function it computes *differently* from Excel would be invisible, because both
+sides of the comparison would be wrong the same way. Mitigated structurally:
+unsupported functions are refused rather than passed, and every certificate
+states what it does not cover.
 
-Paired: **9 Witness wins, 1 loss, 23 both-certified, 4 both-failed.**
-**McNemar exact two-sided p = 0.0215 — significant at α = 0.05.**
+**Second limit:** the corpus is too **easy**, not too small. 37 cases clears the
+brief's ten-case bar comfortably, but eleven have a single free input and the
+repair loop fired roughly once across the whole ablation. Harder cases — deep
+cones with rounding, tier boundaries and date semantics — are the next
+investment, not more cases of the same difficulty.
 
-### What this number attributes, and what it does not
-
-The +22pp is the **whole scaffold** measured against the whole baseline. It is
-not evidence that any one component caused the gain, and it is not offered as
-such.
-
-The Witness arm differs from the baseline in four ways at once: it receives the
-extracted formula cone instead of a raw file, a typed input domain, a repair
-loop, and a shrunk counterexample as that loop's only feedback. Model, cases,
-fuzzer, tolerance, seeds and scorer are held fixed across the arms — so the
-+22pp is attributable to **scaffolding rather than to the model**, and to
-nothing finer than that.
-
-The one component I tried to isolate is the fourth, and the attempt failed.
-The ablation (`results/ablation.json`, 12 cases) fed the repair loop a shrunk
-counterexample, a prose critique, or both:
-
-| Repair signal       | Certified | Mean repairs when certified |
-| ------------------- | --------- | --------------------------- |
-| Counterexample only | 12 / 12   | 0.08                        |
-| Prose critique only | 11 / 12   | 0.00                        |
-| Both                | 12 / 12   | 0.08                        |
-
-**The result is null, and the reason is diagnosable rather than mysterious:
-mean repairs of 0.08 means the loop fired roughly once across twelve cases.**
-You cannot compare two repair signals on a corpus that almost never needs
-repairing. So the design claim in row 4 of the component table — that a minimal
-failing input repairs better than a critic's narrative — is **stated but
-unproven**, and it is labelled that way everywhere it appears. Testing it needs
-a corpus selected for cases the first draft actually fails. That is the next
-experiment, not this one.
-
-### The finding that matters more than the rate
-
-**When the baseline fails, it fails by a median of $47,482. When Witness fails,
-it fails by a median of $1.**
-
-Both arms produce imperfect ports. The difference is the size of what survives.
-Thirteen baseline ports certified _themselves_ as correct and were wrong; **six
-of those thirteen were sitting on five-figure errors** — chained `EDATE` date
-arithmetic landing years off the correct value — and the largest was $50,951.
-The remaining seven are smaller ($2,340 and below). Witness's five failures are
-dominated by ±1 rounding-mode disagreements that it found and reported rather
-than shipped.
-
-A verifier that turns a $47,000 silent error into a $1 disclosed one has done its
-job even when it does not reach GREEN.
-
-### Supporting measurements
-
-|                   |                                                                        |
-| ----------------- | ---------------------------------------------------------------------- |
-| Engine-trust gate | 12/12 usable workbooks, **36,500 formula cells, 0 disagreements**      |
-| Harness self-test | identity 300/300 per case; always-zero shortcut caught on every case   |
-| Mutation score    | **189/231 semantic mutants killed (81.8%), 0/165 false alarms (0.0%)** |
-| Coverage          | **91.4% mean cell coverage, 100% branch coverage**                     |
-
-Verified from a clean clone (`git clone` → `uv sync` → run).
-
-Full evolution, removed experiments, the null-result ablation, and the failure
-analysis: [CHANGELOG.md](CHANGELOG.md).
+**Hot take, in one line:** _"it ties out on historical data"_ is the most
+dangerous sentence in software migration. If your acceptance test is a fixed
+case set, you are testing the cases the bug already avoided — give the verifier
+a **generator**, not a checklist. The full argument, and the story of my own
+evaluation certifying a port that did nothing at all, is at the end of
+[CHANGELOG.md](CHANGELOG.md).
 
 ---
-
-## Status
-
-| Stage                                 | State                                                                                                    |
-| ------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| 0 · Engine-trust gate                 | ✅ 12/12 usable workbooks, 36,500 cells, 0 disagreements                                                 |
-| 1 · Formula-DAG extractor             | ✅ 14 workbooks parsed (`results/dag.json`), inputs typed — the other 3 hold **0 formula cells** |
-| 2 · Case scoping + sensitivity screen | ✅ **37 cases**, always-zero shortcut caught on every one                                                |
-| 3 · Differential fuzzer               | ✅ 9,000 vectors per certified case (3,000 trials × 3 seeds)                                             |
-| 4 · Shrink + repair loop              | ✅ only the shrunk counterexample is fed back                                                            |
-| 5 · **Invariant layer**               | ✅ scale-homogeneity + monotonicity, each confirmed on the oracle before being enforced on the port      |
-| 6 · Refusal gate                      | ✅ volatile and unsupported functions rejected                                                           |
-| 7 · Certificate                       | ✅ signable, with a **quantified** coverage section                                                      |
-| 8 · **Mutation suite**                | ✅ 7 semantic mutants + 5 equivalent false-alarm controls                                                |
-| 9 · **Coverage map**                  | ✅ 91.4% mean cell coverage, 100% branch coverage                                                        |
-| 10 · **pytest plugin**                | ✅ `certify_equivalent()` — ships as a CI gate                                                           |
-| 11 · **Claim verifier**               | ✅ `witness.verify` — all 6 published figures re-derived from the raw artifacts, exits non-zero on drift |
-| 12 · **Single-case walkthrough**      | ✅ `witness.demo` — historical tie-out, live fuzz, shrunk counterexample, on one cell                    |
-| 13 · **Document-claim check**         | ✅ the verifier's 7th check — 16 superseded claims scanned across every prose document, red on any reappearance |
 
 Data: 17 municipal finance workbooks published by the Commonwealth of
-Massachusetts, Division of Local Services. Public records. Provenance and
-licences in [PRIOR-WORK.md](PRIOR-WORK.md).
+Massachusetts, Division of Local Services. Public records; provenance and
+licences in [PRIOR-WORK.md](PRIOR-WORK.md). Code MIT — [LICENSE](LICENSE).
