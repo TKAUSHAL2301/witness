@@ -182,7 +182,7 @@ workbooks are vendored into `corpus/`.
 ```bash
 git clone <repo> && cd witness
 uv sync
-uv run python -m witness.gate corpus     # the engine-trust gate
+uv run python -m witness.gate corpus
 ```
 
 Current output, reproducible from a clean checkout:

@@ -18,7 +18,7 @@ project. Every command below is meant to be pasted verbatim.
 The only prerequisite is [`uv`](https://docs.astral.sh/uv/):
 
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh      # macOS / Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 No Docker. No database. No `ffmpeg`. Nothing to configure.
@@ -155,8 +155,8 @@ failure, the shrunk counterexample and the exact dollar delta.
 ## 5. Certificates
 
 ```bash
-uv run python -m witness.certificate witness            # dry run — writes nothing
-uv run python -m witness.certificate witness --approve  # writes the 37 certificates
+uv run python -m witness.certificate witness
+uv run python -m witness.certificate witness --approve
 ```
 
 Certificates are gated on explicit approval (Ground Rule 04): they are signable
@@ -175,8 +175,8 @@ Everything above evaluates committed artifacts. To regenerate the ports
 themselves you need a working `claude` CLI:
 
 ```bash
-uv run python -m witness.port both        # ~25 min, both arms
-uv run python -m witness.ablation 4       # the repair-signal ablation
+uv run python -m witness.port both
+uv run python -m witness.ablation 4
 ```
 
 Approximate cost of a full regeneration: **under $5** of agent usage on the
