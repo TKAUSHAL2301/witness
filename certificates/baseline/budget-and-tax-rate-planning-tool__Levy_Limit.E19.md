@@ -1,0 +1,83 @@
+# Equivalence certificate — `budget-and-tax-rate-planning-tool::Levy Limit.E19`
+
+## Verdict: **NOT EQUIVALENT**
+
+| | |
+| --- | --- |
+| Target cell | `Levy Limit.E19` |
+| Workbook | `budget-and-tax-rate-planning-tool.xlsx` |
+| Formula nodes behind it | 14 |
+| Free inputs | 6 |
+| Trials per seed | 3,000 |
+| Seeds | 11, 23, 47 |
+| Total input vectors tested | 9,000 |
+| Numeric tolerance | rel 1e-9, abs 1e-6 |
+| Generated | 2026-08-31 03:14 UTC |
+| Python | 3.13.14 |
+
+The port **disagrees** with the workbook. The smallest input vector that
+reproduces the disagreement:
+
+- First failing trial: **3**
+- Excel returned: `1,841.75`
+- The port returned: `0`
+- Difference: **-1,841.75**
+- Minimal differing inputs: `Levy Limit!C16, Levy Limit!C20`
+
+Full failing vector:
+
+```json
+{
+  "Levy Limit!C12": 0,
+  "Levy Limit!C13": 0,
+  "Levy Limit!C15": 0,
+  "Levy Limit!C16": 1841.750247515063,
+  "Levy Limit!C17": 0,
+  "Levy Limit!C20": ""
+}
+```
+
+## Coverage — what the trials actually exercised
+
+Agreement on N vectors means little if every vector drove the
+calculation down the same branch. Measured on the oracle:
+
+| | |
+| --- | --- |
+| Formula cells in this target's cone | 3 |
+| Cells whose value varied across sampling | **3 (100%)** |
+| Cells constant for this input domain | 0 |
+| Branching cells (IF/IFS/CHOOSE) | 1 |
+| Branches observed both ways | **1 (100%)** |
+| Branches observed one way only | 0 |
+
+## What this certificate does NOT cover
+
+- **Only the target cell above.** Other outputs in this workbook are
+  unexamined; a port correct here may be wrong elsewhere.
+- **Only the declared input domain.** Inputs are sampled from types and
+  boundary values inferred from the workbook. An input outside that domain
+  has not been tested.
+- **Sampling, not proof.** Agreement on N vectors is strong evidence, not a
+  formal proof of equivalence over the whole input space.
+- **The oracle is a re-implementation of Excel, not Excel.** It reproduced
+  this workbook's own cached values exactly, which is why it is trusted here
+  — but a function it computes differently from Excel would be invisible to
+  this method. Cells depending on unsupported functions are refused, not
+  passed.
+- **Volatile functions excluded.** Targets depending on `NOW`, `TODAY`,
+  `RAND`, `RANDBETWEEN`, `OFFSET` or `INDIRECT` cannot have a stable oracle
+  and are rejected during case selection.
+
+## Sign-off
+
+This certificate is a recommendation to a qualified human reviewer. It is
+**not** an authorization to cut over. The reviewer below owns that decision.
+
+```
+Reviewed by: ______________________________   Date: ______________
+
+Role:        ______________________________
+
+Accepted for production cut-over:   [ ] yes   [ ] no
+```

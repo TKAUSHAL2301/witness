@@ -8,18 +8,37 @@
 | Workbook | `capital-targets-template.xlsx` |
 | Formula nodes behind it | 64 |
 | Free inputs | 21 |
-| Trials per seed | 10,000 |
+| Trials per seed | 3,000 |
 | Seeds | 11, 23, 47 |
-| Total input vectors tested | 30,000 |
+| Total input vectors tested | 9,000 |
 | Numeric tolerance | rel 1e-9, abs 1e-6 |
-| Generated | 2026-08-30 14:28 UTC |
+| Generated | 2026-08-31 03:14 UTC |
 | Python | 3.13.14 |
 
-Across **30,000 independently generated input vectors**, the
+Across **9,000 independently generated input vectors**, the
 Python port and the workbook agreed on every one, within the stated
 tolerance. The acceptance oracle is the workbook itself, recalculated by a
 pure-Python engine that was first validated against the values Excel had
 cached inside the file.
+
+## Coverage — what the trials actually exercised
+
+Agreement on N vectors means little if every vector drove the
+calculation down the same branch. Measured on the oracle:
+
+| | |
+| --- | --- |
+| Formula cells in this target's cone | 16 |
+| Cells whose value varied across sampling | **9 (56%)** |
+| Cells constant for this input domain | 7 |
+
+Cells that never varied — effectively constants over this domain:
+
+- `Debt!H21`
+- `Debt!H20`
+- `Debt!H44`
+- `Debt!H45`
+- `Debt!H46`
 
 ## What this certificate does NOT cover
 

@@ -30,40 +30,182 @@ subject of the ablation in `CHANGELOG.md`.
 
 ## Observed repair loops
 
-### `budget-and-tax-rate-planning-tool__Recap_Page_2.L52`
+### `appropriation-template::Annual.D31`
 
 | attempt | trials survived | certified |
 | --- | --- | --- |
-| 0 | -/2000 | yes |
+| 0 | 2000/2000 | yes |
 
-### `financial-forecasting-template-10-year__Fiscal_Years.AA13`
-
-| attempt | trials survived | certified |
-| --- | --- | --- |
-| 0 | -/2000 | no |
-| 1 | -/2000 | no |
-| 2 | -/2000 | yes |
-
-### `financial-forecasting-template-10-year__Fiscal_Years.AA16`
+### `appropriation-template::Annual.E31`
 
 | attempt | trials survived | certified |
 | --- | --- | --- |
-| 0 | -/2000 | no |
-| 1 | -/2000 | no |
-| 2 | -/2000 | no |
-| 3 | -/2000 | no |
+| 0 | 2000/2000 | yes |
 
-### `financial-forecasting-template-5-year__Available_Funds.N53`
+### `appropriation-template::Annual.F31`
 
 | attempt | trials survived | certified |
 | --- | --- | --- |
-| 0 | -/2000 | no |
-| 1 | -/2000 | no |
-| 2 | -/2000 | no |
-| 3 | -/2000 | no |
+| 0 | 2000/2000 | yes |
 
-### `financial-indicators-template-0__6_-_Operating_Expenditures.K35`
+### `appropriation-template::Annual.H31`
 
 | attempt | trials survived | certified |
 | --- | --- | --- |
-| 0 | -/2000 | yes |
+| 0 | 2000/2000 | yes |
+
+### `appropriation-template::Annual.I31`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 2000/2000 | yes |
+
+### `appropriation-template::Impact.C33`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 2000/2000 | yes |
+
+### `budget-and-tax-rate-planning-tool::Levy Limit.E31`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 2 | 2000/2000 | yes |
+
+### `budget-and-tax-rate-planning-tool::Recap Page 2.L22`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 1/2 | no |
+| 1 | 2000/2000 | yes |
+
+### `budget-and-tax-rate-planning-tool::Levy Limit.E19`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 3/4 | no |
+| 1 | 2000/2000 | yes |
+
+### `capital-planning-and-budgeting-workbook::Financial Targets.F60`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 2000/2000 | yes |
+
+### `capital-planning-and-budgeting-workbook::Financial Targets.J60`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 2000/2000 | yes |
+
+### `capital-planning-and-budgeting-workbook::Financial Targets.F41`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 2000/2000 | yes |
+
+### `capital-targets-template::Amortization.B48`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 2000/2000 | yes |
+
+### `capital-targets-template::Amortization.A48`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 2000/2000 | yes |
+
+### `capital-targets-template::Debt.I8`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 20/21 | no |
+| 1 | 2000/2000 | yes |
+
+### `capital-targets-template::Debt.J8`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 2000/2000 | yes |
+
+### `financial-forecasting-template-10-year::COLA.J122`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 37/38 | no |
+| 1 | 2000/2000 | yes |
+
+### `financial-forecasting-template-10-year::Available Funds.T53`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 0/1 | no |
+| 1 | 4/5 | no |
+| 2 | 2000/2000 | yes |
+
+### `financial-forecasting-template-10-year::Available Funds.S48`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 4/5 | no |
+| 1 | 2000/2000 | yes |
+
+### `financial-forecasting-template-5-year::COLA.J122`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 2000/2000 | yes |
+
+### `financial-forecasting-template-5-year::CPF.Q20`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 6/7 | no |
+| 1 | 7/8 | no |
+
+### `financial-forecasting-template-5-year::Available Funds.M48`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 0/1 | no |
+| 1 | 4/5 | no |
+| 2 | 2000/2000 | yes |
+
+### `financial-forecasting-template-5-year::Available Funds.M53`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 0/1 | no |
+| 1 | 1/2 | no |
+| 2 | 4/5 | no |
+
+### `financial-indicators-template-0::6 - Operating Expenditures.K36`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 2000/2000 | yes |
+
+### `financial-indicators-template-0::6 - Operating Expenditures.K37`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 2000/2000 | yes |
+
+### `financial-indicators-template-0::6 - Operating Expenditures.K38`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 2000/2000 | yes |
+
+### `financial-indicators-template-0::6 - Operating Expenditures.K39`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 2000/2000 | yes |
+
+### `financial-indicators-template-0::10 - Debt Service.P31`
+
+| attempt | trials survived | certified |
+| --- | --- | --- |
+| 0 | 2000/2000 | yes |

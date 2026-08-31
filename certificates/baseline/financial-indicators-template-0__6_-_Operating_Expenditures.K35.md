@@ -8,11 +8,11 @@
 | Workbook | `financial-indicators-template-0.xlsx` |
 | Formula nodes behind it | 40 |
 | Free inputs | 23 |
-| Trials per seed | 10,000 |
+| Trials per seed | 3,000 |
 | Seeds | 11, 23, 47 |
-| Total input vectors tested | 30,000 |
+| Total input vectors tested | 9,000 |
 | Numeric tolerance | rel 1e-9, abs 1e-6 |
-| Generated | 2026-08-30 14:28 UTC |
+| Generated | 2026-08-31 03:14 UTC |
 | Python | 3.13.14 |
 
 The port **disagrees** with the workbook. The smallest input vector that
@@ -53,6 +53,21 @@ Full failing vector:
   "6 - Operating Expenditures!R51": 0
 }
 ```
+
+## Coverage — what the trials actually exercised
+
+Agreement on N vectors means little if every vector drove the
+calculation down the same branch. Measured on the oracle:
+
+| | |
+| --- | --- |
+| Formula cells in this target's cone | 6 |
+| Cells whose value varied across sampling | **5 (83%)** |
+| Cells constant for this input domain | 1 |
+
+Cells that never varied — effectively constants over this domain:
+
+- `6 - Operating Expenditures!R50`
 
 ## What this certificate does NOT cover
 

@@ -8,18 +8,36 @@
 | Workbook | `budget-and-tax-rate-planning-tool.xlsx` |
 | Formula nodes behind it | 81 |
 | Free inputs | 11 |
-| Trials per seed | 10,000 |
+| Trials per seed | 3,000 |
 | Seeds | 11, 23, 47 |
-| Total input vectors tested | 30,000 |
+| Total input vectors tested | 9,000 |
 | Numeric tolerance | rel 1e-9, abs 1e-6 |
-| Generated | 2026-08-30 14:28 UTC |
+| Generated | 2026-08-31 03:14 UTC |
 | Python | 3.13.14 |
 
-Across **30,000 independently generated input vectors**, the
+Across **9,000 independently generated input vectors**, the
 Python port and the workbook agreed on every one, within the stated
 tolerance. The acceptance oracle is the workbook itself, recalculated by a
 pure-Python engine that was first validated against the values Excel had
 cached inside the file.
+
+## Coverage — what the trials actually exercised
+
+Agreement on N vectors means little if every vector drove the
+calculation down the same branch. Measured on the oracle:
+
+| | |
+| --- | --- |
+| Formula cells in this target's cone | 8 |
+| Cells whose value varied across sampling | **4 (50%)** |
+| Cells constant for this input domain | 4 |
+
+Cells that never varied — effectively constants over this domain:
+
+- `Recap Page 2!K32`
+- `Recap Page 2!L42`
+- `Recap Page 2!K40`
+- `Recap Page 2!K41`
 
 ## What this certificate does NOT cover
 
