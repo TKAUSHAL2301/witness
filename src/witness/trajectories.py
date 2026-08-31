@@ -20,18 +20,42 @@ Redacts absolute home paths. Contains no credentials (Ground Rule 08).
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 from pathlib import Path
 
 HOME = str(Path.home())
-PROJECT_DIR = Path(HOME) / ".claude/projects/-Users-tkaushal99gmail-com-hackathon"
+USER = Path.home().name
 MAX_CHARS = 1600
 
 
+def project_dir() -> Path:
+    """Where the coding agent stores its session transcripts.
+
+    Claude Code slugs the directory it was launched from, turning both "/" and
+    "." into "-". Deriving it keeps this repository free of a hardcoded home
+    path, which Ground Rule 08 asks for. Override with WITNESS_TRANSCRIPT_DIR.
+    """
+    env = os.environ.get("WITNESS_TRANSCRIPT_DIR")
+    if env:
+        return Path(env)
+    slug = re.sub(r"[/.]", "-", str(Path.cwd().parent))
+    return Path(HOME) / ".claude/projects" / slug
+
+
 def redact(s: str) -> str:
+    """Strip anything that identifies the machine or its owner.
+
+    Rendered transcripts quote real shell commands, so they carry home paths,
+    the account slug and any address used as a git author. None of that belongs
+    in a submission (Ground Rule 08).
+    """
     s = s.replace(HOME, "~")
+    s = re.sub(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", "[REDACTED-EMAIL]", s)
     s = re.sub(r"(sk-[A-Za-z0-9_-]{8,})", "[REDACTED-KEY]", s)
+    if USER:
+        s = s.replace(USER, "<user>").replace(USER.replace(".", "-"), "<user>")
     return s
 
 
@@ -59,7 +83,7 @@ def _text(content) -> str:
 
 
 def render_build_agent(out: Path, max_events: int = 220) -> int:
-    files = sorted(PROJECT_DIR.glob("*.jsonl"), key=lambda p: p.stat().st_mtime)
+    files = sorted(project_dir().glob("*.jsonl"), key=lambda p: p.stat().st_mtime)
     if not files:
         out.write_text("_No build-agent transcript found._\n")
         return 0

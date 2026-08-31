@@ -2,6 +2,8 @@
 name = "witness"
 version = "0.1.0"
 description = "Differential-fuzzing acceptance oracle for Excel-to-Python ports"
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.12"
 dependencies = [
     "openpyxl>=3.1",

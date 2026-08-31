@@ -1,0 +1,62 @@
+MIT License
+
+Copyright (c) 2026 Tanya Kaushal
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+SCOPE OF THIS LICENCE
+================================================================================
+
+The MIT grant above covers only the material written by the copyright holder
+for this project: everything under `src/`, `tests/`, the generated ports under
+`ports/`, the result artifacts under `results/` and `certificates/`, and all
+Markdown documentation at the repository root.
+
+It does NOT relicense two categories of material that this repository merely
+carries or depends on. Both are declared in full in PRIOR-WORK.md.
+
+1. Vendored input data — `corpus/*.xlsx`
+
+   17 municipal finance workbooks published by the Commonwealth of
+   Massachusetts, Division of Local Services, at
+   mass.gov/info-details/municipal-finance-tools-templates-calculators
+
+   These are public records of a US state government, reproduced here
+   unmodified so that the evaluation can be rerun without network access.
+   They are not the copyright holder's work and are not licensed under the
+   terms above. No claim of authorship or ownership is made over them.
+
+2. Third-party dependencies — not vendored, installed from PyPI via `uv.lock`
+
+   Each is used unmodified, as an ordinary library import, under its own
+   licence:
+
+     openpyxl        MIT
+     formulas        EUPL-1.1+
+     hypothesis      MPL-2.0
+     numpy           BSD-3-Clause
+     scipy           BSD-3-Clause
+     schedula        EUPL-1.1+
+     numpy-financial BSD-3-Clause
+
+   `formulas` and `schedula` are EUPL-licensed. This project links to them as
+   unmodified libraries and distributes no copy or derivative of either, so no
+   EUPL source-distribution obligation is triggered here. Anyone who modifies
+   and redistributes those libraries takes on their obligations, not these.

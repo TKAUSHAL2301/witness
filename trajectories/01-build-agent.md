@@ -22,7 +22,7 @@ a date-serial bug in my own comparator rather than the engine.
 
 → TOOL CALL `Bash`
 ```json
-{"command": "cd ~/hackathon/witness; uv run python -c \"import witness.invariants, witness.mutation; print('new modules import OK')\"\nnohup env TQDM_DISABLE=1 uv run python -m witness.port both > results/portgen_v3.log 2>&1 &\necho \"port generation for 37 cases launched (pid $!)\"\ngit add -A && git -c user.name=\"Witness\" -c user.email=\"refit.league8n@icloud.com\" commit -q -m \"feat: corpus 10->37 cases, invariant layer, corpus-matched mutation suite\n\nCORPUS: 17 workbooks (was 14), filters relaxed (min_depth 6->3, max_inputs\n40->60, per-sheet cap 2->5). 37 cases across 7 workbooks -- 3.7x. This is the\nlegitimate fix for McNemar p=0.219: more evidence, not a different number.\n\nINVARIANTS: properties derived from the DAG that must hold for ANY input, not\njust sampled ones. Each is CONFIRMED against the oracle before being enforced\nagainst the port, so a spurious invariant can never fail a correct port.\n\nMUTATION: the first suite used one mutant (blank-as-zero) and killed 0/10 --\nthe wrong mutant for this corpus, not a weak fuzzer. This one injects the\nfamilies the corpus actually exhibits: banker's rounding (the exact defect that\nbeat Witness on Debt.H8), date-serial off-by-one (behind the four largest\nbaseline errors), truncation, sign, scale. Plus 5 EQUIVALENT mutants as\nfalse-alarm controls -- without those a mutation score just rewards paranoia.\" >/dev/null && echo committed", "description": "Launch port generation and commit new modules", "timeout": 300000}
+{"command": "cd ~/hackathon/witness; uv run python -c \"import witness.invariants, witness.mutation; print('new modules import OK')\"\nnohup env TQDM_DISABLE=1 uv run python -m witness.port both > results/portgen_v3.log 2>&1 &\necho \"port generation for 37 cases launched (pid $!)\"\ngit add -A && git -c user.name=\"Witness\" -c user.email=\"[REDACTED-EMAIL]\" commit -q -m \"feat: corpus 10->37 cases, invariant layer, corpus-matched mutation suite\n\nCORPUS: 17 workbooks (was 14), filters relaxed (min_depth 6->3, max_inputs\n40->60, per-sheet cap 2->5). 37 cases across 7 workbooks -- 3.7x. This is the\nlegitimate fix for McNemar p=0.219: more evidence, not a different number.\n\nINVARIANTS: properties derived from the DAG that must hold for ANY input, not\njust sampled ones. Each is CONFIRMED against the oracle before being enforced\nagainst the port, so a spurious invariant can never fail a correct port.\n\nMUTATION: the first suite used one mutant (blank-as-zero) and killed 0/10 --\nthe wrong mutant for this corpus, not a weak fuzzer. This one injects the\nfamilies the corpus actually exhibits: banker's rounding (the exact defect that\nbeat Witness on Debt.H8), date-serial off-by-one (behind the four largest\nbaseline errors), truncation, sign, scale. Plus 5 EQUIVALENT mutants as\nfalse-alarm controls -- without those a mutation score just rewards paranoia.\" >/dev/null && echo committed", "description": "Launch port generation and commit new modules", "timeout": 300000}
 ```
 
 ### 🧑 HUMAN
@@ -117,7 +117,7 @@ Rejection test passes (broken port correctly caught). The "correct port" fixture
 
 → TOOL CALL `Bash`
 ```json
-{"command": "cd ~/hackathon/witness; cat > tests/test_witness_plugin.py <<'PYEOF'\n\"\"\"The pytest integration \u2014 Witness as a CI gate, not a demo.\n\nThis is what a finance team would actually add to their repo: a normal pytest\ntest asserting their Python port still matches the workbook it came from, and\na test proving the gate rejects a defective port.\n\"\"\"\n\nimport importlib.util\nfrom pathlib import Path\n\nimport pytest\n\nfrom witness.pytest_plugin import CertificationError, certify_equivalent\n\nWORKBOOK = \"corpus/financial-indicators-template-0.xlsx\"\nTARGET = \"10 - Debt Service!P31\"\nPORT_FILE = Path(\"ports/witness/financial-indicators-template-0__10_-_Debt_Service.P31.py\")\n\n\ndef _load(path: Path):\n    spec = importlib.util.spec_from_file_location(\"demo_port\", path)\n    mod = importlib.util.module_from_spec(spec)\n    spec.loader.exec_module(mod)\n    return mod.compute\n\n\n@pytest.mark.skipif(not PORT_FILE.exists(), reason=\"port not generated yet\")\ndef test_certified_port_matches_workbook():\n    \"\"\"The happy path: a port that agrees with Excel passes the gate.\"\"\"\n    check = certify_equivalent(\n        workbook=WORKBOOK, target=TARGET, port=_load(PORT_FILE), trials=500\n    )\n    check()\n\n\n@pytest.mark.skipif(not PORT_FILE.exists(), reason=\"port not generated yet\")\ndef test_defective_port_is_rejected():\n    \"\"\"The gate must FAIL a defective port, otherwise it is decoration.\n\n    The injected defect is banker's rounding \u2014 the exact failure family that\n    beat Witness on capital-target
+{"command": "cd ~/hackathon/witness; cat > tests/test_witness_plugin.py <<'PYEOF'\n\"\"\"The pytest integration \u2014 Witness as a CI gate, not a demo.\n\nThis is what a finance team would actually add to their repo: a normal pytest\ntest asserting their Python port still matches the workbook it came from, and\na test proving the gate rejects a defective port.\n\"\"\"\n\nimport importlib.util\nfrom pathlib import Path\n\nimport pytest\n\nfrom witness.pytest_plugin import CertificationError, certify_equivalent\n\nWORKBOOK = \"corpus/financial-indicators-template-0.xlsx\"\nTARGET = \"10 - Debt Service!P31\"\nPORT_FILE = Path(\"ports/witness/financial-indicators-template-0__10_-_Debt_Service.P31.py\")\n\n\ndef _load(path: Path):\n    spec = importlib.util.spec_from_file_location(\"demo_port\", path)\n    mod = importlib.util.module_from_spec(spec)\n    spec.loader.exec_module(mod)\n    return mod.compute\n\n\[REDACTED-EMAIL](not PORT_FILE.exists(), reason=\"port not generated yet\")\ndef test_certified_port_matches_workbook():\n    \"\"\"The happy path: a port that agrees with Excel passes the gate.\"\"\"\n    check = certify_equivalent(\n        workbook=WORKBOOK, target=TARGET, port=_load(PORT_FILE), trials=500\n    )\n    check()\n\n\[REDACTED-EMAIL](not PORT_FILE.exists(), reason=\"port not generated yet\")\ndef test_defective_port_is_rejected():\n    \"\"\"The gate must FAIL a defective port, otherwise it is decoration.\n\n    The injected defect is banker's rounding \u2014 the exact failure family that\n    beat Witness on capital-target
 ```
 
 ### 🧑 HUMAN
@@ -158,7 +158,7 @@ imports OK
 
 → TOOL CALL `Bash`
 ```json
-{"command": "cd ~/hackathon/witness; git add -A && git -c user.name=\"Witness\" -c user.email=\"refit.league8n@icloud.com\" commit -q -m \"feat: pytest plugin, coverage map, invariants wired into evaluation\n\npytest_plugin: certify_equivalent(workbook, target, port) produces a normal\npytest test. On failure the assertion message IS the shrunk counterexample.\nTurns a migration project into a CI gate that goes red when a port drifts.\n\ncoverage: cell + branch coverage measured on the oracle. Agreement on N vectors\nmeans little if every vector drove the calculation down the same branch. The\ncertificate's limits section becomes a number instead of a disclaimer.\n\ninvariants: enforced in evaluate.py. A port can now fail certification by\nviolating a structural property even when it agrees on every sampled value.\" >/dev/null && echo committed\necho \"portgen: baseline=$(ls ports/baseline/*.py 2>/dev/null|wc -l|tr -d ' ') witness=$(ls ports/witness/*.py 2>/dev/null|wc -l|tr -d ' ') / 37\"\necho \"=== running coverage map now (independent of ports) ===\"\nTQDM_DISABLE=1 uv run python -m witness.coverage 40 2>/dev/null | tail -8", "description": "Commit and run coverage map", "timeout": 1800000}
+{"command": "cd ~/hackathon/witness; git add -A && git -c user.name=\"Witness\" -c user.email=\"[REDACTED-EMAIL]\" commit -q -m \"feat: pytest plugin, coverage map, invariants wired into evaluation\n\npytest_plugin: certify_equivalent(workbook, target, port) produces a normal\npytest test. On failure the assertion message IS the shrunk counterexample.\nTurns a migration project into a CI gate that goes red when a port drifts.\n\ncoverage: cell + branch coverage measured on the oracle. Agreement on N vectors\nmeans little if every vector drove the calculation down the same branch. The\ncertificate's limits section becomes a number instead of a disclaimer.\n\ninvariants: enforced in evaluate.py. A port can now fail certification by\nviolating a structural property even when it agrees on every sampled value.\" >/dev/null && echo committed\necho \"portgen: baseline=$(ls ports/baseline/*.py 2>/dev/null|wc -l|tr -d ' ') witness=$(ls ports/witness/*.py 2>/dev/null|wc -l|tr -d ' ') / 37\"\necho \"=== running coverage map now (independent of ports) ===\"\nTQDM_DISABLE=1 uv run python -m witness.coverage 40 2>/dev/null | tail -8", "description": "Commit and run coverage map", "timeout": 1800000}
 ```
 
 ### 🧑 HUMAN
@@ -358,7 +358,7 @@ ablation launched (pid 90615) — 3 arms x 12 cases (was 4)
 
 ← TOOL RESULT
 ```
-Command did not complete within its 600s timeout and was moved to the background (ID: bxiz8dovb). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bxiz8dovb.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 600s timeout and was moved to the background (ID: bxiz8dovb). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bxiz8dovb.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -373,7 +373,7 @@ Session cwd remains ~/hackathon/witness; directory changes made by the backgroun
 
 ← TOOL RESULT
 ```
-Command did not complete within its 590s timeout and was moved to the background (ID: bnq1zjvsc). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bnq1zjvsc.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 590s timeout and was moved to the background (ID: bnq1zjvsc). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bnq1zjvsc.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -424,7 +424,7 @@ Ablation done: **counterexample 12/12, prose 11/12, both 12/12** — mean repair
 
 ← TOOL RESULT
 ```
-Command did not complete within its 600s timeout and was moved to the background (ID: b0g0z15vk). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b0g0z15vk.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 600s timeout and was moved to the background (ID: b0g0z15vk). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b0g0z15vk.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -439,7 +439,7 @@ Session cwd remains ~/hackathon/witness; directory changes made by the backgroun
 
 ← TOOL RESULT
 ```
-Command did not complete within its 600s timeout and was moved to the background (ID: b0c43hfqs). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b0c43hfqs.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 600s timeout and was moved to the background (ID: b0c43hfqs). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b0c43hfqs.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -525,7 +525,7 @@ licences in [PRIOR-WORK.md](PRIOR-WORK.md).
 
 ← TOOL RESULT
 ```
-Command did not complete within its 600s timeout and was moved to the background (ID: b390iwtfn). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b390iwtfn.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 600s timeout and was moved to the background (ID: b390iwtfn). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b390iwtfn.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -540,7 +540,7 @@ Session cwd remains ~/hackathon/witness; directory changes made by the backgroun
 
 ← TOOL RESULT
 ```
-Command did not complete within its 600s timeout and was moved to the background (ID: bmgtnd7it). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bmgtnd7it.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 600s timeout and was moved to the background (ID: bmgtnd7it). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bmgtnd7it.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -605,7 +605,7 @@ Real process (pid 90618) still running — my `pgrep` watchers were self-matchin
 
 ← TOOL RESULT
 ```
-Command did not complete within its 600s timeout and was moved to the background (ID: btlf7e7e4). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/btlf7e7e4.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 600s timeout and was moved to the background (ID: btlf7e7e4). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/btlf7e7e4.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -620,7 +620,7 @@ Session cwd remains ~/hackathon/witness; directory changes made by the backgroun
 
 ← TOOL RESULT
 ```
-Command did not complete within its 590s timeout and was moved to the background (ID: b64ncnppt). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b64ncnppt.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 590s timeout and was moved to the background (ID: b64ncnppt). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b64ncnppt.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -654,7 +654,7 @@ RUNNING (01:52:05)
 
 ← TOOL RESULT
 ```
-Command did not complete within its 560s timeout and was moved to the background (ID: bro7ouxl5). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bro7ouxl5.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 560s timeout and was moved to the background (ID: bro7ouxl5). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bro7ouxl5.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -690,7 +690,7 @@ mutation rows: 0
 
 ← TOOL RESULT
 ```
-Command did not complete within its 590s timeout and was moved to the background (ID: byrupv40p). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/byrupv40p.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 590s timeout and was moved to the background (ID: byrupv40p). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/byrupv40p.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -746,7 +746,7 @@ evaluation.json: Aug 30 19:55:55
 
 ← TOOL RESULT
 ```
-Command did not complete within its 580s timeout and was moved to the background (ID: bhfj75fx1). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bhfj75fx1.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 580s timeout and was moved to the background (ID: bhfj75fx1). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bhfj75fx1.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -883,7 +883,7 @@ imports OK
 
 ← TOOL RESULT
 ```
-Command did not complete within its 500s timeout and was moved to the background (ID: bjlgt14sp). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bjlgt14sp.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 500s timeout and was moved to the background (ID: bjlgt14sp). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bjlgt14sp.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -937,7 +937,7 @@ log bytes:       36
 
 ← TOOL RESULT
 ```
-Command did not complete within its 200s timeout and was moved to the background (ID: b66px04qe). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b66px04qe.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 200s timeout and was moved to the background (ID: b66px04qe). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b66px04qe.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -968,7 +968,7 @@ RUNNING
 
 ← TOOL RESULT
 ```
-Command did not complete within its 300s timeout and was moved to the background (ID: bqabmrsou). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bqabmrsou.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 300s timeout and was moved to the background (ID: bqabmrsou). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bqabmrsou.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1000,7 +1000,7 @@ lines: 5
 
 → TOOL CALL `Bash`
 ```json
-{"command": "cd ~/hackathon/witness; git add -A && git -c user.name=\"Witness\" -c user.email=\"refit.league8n@icloud.com\" commit -q -m \"perf: cache the compiled workbook model per process; bound shrink and fuzz cost\n\nThe evaluator rebuilt the whole formulas model for every case. 37 cases across\n7 workbooks meant recompiling the same large workbook a dozen times, which\nturned a ~6-minute evaluation into a multi-hour one -- the fuzzing itself is\nabout 1 ms per vector. get_oracle() compiles each workbook at most once.\n\nAlso bounds two unbounded loops that could stall a run: _shrink now has a\n400-evaluation budget, and fuzz_case has a 240s per-case wall-clock guard that\nrecords how many trials it actually ran rather than silently truncating.\nInvariant probes reduced from 12 to 6 and monotonicity to 3 inputs.\" >/dev/null && echo committed\npython3 - <<'PY'\nimport pathlib\np=pathlib.Path(\"CHANGELOG.md\"); s=p.read_text()\nanchor = \"| **8 \u00b7 Final comparison**\"\nnew_rows = \"\"\"| **8 \u00b7 Corpus growth** | McNemar p=0.219 on 10 cases meant the result was underpowered. The legitimate fix is more evidence, not a different number: 3 more workbooks, and relaxed selection (min depth 6\u21923, max inputs 40\u219260, per-sheet cap 2\u21925). | **10 \u2192 37 cases** across 7 workbooks | **Kept.** Every added case still passes the sensitivity screen and the always-zero shortcut check. |\n| **9 \u00b7 Oracle cache** | The evaluator rebuilt the full workbook model per case. 37 cases over 7 workbooks meant recompiling the same large workbook 
+{"command": "cd ~/hackathon/witness; git add -A && git -c user.name=\"Witness\" -c user.email=\"[REDACTED-EMAIL]\" commit -q -m \"perf: cache the compiled workbook model per process; bound shrink and fuzz cost\n\nThe evaluator rebuilt the whole formulas model for every case. 37 cases across\n7 workbooks meant recompiling the same large workbook a dozen times, which\nturned a ~6-minute evaluation into a multi-hour one -- the fuzzing itself is\nabout 1 ms per vector. get_oracle() compiles each workbook at most once.\n\nAlso bounds two unbounded loops that could stall a run: _shrink now has a\n400-evaluation budget, and fuzz_case has a 240s per-case wall-clock guard that\nrecords how many trials it actually ran rather than silently truncating.\nInvariant probes reduced from 12 to 6 and monotonicity to 3 inputs.\" >/dev/null && echo committed\npython3 - <<'PY'\nimport pathlib\np=pathlib.Path(\"CHANGELOG.md\"); s=p.read_text()\nanchor = \"| **8 \u00b7 Final comparison**\"\nnew_rows = \"\"\"| **8 \u00b7 Corpus growth** | McNemar p=0.219 on 10 cases meant the result was underpowered. The legitimate fix is more evidence, not a different number: 3 more workbooks, and relaxed selection (min depth 6\u21923, max inputs 40\u219260, per-sheet cap 2\u21925). | **10 \u2192 37 cases** across 7 workbooks | **Kept.** Every added case still passes the sensitivity screen and the always-zero shortcut check. |\n| **9 \u00b7 Oracle cache** | The evaluator rebuilt the full workbook model per case. 37 cases over 7 workbooks meant recompiling the same large workbook 
 ```
 
 ### 🧑 HUMAN
@@ -1048,7 +1048,7 @@ twelve cases did not move it, and the reason is visible in the second column:
 
 → TOOL CALL `Bash`
 ```json
-{"command": "cd ~/hackathon/witness; git add -A && git -c user.name=\"Witness\" -c user.email=\"refit.league8n@icloud.com\" commit -q -m \"docs(changelog): stages 8-13 and the 12-case ablation\n\nThe ablation stays null at 3x the cases, but the diagnosis is now precise:\nmean repairs is 0.08, so across twelve cases the loop performed roughly one\nrepair. You cannot compare repair signals on a corpus that never needs\nrepairing. Reported as a limitation of case difficulty, not as a win.\" >/dev/null && echo committed\necho \"eval lines: $(grep -cE '^\\[base\\]|^\\[witn\\]' results/eval_v5.log)/74\"; sleep 500; echo \"eval lines: $(grep -cE '^\\[base\\]|^\\[witn\\]' results/eval_v5.log)/74\"; grep -E \"^\\[base\\]|^\\[witn\\]\" results/eval_v5.log | tail -4", "description": "Commit changelog and monitor evaluation", "timeout": 560000}
+{"command": "cd ~/hackathon/witness; git add -A && git -c user.name=\"Witness\" -c user.email=\"[REDACTED-EMAIL]\" commit -q -m \"docs(changelog): stages 8-13 and the 12-case ablation\n\nThe ablation stays null at 3x the cases, but the diagnosis is now precise:\nmean repairs is 0.08, so across twelve cases the loop performed roughly one\nrepair. You cannot compare repair signals on a corpus that never needs\nrepairing. Reported as a limitation of case difficulty, not as a win.\" >/dev/null && echo committed\necho \"eval lines: $(grep -cE '^\\[base\\]|^\\[witn\\]' results/eval_v5.log)/74\"; sleep 500; echo \"eval lines: $(grep -cE '^\\[base\\]|^\\[witn\\]' results/eval_v5.log)/74\"; grep -E \"^\\[base\\]|^\\[witn\\]\" results/eval_v5.log | tail -4", "description": "Commit changelog and monitor evaluation", "timeout": 560000}
 ```
 
 ### 🧑 HUMAN
@@ -1096,7 +1096,7 @@ eval: 8/74
 
 ← TOOL RESULT
 ```
-Command did not complete within its 560s timeout and was moved to the background (ID: b688nfdem). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b688nfdem.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 560s timeout and was moved to the background (ID: b688nfdem). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b688nfdem.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1135,7 +1135,7 @@ RUNNING
 
 ← TOOL RESULT
 ```
-Command did not complete within its 590s timeout and was moved to the background (ID: bxj8alks3). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bxj8alks3.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 590s timeout and was moved to the background (ID: bxj8alks3). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bxj8alks3.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1165,7 +1165,7 @@ RUNNING
 
 ← TOOL RESULT
 ```
-Command did not complete within its 595s timeout and was moved to the background (ID: bfwqopvee). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bfwqopvee.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 595s timeout and was moved to the background (ID: bfwqopvee). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bfwqopvee.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1199,7 +1199,7 @@ RUNNING
 
 ← TOOL RESULT
 ```
-Command did not complete within its 595s timeout and was moved to the background (ID: bqkpa4teg). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bqkpa4teg.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 595s timeout and was moved to the background (ID: bqkpa4teg). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bqkpa4teg.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1214,7 +1214,7 @@ Session cwd remains ~/hackathon/witness; directory changes made by the backgroun
 
 ← TOOL RESULT
 ```
-Command did not complete within its 595s timeout and was moved to the background (ID: bewvad88n). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bewvad88n.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 595s timeout and was moved to the background (ID: bewvad88n). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bewvad88n.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1250,7 +1250,7 @@ RUNNING
 
 ← TOOL RESULT
 ```
-Command did not complete within its 595s timeout and was moved to the background (ID: bbon59r9w). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bbon59r9w.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 595s timeout and was moved to the background (ID: bbon59r9w). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bbon59r9w.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1265,7 +1265,7 @@ Session cwd remains ~/hackathon/witness; directory changes made by the backgroun
 
 ← TOOL RESULT
 ```
-Command did not complete within its 595s timeout and was moved to the background (ID: bwk2jnu3o). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bwk2jnu3o.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 595s timeout and was moved to the background (ID: bwk2jnu3o). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bwk2jnu3o.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1300,7 +1300,7 @@ RUNNING
 
 ← TOOL RESULT
 ```
-Command did not complete within its 595s timeout and was moved to the background (ID: byise95yu). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/byise95yu.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 595s timeout and was moved to the background (ID: byise95yu). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/byise95yu.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1315,7 +1315,7 @@ Session cwd remains ~/hackathon/witness; directory changes made by the backgroun
 
 ← TOOL RESULT
 ```
-Command did not complete within its 595s timeout and was moved to the background (ID: b79gl2gvg). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b79gl2gvg.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 595s timeout and was moved to the background (ID: b79gl2gvg). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b79gl2gvg.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1354,7 +1354,7 @@ Halfway (37/74), 17h to deadline. Failures on both arms now — honest signal.
 
 ← TOOL RESULT
 ```
-Command did not complete within its 595s timeout and was moved to the background (ID: buxwkfx2o). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/buxwkfx2o.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 595s timeout and was moved to the background (ID: buxwkfx2o). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/buxwkfx2o.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1369,7 +1369,7 @@ Session cwd remains ~/hackathon/witness; directory changes made by the backgroun
 
 ← TOOL RESULT
 ```
-Command did not complete within its 595s timeout and was moved to the background (ID: bwsqfoir1). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bwsqfoir1.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 595s timeout and was moved to the background (ID: bwsqfoir1). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bwsqfoir1.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1425,7 +1425,7 @@ docs: AGENTS.md CHANGELOG.md PRIOR-WORK.md README.md REPRODUCE.md VIDEO-SCRIPT.m
 
 ← TOOL RESULT
 ```
-Command did not complete within its 595s timeout and was moved to the background (ID: bbyo99y70). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bbyo99y70.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 595s timeout and was moved to the background (ID: bbyo99y70). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bbyo99y70.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1440,7 +1440,7 @@ Session cwd remains ~/hackathon/witness; directory changes made by the backgroun
 
 ← TOOL RESULT
 ```
-Command did not complete within its 595s timeout and was moved to the background (ID: bxapuhj6u). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bxapuhj6u.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 595s timeout and was moved to the background (ID: bxapuhj6u). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bxapuhj6u.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1480,7 +1480,7 @@ RUNNING
 
 ← TOOL RESULT
 ```
-Command did not complete within its 595s timeout and was moved to the background (ID: b1281clqi). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b1281clqi.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 595s timeout and was moved to the background (ID: b1281clqi). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b1281clqi.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1510,7 +1510,7 @@ RUNNING
 
 ← TOOL RESULT
 ```
-Command did not complete within its 595s timeout and was moved to the background (ID: b9oxqke5z). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b9oxqke5z.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 595s timeout and was moved to the background (ID: b9oxqke5z). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b9oxqke5z.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1541,7 +1541,7 @@ RUNNING
 
 ← TOOL RESULT
 ```
-Command did not complete within its 595s timeout and was moved to the background (ID: biqxyyzn6). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/biqxyyzn6.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 595s timeout and was moved to the background (ID: biqxyyzn6). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/biqxyyzn6.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1571,7 +1571,7 @@ lines: 71/74
 
 ← TOOL RESULT
 ```
-Command did not complete within its 595s timeout and was moved to the background (ID: b156q9fyb). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b156q9fyb.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 595s timeout and was moved to the background (ID: b156q9fyb). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/b156q9fyb.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1635,7 +1635,7 @@ invariant violations recorded: 0
 
 ← TOOL RESULT
 ```
-Command did not complete within its 500s timeout and was moved to the background (ID: bf6eevnvp). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bf6eevnvp.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 500s timeout and was moved to the background (ID: bf6eevnvp). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bf6eevnvp.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
@@ -1705,7 +1705,7 @@ mutation: 5 rows, RUNNING
 
 ← TOOL RESULT
 ```
-Command did not complete within its 595s timeout and was moved to the background (ID: bjq0t4bkl). Output is being written to: /private/tmp/claude-501/-Users-tkaushal99gmail-com-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bjq0t4bkl.output. You will be notified when it completes. To check interim output, use Read on that file path.
+Command did not complete within its 595s timeout and was moved to the background (ID: bjq0t4bkl). Output is being written to: /private/tmp/claude-501/-Users-<user>-hackathon/76245214-4d48-4c22-b153-dc5a071a64f0/tasks/bjq0t4bkl.output. You will be notified when it completes. To check interim output, use Read on that file path.
 Session cwd remains ~/hackathon/witness; directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 
