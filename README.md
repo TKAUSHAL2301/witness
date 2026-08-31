@@ -201,7 +201,22 @@ ALL 6 CHECKS GREEN — every figure in README.md is backed by results/.
 ```
 
 Add `--run` to regenerate those artifacts first instead of reading the
-committed ones. To run the engine-trust gate alone:
+committed ones.
+
+To watch the argument happen on a single cell instead of reading a scoreboard —
+both ports loaded from disk and fuzzed live against the workbook, nothing
+replayed:
+
+```bash
+uv run python -m witness.demo
+```
+
+It ties both ports out against the values the workbook was saved with (they
+match, which is where a migration is normally signed off), then generates 3,000
+inputs the history never contained and shrinks the first failure to the smallest
+input that still breaks it.
+
+To run the engine-trust gate alone:
 
 ```bash
 uv run python -m witness.gate corpus
@@ -284,6 +299,7 @@ analysis: [CHANGELOG.md](CHANGELOG.md).
 | 9 · **Coverage map** | ✅ 91.4% mean cell coverage, 100% branch coverage |
 | 10 · **pytest plugin** | ✅ `certify_equivalent()` — ships as a CI gate |
 | 11 · **Claim verifier** | ✅ `witness.verify` — all 6 published figures re-derived from the raw artifacts, exits non-zero on drift |
+| 12 · **Single-case walkthrough** | ✅ `witness.demo` — historical tie-out, live fuzz, shrunk counterexample, on one cell |
 
 Data: 17 municipal finance workbooks published by the Commonwealth of
 Massachusetts, Division of Local Services. Public records. Provenance and
