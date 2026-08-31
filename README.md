@@ -25,15 +25,6 @@ kickoff; everything I did not write is declared in
 [PRIOR-WORK.md](PRIOR-WORK.md). The coding agents I used and the trajectories
 they produced are disclosed in [AGENTS.md](AGENTS.md).
 
-**On the two git author identities.** `git log` shows commits under two names —
-`Tanya Kaushal` and `Witness` — because I ran some sessions with a per-repository
-author set to the project name. **Both are me.** There is no second contributor.
-I have deliberately not rewritten the history to normalise them: the commit
-timestamps are the evidence that this was built after kickoff (Ground Rule 02),
-and rewriting them would destroy exactly the record a reviewer should be able to
-check. `git log --format='%an <%ae>'` shows both; `git log --format=%h` shows
-every commit is a single-parent commit on one linear branch.
-
 ---
 
 ## Who has this problem
