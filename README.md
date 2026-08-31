@@ -14,8 +14,8 @@ against it. If nothing breaks, you get a **one-page certificate you can put your
 name on**: what was tested, over what range, and what it does not cover. If
 something breaks, you get the exact input that broke it — and no certificate.
 
-|  | Before | With Witness |
-| -- | ------ | ------------ |
+| What sign-off depends on | Before | With Witness |
+| ------------------------ | ------ | ------------ |
 | What proves the port is right | 3 historical quarters tie out | **9,000 generated scenarios per cell** |
 | Who decides it is safe to cut over | whoever is confident | a named reviewer, on a signed certificate |
 | What happens when it is wrong | found at the next close | found before sign-off, with the breaking input |
@@ -354,9 +354,85 @@ Witness has **none**.
 > figures are now banned by name in the claim verifier, so neither can come
 > back. The full record is in [CHANGELOG.md](CHANGELOG.md).
 
+#### Every failed port, and how wrong it actually is
+
+Bars are scaled to the largest error in the run. Units differ by cell, so they
+are stated per row — this is the whole point: six of the baseline's failures are
+dates off by more than a century, not money.
+
+**Baseline — 13 failures**
+
+| Target cell | Unit | Error | |
+| ----------- | ---- | ----: | - |
+| `Fiscal Years.AA16` | date | 50,951 days | ████████████████████████████████████ |
+| `Available Funds.T48` | date | 48,030 days | ██████████████████████████████████ |
+| `Available Funds.S48` | date | 47,665 days | ██████████████████████████████████ |
+| `Available Funds.N48` | date | 47,665 days | ██████████████████████████████████ |
+| `Available Funds.N53` | date | 47,664 days | ██████████████████████████████████ |
+| `Available Funds.M48` | date | 47,300 days | █████████████████████████████████ |
+| `Levy Limit.E19` | currency | $2,340 | ██ |
+| `Debt.I8` | number | 1 | ▏ |
+| `Available Funds.M53` | date | 1 day | ▏ |
+| `6 - Operating Expenditures.K35` | number | 0.0003 | ▏ |
+| `Fiscal Years.AA13` · `Available Funds.T53` · `CPF.Q20` | — | 0 — structural failure, no value delta | |
+
+**Witness — 5 failures**
+
+| Target cell | Unit | Error | |
+| ----------- | ---- | ----: | - |
+| `Fiscal Years.AA16` | date | 9,132 days | ██████ |
+| `Debt.H8` | number | 1 | ▏ |
+| `Available Funds.S48` | date | 1 day | ▏ |
+| `Available Funds.M53` | date | 1 day | ▏ |
+| `CPF.Q20` | — | 0 — structural failure, no value delta | |
+
 Neither arm certified the hardest case, `Fiscal Years.AA16`; both certificates
 read **NOT EQUIVALENT**. The difference is that the baseline's port is what a
 team ships today, and it is wrong by 139 years.
+
+---
+
+### What Owen actually receives
+
+One file per certified cell, in `certificates/`. Not a green checkmark — a
+document with a scope, a signature block, and an explicit list of what it does
+**not** cover.
+
+```markdown
+# Equivalence certificate — financial-forecasting-template-10-year::Available Funds.T48
+
+## Verdict: CERTIFIED EQUIVALENT
+
+| Target cell             | Available Funds.T48   |
+| Formula nodes behind it | 37                    |
+| Trials per seed         | 3,000                 |
+| Seeds                   | 11, 23, 47            |
+| Total input vectors     | 9,000                 |
+| Numeric tolerance       | rel 1e-9, abs 1e-6    |
+
+## Coverage — what the trials actually exercised
+| Formula cells in this target's cone   | 18        |
+| Cells whose value varied under sampling | 18 (100%) |
+| Cells constant for this input domain    | 0         |
+
+## What this certificate does NOT cover
+- Only the target cell above. Other outputs are unexamined.
+- Only the declared input domain.
+- Sampling, not proof.
+- The oracle is a re-implementation of Excel, not Excel.
+- Volatile functions excluded — they cannot have a stable oracle.
+
+## Sign-off
+This certificate is a recommendation to a qualified human reviewer. It is
+not an authorization to cut over. The reviewer below owns that decision.
+
+Reviewed by: ____________________   Date: __________
+Role:        ____________________
+Accepted for production cut-over:   [ ] yes   [ ] no
+```
+
+A certificate that lists only its successes is marketing. This one states its
+own limits first, because the person signing it carries the consequence.
 
 ---
 
