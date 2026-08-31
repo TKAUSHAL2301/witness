@@ -160,8 +160,8 @@ number it moved. A component with no number is decoration and gets deleted.
 
 ## Does the agent solve it well
 
-**Primary metric: certified-equivalence rate at 10,000 fuzzed vectors —
-`pass^10000`, not `pass@15`.**
+**Primary metric: certified-equivalence rate at 9,000 fuzzed vectors per case —
+`pass^3000` across 3 independent seeds, not `pass@15`.**
 
 Ground truth is free and unbounded because _the workbook is the oracle_. Every
 generated input vector is a labelled case. No rubric, no LLM judge, no
