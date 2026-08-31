@@ -235,7 +235,7 @@ job even when it does not reach GREEN.
 | --- | --- |
 | Engine-trust gate | 12/12 usable workbooks, **36,500 formula cells, 0 disagreements** |
 | Harness self-test | identity 300/300 per case; always-zero shortcut caught on every case |
-| Mutation score | **6/7 semantic mutants killed, 0/5 false alarms** |
+| Mutation score | **189/231 semantic mutants killed (81.8%), 0/165 false alarms (0.0%)** |
 | Coverage | **91.4% mean cell coverage, 100% branch coverage** |
 
 Verified from a clean clone (`git clone` → `uv sync` → run).

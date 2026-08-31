@@ -52,7 +52,7 @@ it itself.
 | **8 · Corpus growth** | McNemar p=0.219 on 10 cases meant the result was underpowered. The legitimate fix is more evidence, not a different number: 3 more workbooks, and relaxed selection (min depth 6→3, max inputs 40→60, per-sheet cap 2→5). | **10 → 37 cases** across 7 workbooks | **Kept.** Every added case still passes the sensitivity screen and the always-zero shortcut check. |
 | **9 · Oracle cache** | The evaluator rebuilt the full workbook model per case. 37 cases over 7 workbooks meant recompiling the same large workbook a dozen times. | evaluation wall-clock from multi-hour to ~2 h; fuzzing itself is ~1 ms/vector | **Kept.** The bottleneck was never the fuzzing. |
 | **10 · Invariant layer** | Point equality on sampled vectors is blind to a port that is structurally wrong but agrees on the values drawn. Derive scale-homogeneity and monotonicity from the DAG. | 212 invariants proposed, **106 confirmed against the oracle** (18 scale, 88 monotone), **0 violated by any port** | **Kept, and it found nothing.** Reported as a null contribution rather than presented as a success — see below. |
-| **11 · Mutation suite** | The first suite used one mutant (blank-as-zero) and killed 0/10 — the wrong mutant for this corpus, not a weak fuzzer. Rebuild it around the families the corpus actually exhibits. | 7 semantic mutants (banker's rounding, date-serial off-by-one, truncation, sign, scale…) + **5 equivalent mutants as false-alarm controls** | **Kept.** Without equivalent-mutant controls a mutation score just rewards paranoia. |
+| **11 · Mutation suite** | The first suite used one mutant (blank-as-zero) and killed 0/10 — the wrong mutant for this corpus, not a weak fuzzer. Rebuild around the families the corpus actually exhibits. | **189/231 semantic mutants killed (81.8%)**, **0/165 false alarms (0.0%)** across 33 certified ports | **Kept.** The 0% false-alarm rate is what the equivalent-mutant controls exist to prove; without them a kill rate just rewards paranoia. |
 | **12 · Coverage map** | "9,000 vectors agreed" is weak if every vector drove the calculation down the same branch. Measure which cells and IF-branches actually varied. | **91.4% mean cell coverage, 100% branch coverage** | **Kept.** The certificate's limits section is now a number, not a disclaimer. |
 | **13 · pytest plugin** | A report is a deliverable; a CI gate is a tool. `certify_equivalent(workbook, target, port)` produces a normal pytest test whose failure message *is* the shrunk counterexample. | tests pass for a certified port and **fail for a banker's-rounding mutant** | **Kept.** Turns a migration project into a regression gate. |
 | **8 · Final comparison** | Both arms, 37 cases, 3 seeds, 3,000 vectors per seed (9,000 per case).                                                                                                                                                      | See [Final result](#final-result)                                                                                                        | —                                                                                                                                                                                                                                                                        |
@@ -160,6 +160,33 @@ A verifier that turns a $47,000 silent error into a $1 disclosed one has done
 its job even when it does not reach GREEN.
 
 ---
+
+## Mutation score — what the verifier can actually detect
+
+Accuracy on a fixed case set tells you whether an agent guessed right. It does
+not tell you whether your *verifier* could detect a defect at all. So: inject a
+known defect into a port the fuzzer has already certified, and see if it notices.
+
+| | |
+| --- | --- |
+| Certified ports mutated | 33 |
+| Semantic mutants killed | **189 / 231 (81.8%)** |
+| **False alarms on equivalent mutants** | **0 / 165 (0.0%)** |
+
+The 0% false-alarm rate matters more than the kill rate. Five of the twelve
+mutants per case are *equivalent* — `float()` casts, `+ 0.0`, double negation,
+a subtraction below tolerance — semantics-preserving changes the fuzzer must
+**not** flag. Without those controls, a high kill rate only proves the verifier
+is trigger-happy.
+
+**The 18% it misses is informative.** The most-missed mutants are
+`date_serial_off_by_one` (15 cases), `rounding_bankers` (10) and
+`truncate_not_round` (10). Those are misses by *inapplicability*, not blindness:
+a date-serial mutant cannot be detected on a case whose target never produces a
+date-magnitude value, and a rounding mutant cannot be detected where the target
+is already integral. The honest reading is that the corpus does not exercise
+every failure family on every case — which is the same corpus-difficulty
+limitation the ablation ran into.
 
 ## The invariant layer found nothing, and that is worth saying
 
