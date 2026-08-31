@@ -25,6 +25,15 @@ kickoff; everything I did not write is declared in
 [PRIOR-WORK.md](PRIOR-WORK.md). The coding agents I used and the trajectories
 they produced are disclosed in [AGENTS.md](AGENTS.md).
 
+**On the two git author identities.** `git log` shows commits under two names —
+`Tanya Kaushal` and `Witness` — because I ran some sessions with a per-repository
+author set to the project name. **Both are me.** There is no second contributor.
+I have deliberately not rewritten the history to normalise them: the commit
+timestamps are the evidence that this was built after kickoff (Ground Rule 02),
+and rewriting them would destroy exactly the record a reviewer should be able to
+check. `git log --format='%an <%ae>'` shows both; `git log --format=%h` shows
+every commit is a single-parent commit on one linear branch.
+
 ---
 
 ## Who has this problem
@@ -318,7 +327,7 @@ analysis: [CHANGELOG.md](CHANGELOG.md).
 | 0 · Engine-trust gate                 | ✅ 12/12 usable workbooks, 36,500 cells, 0 disagreements                                                 |
 | 1 · Formula-DAG extractor             | ✅ 17 workbooks parsed, inputs typed                                                                     |
 | 2 · Case scoping + sensitivity screen | ✅ **37 cases**, always-zero shortcut caught on every one                                                |
-| 3 · Differential fuzzer               | ✅ 30,000 vectors per certified case                                                                     |
+| 3 · Differential fuzzer               | ✅ 9,000 vectors per certified case (3,000 trials × 3 seeds)                                             |
 | 4 · Shrink + repair loop              | ✅ only the shrunk counterexample is fed back                                                            |
 | 5 · **Invariant layer**               | ✅ scale-homogeneity + monotonicity, each confirmed on the oracle before being enforced on the port      |
 | 6 · Refusal gate                      | ✅ volatile and unsupported functions rejected                                                           |
