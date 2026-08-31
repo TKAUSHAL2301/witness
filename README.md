@@ -66,7 +66,7 @@ whether written code may be trusted.
 
 ```
                           ┌───────────────────────────────┐
-   workbook.xlsx  ───────▶│  0 · ENGINE-TRUST GATE        │  ✅ 12/12 workbooks
+   workbook.xlsx  ───────▶│  0 · ENGINE-TRUST GATE        │  ✅ 12/12 usable
                           │    recalc every formula cell  │     36,500 cells
                           │    vs Excel's OWN cached      │     0 disagreements
                           │    values. Fail ⇒ refuse.     │
@@ -141,7 +141,7 @@ number it moved. A component with no number is decoration and gets deleted.
 
 | #   | Component                                       | Why it exists                                                                                                                                                   |
 | --- | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0   | Engine-trust gate                               | Without it the oracle could be silently wrong, and every number downstream is worthless. **Already executed: 12/12, 36,500 cells, 0 disagreements.**            |
+| 0   | Engine-trust gate                               | Without it the oracle could be silently wrong, and every number downstream is worthless. **Executed: 12/12 usable workbooks, 36,500 cells, 0 disagreements.**            |
 | 1   | Formula-DAG extractor                           | Deterministic. Porting a _derived_ cell as an _input_ is a whole failure family the model cannot see and the DAG cannot miss.                                   |
 | 2   | Per-block translation                           | 2,300 formulas in one context window degrades badly. Blocks also cut cost per workbook.                                                                         |
 | 3   | Differential fuzzer                             | Converts "looks right" into a counterexample. This is the measurement, not a check on it.                                                                       |
@@ -182,15 +182,15 @@ uv run python -m witness.gate corpus     # the engine-trust gate
 Current output, reproducible from a clean checkout:
 
 ```
-GATE: 12/14 workbooks reproduce their own cached values
+GATE: 12/17 workbooks reproduce their own cached values
 usable workbooks (had cached formula values): 12
 total formula cells compared: 36500
 total disagreements: 0
 ```
 
-The two excluded workbooks carry no cached formula values at all — they were
+The five excluded workbooks carry no cached formula values at all — they were
 saved without calculation, so there is nothing to validate the engine against.
-That is a property of those files, not an engine failure, and the exclusion is a
+They were saved without calculation. That is a property of those files, not an engine failure, and the exclusion is a
 **disclosed case-selection criterion**, not a hidden filter.
 
 ---
@@ -227,7 +227,7 @@ job even when it does not reach GREEN.
 
 | | |
 | --- | --- |
-| Engine-trust gate | 12/12 workbooks, **36,500 formula cells, 0 disagreements** |
+| Engine-trust gate | 12/12 usable workbooks, **36,500 formula cells, 0 disagreements** |
 | Harness self-test | identity 300/300 per case; always-zero shortcut caught on every case |
 | Mutation score | **6/7 semantic mutants killed, 0/5 false alarms** |
 | Coverage | **91.4% mean cell coverage, 100% branch coverage** |
@@ -244,7 +244,7 @@ analysis: [CHANGELOG.md](CHANGELOG.md).
 
 | Stage | State |
 | --- | --- |
-| 0 · Engine-trust gate | ✅ 12/12 workbooks, 36,500 cells, 0 disagreements |
+| 0 · Engine-trust gate | ✅ 12/12 usable workbooks, 36,500 cells, 0 disagreements |
 | 1 · Formula-DAG extractor | ✅ 17 workbooks parsed, inputs typed |
 | 2 · Case scoping + sensitivity screen | ✅ **37 cases**, always-zero shortcut caught on every one |
 | 3 · Differential fuzzer | ✅ 30,000 vectors per certified case |

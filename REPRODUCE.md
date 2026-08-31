@@ -66,7 +66,7 @@ uv run python -m witness.gate corpus
 [FAIL] budget-calendar.xlsx                         0/0 cells  :: no formula cells with cached values
 ...
 ================================================================
-GATE: 12/14 workbooks reproduce their own cached values
+GATE: 12/17 workbooks reproduce their own cached values
 ```
 
 **How to read it.** 12 of 14 workbooks pass. The 2 that "fail" contain no
