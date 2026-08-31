@@ -35,6 +35,27 @@ it itself.
 
 ---
 
+## What a good result means, defined before the evaluation ran
+
+The rulebook asks for this to be settled *before* running, so it is stated here
+as it was fixed in `results/cases.json` — frozen before any port was generated:
+
+> **A port is CERTIFIED for a case only if, across all three seeds, every one of
+> 3,000 generated input vectors produces a value matching the workbook within
+> relative 1e-9 / absolute 1e-6 — and no confirmed structural invariant is
+> violated. Anything less is not equivalent.**
+
+This is all-or-nothing per case on purpose. Owen does not get partial credit for
+a port that is right 99% of the time; one wrong quarter is a restatement. A case
+where the target depends on a volatile function (`NOW`, `RAND`, `OFFSET`,
+`INDIRECT`) is **refused rather than scored**, because it cannot have a stable
+oracle.
+
+The tolerance, the seeds, the trial budget and the pass criterion were fixed
+before generation and never adjusted afterwards.
+
+---
+
 ## Changelog
 
 | Stage                                      | What was tried, and why                                                                                                                                                                                 | Evidence                                                                                                                                 | Decision / learning                                                                                                                                                                                                                                                      |
@@ -56,6 +77,50 @@ it itself.
 | **12 · Coverage map** | "9,000 vectors agreed" is weak if every vector drove the calculation down the same branch. Measure which cells and IF-branches actually varied. | **91.4% mean cell coverage, 100% branch coverage** | **Kept.** The certificate's limits section is now a number, not a disclaimer. |
 | **13 · pytest plugin** | A report is a deliverable; a CI gate is a tool. `certify_equivalent(workbook, target, port)` produces a normal pytest test whose failure message *is* the shrunk counterexample. | tests pass for a certified port and **fail for a banker's-rounding mutant** | **Kept.** Turns a migration project into a regression gate. |
 | **8 · Final comparison** | Both arms, 37 cases, 3 seeds, 3,000 vectors per seed (9,000 per case).                                                                                                                                                      | See [Final result](#final-result)                                                                                                        | —                                                                                                                                                                                                                                                                        |
+
+---
+
+## The challenging case, and what it revealed
+
+The rulebook asks for one hard case explained. This is it, and it is the single
+most informative row in the whole evaluation.
+
+**`financial-forecasting-template-10-year::Available Funds.S48`** — 35 formula
+nodes, and exactly **one** free input: a date in `Fiscal Years!B13` that a chain
+of `EDATE` calls walks forward year by year.
+
+| | Baseline | Witness |
+| --- | --- | --- |
+| First disagreement | **trial 0** — the workbook's own saved inputs | **trial 132** |
+| Excel expected | 47,665 | 7,364 |
+| Port returned | `None` | 7,365 |
+| Error | **−$47,665** | **+$1** |
+
+Three things this case revealed:
+
+**1. The baseline failed on the workbook's own data.** Trial 0 is not a fuzzed
+vector — it is the values already saved in the spreadsheet. The baseline port
+returned `None` where Excel returns a date serial, and it had *self-certified as
+correct* before the fuzzer ever ran. Its own checking looked at the sheet and
+concluded it matched.
+
+**2. One input is enough to be hard.** With a single free variable there is no
+combinatorial explosion to hide in — and it still took **132 generated vectors**
+to expose Witness's defect. A fixed test set of ten or fifteen cases would have
+declared this port correct. That is the entire thesis of the project reproduced
+inside one case.
+
+**3. The surviving defect is a $1 rounding-mode disagreement**, not a logic
+error. `ROUND` half-away-from-zero versus Python's banker's rounding, surfacing
+only on inputs where the intermediate lands exactly on .5. It is the smallest
+class of bug the fuzzer can find, it is invisible to historical tie-out, and it
+is precisely the class that quietly accumulates across a quarter.
+
+A related case, **`financial-forecasting-template-5-year::CPF.Q20`**, revealed a
+limit of the method rather than of a port: the oracle returned an *empty* value
+where both ports returned `-730.21`. That is the recalculation engine declining
+to evaluate a construct, not a port defect — and it is why unsupported
+constructs are reported as "cannot certify" rather than as failures.
 
 ---
 
@@ -126,8 +191,16 @@ Command: `uv run python -m witness.evaluate 3000` · Raw: `results/evaluation.js
 | Ports that failed | 13 | 5 | −8 |
 | **Median error when it failed** | **$47,482** | **$1** | — |
 | Largest undetected error in a self-certified port | **$50,951** | $9,132 | — |
-| Human time to verify one port | ~2–4 h manual tie-out | ~3 min automated | ~40–80× |
-| Cost per certification | — | < $0.50 agent usage | — |
+| Machine time to certify one port | — | **236 s** (3 seeds × 3,000 vectors), measured | — |
+| Human time per port | *estimated* 2–4 h manual tie-out | **0 min** — no human in the measurement loop | *estimate, not measured* |
+| Cost per certification | — | **$0** to run; the fuzzer calls no model | — |
+
+The machine-time figure is measured: 222 fuzz runs totalling 290.9 minutes
+(`results/evaluation.json`, `seconds` field per run). **The human-time row is an
+estimate and is labelled as one** — I did not run a timed human tie-out, so it
+carries no evidence and should not be read as a measured result. Cost is $0
+because certification is pure computation; only *generating* a port calls a
+model, and that is a separate step.
 
 ### Paired breakdown, 37 cases
 

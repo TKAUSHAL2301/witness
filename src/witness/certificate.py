@@ -152,7 +152,18 @@ def build(case: dict, arm_result: dict, nodes: int, generated_at: str, cov: dict
 
 
 def main(argv: list[str]) -> int:
-    arm = argv[1] if len(argv) > 1 else "witness"
+    """Ground Rule 04: writing a certificate is the consequential action here —
+    it is the artifact a controller signs and acts on. It is therefore gated on
+    explicit human approval and never fires by default. Without --approve the
+    command reports what it *would* write and exits without touching disk.
+
+    Ground Rule 05: a GREEN verdict is a recommendation to a qualified reviewer,
+    never an authorization to cut over. Every certificate carries a signature
+    block that only a human can complete.
+    """
+    args = [a for a in argv[1:] if not a.startswith("--")]
+    approved = "--approve" in argv[1:]
+    arm = args[0] if args else "witness"
     ev = Path("results/evaluation.json")
     if not ev.exists():
         print("results/evaluation.json not found — run `uv run python -m witness.evaluate` first")
@@ -165,6 +176,21 @@ def main(argv: list[str]) -> int:
         covmap = {c["case_id"]: c for c in json.loads(cov_path.read_text())}
 
     out = Path("certificates") / arm
+    pending = [c for c in data["cases"]
+               if c["arms"].get(arm) and not c["arms"][arm].get("missing")
+               and not c["arms"][arm].get("import_failed")]
+    if not approved:
+        print(f"DRY RUN — would write {len(pending)} certificate(s) to certificates/{arm}/")
+        print("Nothing has been written. These are signable artifacts a reviewer acts on,")
+        print("so writing them requires explicit approval (Ground Rule 04):")
+        print(f"\n    uv run python -m witness.certificate {arm} --approve\n")
+        for c in pending[:5]:
+            v = "CERTIFIED" if c["arms"][arm].get("certified") else "NOT EQUIVALENT"
+            print(f"  {v:<15} {c['case_id']}")
+        if len(pending) > 5:
+            print(f"  ... and {len(pending) - 5} more")
+        return 0
+
     out.mkdir(parents=True, exist_ok=True)
     n = 0
     for c in data["cases"]:
@@ -174,7 +200,7 @@ def main(argv: list[str]) -> int:
         slug = c["case_id"].replace("::", "__").replace("!", ".").replace(" ", "_")
         (out / f"{slug}.md").write_text(build(c, res, c["nodes"], at, covmap.get(c["case_id"])))
         n += 1
-    print(f"{n} certificates -> certificates/{arm}/")
+    print(f"{n} certificates -> certificates/{arm}/  (approved by operator)")
     return 0
 
 

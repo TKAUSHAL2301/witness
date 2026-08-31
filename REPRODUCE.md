@@ -155,8 +155,13 @@ failure, the shrunk counterexample and the exact dollar delta.
 ## 5. Certificates
 
 ```bash
-uv run python -m witness.certificate witness
+uv run python -m witness.certificate witness            # dry run — writes nothing
+uv run python -m witness.certificate witness --approve  # writes the 37 certificates
 ```
+
+Certificates are gated on explicit approval (Ground Rule 04): they are signable
+artifacts a controller acts on, so the command reports what it *would* write and
+exits unless `--approve` is passed.
 
 Writes one signable equivalence certificate per case to `certificates/witness/`.
 Each states what was proven, over what domain, at what tolerance — and five

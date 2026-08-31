@@ -12,7 +12,7 @@
 | Seeds | 11, 23, 47 |
 | Total input vectors tested | 9,000 |
 | Numeric tolerance | rel 1e-9, abs 1e-6 |
-| Generated | 2026-08-31 03:14 UTC |
+| Generated | 2026-08-31 04:43 UTC |
 | Python | 3.13.14 |
 
 Across **9,000 independently generated input vectors**, the
