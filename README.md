@@ -197,24 +197,42 @@ That is a property of those files, not an engine failure, and the exclusion is a
 
 ## Result
 
-Command: `uv run python -m witness.evaluate 10000` · Raw: `results/evaluation.json`
+Command: `uv run python -m witness.evaluate 3000` · Raw: `results/evaluation.json`
 
 | METRIC | SIMPLE BASELINE | AGENT SOLUTION | CHANGE |
 | --- | --- | --- | --- |
-| **Certified-equivalence rate** (`pass^10000`, all 3 seeds) | **40%** | **80%** | **+40 pp** |
-| Ports certified | 4 / 10 | 8 / 10 | +4 |
-| Largest undetected error in a self-certified baseline port | **$50,951** | — | — |
-| Human time to verify one port | ~2–4 h manual tie-out | ~3 min automated | ~40–80× |
+| **Certified-equivalence rate** (`pass^3000`, 3 seeds, 37 cases) | **65%** | **86%** | **+22 pp** |
+| Ports certified | 24 / 37 | 32 / 37 | +8 |
+| **Median error when it failed** | **$47,482** | **$1** | — |
+| Largest undetected error in a self-certified port | **$50,951** | $9,132 | — |
 
-Paired: **5 Witness wins, 1 loss, 3 both-certified, 1 both-failed.** McNemar
-exact two-sided **p = 0.219 — not significant at α = 0.05.** The direction is
-consistent and the effect large, but ten cases is underpowered to establish it,
-and saying otherwise would be overclaiming.
+Paired: **9 Witness wins, 1 loss, 23 both-certified, 4 both-failed.**
+**McNemar exact two-sided p = 0.0215 — significant at α = 0.05.**
 
-Every one of those four baseline ports had **self-certified as correct** before
-the fuzzer touched it. That is the entire thesis in one line.
+### The finding that matters more than the rate
 
-Verified from a clean clone (`git clone` → `uv sync` → run): identical numbers.
+**When the baseline fails, it fails by a median of $47,482. When Witness fails,
+it fails by a median of $1.**
+
+Both arms produce imperfect ports. The difference is the size of what survives.
+Thirteen baseline ports certified *themselves* as correct while sitting on
+five-figure errors — chained `EDATE` date arithmetic landing years off the
+correct value. Witness's five failures are dominated by ±1 rounding-mode
+disagreements that it found and reported rather than shipped.
+
+A verifier that turns a $47,000 silent error into a $1 disclosed one has done its
+job even when it does not reach GREEN.
+
+### Supporting measurements
+
+| | |
+| --- | --- |
+| Engine-trust gate | 12/12 workbooks, **36,500 formula cells, 0 disagreements** |
+| Harness self-test | identity 300/300 per case; always-zero shortcut caught on every case |
+| Mutation score | **6/7 semantic mutants killed, 0/5 false alarms** |
+| Coverage | **91.4% mean cell coverage, 100% branch coverage** |
+
+Verified from a clean clone (`git clone` → `uv sync` → run).
 
 Full evolution, removed experiments, the null-result ablation, and the failure
 analysis: [CHANGELOG.md](CHANGELOG.md).

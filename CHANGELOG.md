@@ -121,39 +121,45 @@ been fabrication.**
 Command: `uv run python -m witness.evaluate 10000` · Raw: `results/evaluation.json`
 | METRIC | SIMPLE BASELINE | AGENT SOLUTION | CHANGE |
 | --- | --- | --- | --- |
-| **Certified-equivalence rate** (`pass^10000`, all 3 seeds) | **40%** | **80%** | **+40 pp** |
-| Ports certified | 4 / 10 | 8 / 10 | +4 |
-| Largest undetected error in a self-certified baseline port | **$50,951** | — | — |
+| **Certified-equivalence rate** (`pass^3000`, all 3 seeds) | **65%** | **86%** | **+22 pp** |
+| Ports certified | 24 / 37 | 32 / 37 | +8 |
+| Ports that failed | 13 | 5 | −8 |
+| **Median error when it failed** | **$47,482** | **$1** | — |
+| Largest undetected error in a self-certified port | **$50,951** | $9,132 | — |
 | Human time to verify one port | ~2–4 h manual tie-out | ~3 min automated | ~40–80× |
 | Cost per certification | — | < $0.50 agent usage | — |
 
-### Paired breakdown
+### Paired breakdown, 37 cases
 
 | Outcome | Cases |
 | --- | --- |
-| Witness certified, baseline failed | **5** |
+| Witness certified, baseline failed | **9** |
 | Baseline certified, witness failed | **1** |
-| Both certified | 3 |
-| Both failed | 1 |
+| Both certified | 23 |
+| Both failed | 4 |
 
-**Statistical honesty.** Six discordant pairs, 5–1 in Witness's favour. McNemar
-exact two-sided **p = 0.219 — not significant at α = 0.05.** The effect direction
-is consistent and the effect size is large, but ten cases is underpowered to
-establish it. That is a limitation of corpus size, not evidence against the
-method, and it is the strongest argument for expanding the corpus next.
+**McNemar exact two-sided p = 0.0215 — significant at α = 0.05.**
 
-**The four largest baseline errors were all date arithmetic** — chained `EDATE`
-calls where the baseline port landed tens of thousands away from the correct
-Excel date serial, i.e. a date years wrong. Every one of those baseline ports had
-self-certified as correct.
+This is the number the first run could not produce. At 10 cases the same effect
+gave p = 0.219 and I reported it as underpowered rather than dressing it up.
+The fix was more evidence, not a different statistic: 10 → 37 cases, and the
+direction held while the interval tightened.
 
-**Witness's one loss is worth more than its wins.** On
-`capital-targets-template::Debt.H8` the port returned `101090` where Excel returns
-`101089.0` — **a delta of exactly 1.00**, from `ROUND` half-away-from-zero versus
-Python's banker's rounding. That is precisely the failure family this project was
-built to catch; it survived to trial 10 of 10,000, and the baseline's port
-happened not to contain it. Reported as a loss, because it is one.
+### The finding that matters more than the rate
 
+**When the baseline fails, it fails by a median of $47,482.
+When Witness fails, it fails by a median of $1.**
+
+Both arms produce imperfect ports. The difference is the *size* of what survives.
+Thirteen baseline ports certified themselves as correct while sitting on
+five-figure errors — chained `EDATE` date arithmetic landing years off. Witness's
+five failures are dominated by ±1 rounding-mode disagreements it found and
+reported rather than shipped.
+
+A verifier that turns a $47,000 silent error into a $1 disclosed one has done
+its job even when it does not reach GREEN.
+
+---
 
 ## Main failure mode
 

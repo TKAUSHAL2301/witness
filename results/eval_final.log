@@ -1,0 +1,180 @@
+[base] appropriation-template::Annual.D31                   CERTIFIED
+[witn] appropriation-template::Annual.D31                   CERTIFIED
+[base] appropriation-template::Annual.E31                   CERTIFIED
+[witn] appropriation-template::Annual.E31                   CERTIFIED
+[base] appropriation-template::Annual.F31                   CERTIFIED
+[witn] appropriation-template::Annual.F31                   CERTIFIED
+[base] appropriation-template::Annual.H31                   CERTIFIED
+[witn] appropriation-template::Annual.H31                   CERTIFIED
+[base] appropriation-template::Annual.I31                   CERTIFIED
+[witn] appropriation-template::Annual.I31                   CERTIFIED
+[base] appropriation-template::Impact.C33                   CERTIFIED
+[witn] appropriation-template::Impact.C33                   CERTIFIED
+Error in loading `[3]LA13 BOTTOM!H28`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[3]LA-13A!E19`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[3]DE-1!J226`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[2]LA7!D32`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]TAX TITLE FORM!G32`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]START!C56`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]LA5 FORM!L54`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]LA5 FORM!L53`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]LA5 FORM!L52`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]LA5 FORM!L51`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]LA5 FORM!L50`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]CHAPTER 200!G7`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]CHAPTER 200!B48:E400`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]B-1!I42`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]A-4!K41`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]A-4!K24`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]A-2(7TH)!J25`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]A-2(6TH)!J25`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]A-2(5TH)!J25`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]A-2(4TH)!J25`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]A-2(3RD)!J25`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]A-2(2ND)!J25`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]A-2(1ST)!J25`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]A-1!I25`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+[base] budget-and-tax-rate-planning-tool::Recap Page 2.L52  CERTIFIED
+[witn] budget-and-tax-rate-planning-tool::Recap Page 2.L52  CERTIFIED
+[base] budget-and-tax-rate-planning-tool::Levy Limit.E31    CERTIFIED
+[witn] budget-and-tax-rate-planning-tool::Levy Limit.E31    CERTIFIED
+[base] budget-and-tax-rate-planning-tool::Recap Page 2.L22  CERTIFIED
+[witn] budget-and-tax-rate-planning-tool::Recap Page 2.L22  CERTIFIED
+[base] budget-and-tax-rate-planning-tool::Levy Limit.E19    FAILED@3  Δ=2,340.45
+[witn] budget-and-tax-rate-planning-tool::Levy Limit.E19    CERTIFIED
+Error in loading `[2]DISTRIBUTIONS!A10:T449`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[2]DEC!A10:O449`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]DISTHIST!A10:AN448`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]AID436!A10:AI448`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `'file:/[Z:\Group\Budget\FY2015\02.%20Budget%20Overview\aaghistorical%20-%20Copy.xlsx]RESERVES'!B2:W354`:
+[Errno 2] No such file or directory: '/Users/tkaushal99gmail.com/hackathon/witness/corpus/file:/Z:/Group/Budget/FY2015/02.%20Budget%20Overview/aaghistorical%20-%20Copy.xlsx'
+Error in loading `'file:/[Z:\Group\Budget\FY2015\02.%20Budget%20Overview\aaghistorical%20-%20Copy.xlsx]ASSESSED VALUES'!A1`:
+[Errno 2] No such file or directory: '/Users/tkaushal99gmail.com/hackathon/witness/corpus/file:/Z:/Group/Budget/FY2015/02.%20Budget%20Overview/aaghistorical%20-%20Copy.xlsx'
+[base] capital-planning-and-budgeting-workbook::Financial Targets.F60 CERTIFIED
+[witn] capital-planning-and-budgeting-workbook::Financial Targets.F60 CERTIFIED
+[base] capital-planning-and-budgeting-workbook::Financial Targets.J60 CERTIFIED
+[witn] capital-planning-and-budgeting-workbook::Financial Targets.J60 CERTIFIED
+[base] capital-planning-and-budgeting-workbook::Financial Targets.F41 CERTIFIED
+[witn] capital-planning-and-budgeting-workbook::Financial Targets.F41 CERTIFIED
+Error in loading `[2]DISTRIBUTIONS!A10:T449`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[2]DEC!A10:O449`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]DISTHIST!A10:AN448`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[1]AID436!A10:AI448`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+[base] capital-targets-template::Amortization.B48           CERTIFIED
+[witn] capital-targets-template::Amortization.B48           CERTIFIED
+[base] capital-targets-template::Amortization.A48           CERTIFIED
+[witn] capital-targets-template::Amortization.A48           CERTIFIED
+[base] capital-targets-template::Debt.G8                    CERTIFIED
+[witn] capital-targets-template::Debt.G8                    CERTIFIED
+[base] capital-targets-template::Debt.H8                    CERTIFIED
+[witn] capital-targets-template::Debt.H8                    FAILED@10  Δ=1.00
+[base] capital-targets-template::Debt.I8                    FAILED@20  Δ=1.00
+[witn] capital-targets-template::Debt.I8                    CERTIFIED
+[base] capital-targets-template::Debt.J8                    CERTIFIED
+[witn] capital-targets-template::Debt.J8                    CERTIFIED
+Error in loading `[9]TOWNWIDE CONTRIBUTIONS!A10:AA361`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[7]REGIONALS!A10:J470`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[6]LOCALCONT!A10:Y1765`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[4]DISTRIBUTIONS!A10:T449`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[4]DEC!A10:O449`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[2]DISTHIST!A10:AN448`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[2]AID436!A10:AI448`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+[base] financial-forecasting-template-10-year::COLA.J122    CERTIFIED
+[witn] financial-forecasting-template-10-year::COLA.J122    CERTIFIED
+[base] financial-forecasting-template-10-year::Fiscal Years.AA13 FAILED@0
+[witn] financial-forecasting-template-10-year::Fiscal Years.AA13 CERTIFIED
+[base] financial-forecasting-template-10-year::Fiscal Years.AA16 FAILED@0  Δ=50,951.00
+[witn] financial-forecasting-template-10-year::Fiscal Years.AA16 FAILED@3  Δ=9,132.00
+[base] financial-forecasting-template-10-year::Available Funds.T48 FAILED@0  Δ=48,030.00
+[witn] financial-forecasting-template-10-year::Available Funds.T48 CERTIFIED
+[base] financial-forecasting-template-10-year::Available Funds.T53 FAILED@0
+[witn] financial-forecasting-template-10-year::Available Funds.T53 CERTIFIED
+[base] financial-forecasting-template-10-year::Available Funds.S48 FAILED@0  Δ=47,665.00
+[witn] financial-forecasting-template-10-year::Available Funds.S48 FAILED@132  Δ=1.00
+Error in loading `[9]TOWNWIDE CONTRIBUTIONS!A10:AA361`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[7]REGIONALS!A10:J470`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[6]LOCALCONT!A10:Y1765`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[4]DISTRIBUTIONS!A10:T449`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[4]DEC!A10:O449`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[2]DISTHIST!A10:AN448`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+Error in loading `[2]AID436!A10:AI448`:
+openpyxl does not support  file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm
+[base] financial-forecasting-template-5-year::COLA.J122     CERTIFIED
+[witn] financial-forecasting-template-5-year::COLA.J122     CERTIFIED
+[base] financial-forecasting-template-5-year::CPF.Q20       FAILED@1
+[witn] financial-forecasting-template-5-year::CPF.Q20       FAILED@1
+[base] financial-forecasting-template-5-year::Available Funds.N48 FAILED@0  Δ=47,665.00
+[witn] financial-forecasting-template-5-year::Available Funds.N48 CERTIFIED
+[base] financial-forecasting-template-5-year::Available Funds.N53 FAILED@0  Δ=47,664.00
+[witn] financial-forecasting-template-5-year::Available Funds.N53 CERTIFIED
+[base] financial-forecasting-template-5-year::Available Funds.M48 FAILED@0  Δ=47,300.00
+[witn] financial-forecasting-template-5-year::Available Funds.M48 CERTIFIED
+[base] financial-forecasting-template-5-year::Available Funds.M53 FAILED@0  Δ=1.00
+[witn] financial-forecasting-template-5-year::Available Funds.M53 FAILED@0  Δ=1.00
+[base] financial-indicators-template-0::6 - Operating Expenditures.K35 FAILED@2  Δ=0.00
+[witn] financial-indicators-template-0::6 - Operating Expenditures.K35 CERTIFIED
+[base] financial-indicators-template-0::6 - Operating Expenditures.K36 CERTIFIED
+[witn] financial-indicators-template-0::6 - Operating Expenditures.K36 CERTIFIED
+[base] financial-indicators-template-0::6 - Operating Expenditures.K37 CERTIFIED
+[witn] financial-indicators-template-0::6 - Operating Expenditures.K37 CERTIFIED
+[base] financial-indicators-template-0::6 - Operating Expenditures.K38 CERTIFIED
+[witn] financial-indicators-template-0::6 - Operating Expenditures.K38 CERTIFIED
+[base] financial-indicators-template-0::6 - Operating Expenditures.K39 CERTIFIED
+[witn] financial-indicators-template-0::6 - Operating Expenditures.K39 CERTIFIED
+[base] financial-indicators-template-0::10 - Debt Service.P31 CERTIFIED
+[witn] financial-indicators-template-0::10 - Debt Service.P31 CERTIFIED
+
+==========================================================================
+CERTIFIED-EQUIVALENCE RATE  (pass^3000, all of seeds [11, 23, 47])
+==========================================================================
+METRIC                                    BASELINE     WITNESS      CHANGE
+Ports certified                              24/37       32/37          +8
+Certified-equivalence rate                    65%         86%        +22%
+Largest undetected baseline error       50,951.00           —           —
+==========================================================================
+results/evaluation.json written
