@@ -2,3 +2,7 @@
 __pycache__/
 *.pyc
 .hypothesis/
+
+# Raw run logs: transient, and they embed absolute local paths (Ground Rule 08).
+# Every number that matters is in the committed results/*.json.
+results/*.log
